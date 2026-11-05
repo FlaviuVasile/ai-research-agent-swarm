@@ -1,0 +1,4 @@
+{
+    "python.defaultInterpreterPath": "${workspaceFolder}/.venv-swarm/Scripts/python.exe",
+    "python.terminal.useEnvFile": true
+}

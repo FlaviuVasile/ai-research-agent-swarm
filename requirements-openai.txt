@@ -1,0 +1,4 @@
+# Optional: install only when explicitly opting into paid OpenAI analysis.
+-r requirements.txt
+openai-agents>=0.6.0,<1.0
+openai>=2.0.0,<3.0
