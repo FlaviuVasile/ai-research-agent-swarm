@@ -1,0 +1,268 @@
+{
+  "tools": [
+    "extract_paper_text",
+    "summarize_paper",
+    "find_research_questions",
+    "search_literature",
+    "analyze_paper",
+    "get_analysis_result",
+    "ingest_paper",
+    "list_indexed_papers",
+    "search_evidence",
+    "inspect_evidence",
+    "ask_scientific_question"
+  ],
+  "indexed": [
+    {
+      "id": "550ffe72f2734b33af1c902df947c713",
+      "publication_id": 1,
+      "sha256": "bdfaa68d8984f0dc02beaca527b76f207d99b666d31d1da728ee0728182df697",
+      "relative_path": "bdfaa68d8984f0dc02beaca527b76f207d99b666d31d1da728ee0728182df697.pdf",
+      "status": "complete",
+      "page_count": 15,
+      "last_page": 15,
+      "profile": "{\"overlap\": 120, \"pymupdf\": \"1.28.2\", \"size\": 1200, \"version\": 1}",
+      "owner": null,
+      "lease_until": null,
+      "error": null,
+      "updated": 1795018430.3663616,
+      "title": "Attention Is All You Need"
+    },
+    {
+      "id": "9ce52cbab79e44ba89d58c903b006fd2",
+      "publication_id": 3,
+      "sha256": "eab9c73ae2ceda884b94830bda99312254bac4806f6c9f045cbab90721ecda31",
+      "relative_path": "eab9c73ae2ceda884b94830bda99312254bac4806f6c9f045cbab90721ecda31.pdf",
+      "status": "complete",
+      "page_count": 15,
+      "last_page": 15,
+      "profile": "{\"overlap\": 120, \"pymupdf\": \"1.28.2\", \"size\": 1200, \"version\": 1}",
+      "owner": null,
+      "lease_until": null,
+      "error": null,
+      "updated": 1795018510.6565857,
+      "title": "Adam: A Method for Stochastic Optimization"
+    },
+    {
+      "id": "ce4e28379dd44314bd1286d17fd0681f",
+      "publication_id": 4,
+      "sha256": "e9a0d3128767db616085dc0f4e6e455e672e89af823e8ed1282793682787395a",
+      "relative_path": "e9a0d3128767db616085dc0f4e6e455e672e89af823e8ed1282793682787395a.pdf",
+      "status": "complete",
+      "page_count": 26,
+      "last_page": 26,
+      "profile": "{\"overlap\": 120, \"pymupdf\": \"1.28.2\", \"size\": 1200, \"version\": 1}",
+      "owner": null,
+      "lease_until": null,
+      "error": null,
+      "updated": 1795018512.4320097,
+      "title": "LoRA: Low-Rank Adaptation of Large Language Models"
+    }
+  ],
+  "answers": [
+    {
+      "question": "What architectural mechanism replaces recurrence and convolutions in the Transformer?",
+      "evidence": [
+        {
+          "id": 3,
+          "document_id": "550ffe72f2734b33af1c902df947c713",
+          "page": 1,
+          "start_char": 1018,
+          "end_char": 2218,
+          "section": "Abstract",
+          "text": "                                                 Abstract\n\n\n                         The dominant sequence transduction models are based on complex recurrent or\n                               convolutional neural networks that include an encoder and a decoder. The best\n                             performing models also connect the encoder and decoder through an attention\n                           mechanism. We propose a new simple network architecture, the Transformer,\n                              based solely on attention mechanisms, dispensing with recurrence and convolutions\n                                    entirely. Experiments on two machine translation tasks show these models to\n                            be superior in quality while being more parallelizable and requiring significantly\n                                   less time to train. Our model achieves 28.4 BLEU on the WMT 2014 English-\n                           to-German translation task, improving over the existing best results, including\n                               ensembles, by over 2 BLEU. On the WMT 2014 English-to-French translation task,\n                               our model establishes a new sing",
+          "publication_id": 1,
+          "title": "Attention Is All You Need",
+          "doi": null,
+          "sha256": "bdfaa68d8984f0dc02beaca527b76f207d99b666d31d1da728ee0728182df697",
+          "relative_path": "bdfaa68d8984f0dc02beaca527b76f207d99b666d31d1da728ee0728182df697.pdf",
+          "score": 12.828466146250001
+        },
+        {
+          "id": 9,
+          "document_id": "550ffe72f2734b33af1c902df947c713",
+          "page": 2,
+          "start_char": 2650,
+          "end_char": 3764,
+          "section": "2  Background",
+          "text": "averaging attention-weighted positions, an effect we counteract with Multi-Head Attention as\ndescribed in section 3.2.\n\nSelf-attention, sometimes called intra-attention is an attention mechanism relating different positions\nof a single sequence in order to compute a representation of the sequence. Self-attention has been\nused successfully in a variety of tasks including reading comprehension, abstractive summarization,\ntextual entailment and learning task-independent sentence representations [4, 27, 28, 22].\n\nEnd-to-end memory networks are based on a recurrent attention mechanism instead of sequence-\naligned recurrence and have been shown to perform well on simple-language question answering and\nlanguage modeling tasks [34].\n\nTo the best of our knowledge, however, the Transformer is the first transduction model relying\nentirely on self-attention to compute representations of its input and output without using sequence-\naligned RNNs or convolution. In the following sections, we will describe the Transformer, motivate\nself-attention and discuss its advantages over models such as [17, 18] and [9].\n\n\n",
+          "publication_id": 1,
+          "title": "Attention Is All You Need",
+          "doi": null,
+          "sha256": "bdfaa68d8984f0dc02beaca527b76f207d99b666d31d1da728ee0728182df697",
+          "relative_path": "bdfaa68d8984f0dc02beaca527b76f207d99b666d31d1da728ee0728182df697.pdf",
+          "score": 10.084709522676562
+        },
+        {
+          "id": 7,
+          "document_id": "550ffe72f2734b33af1c902df947c713",
+          "page": 2,
+          "start_char": 1072,
+          "end_char": 1928,
+          "section": "1  Introduction",
+          "text": "oving model performance in case of the latter. The fundamental\nconstraint of sequential computation, however, remains.\n\nAttention mechanisms have become an integral part of compelling sequence modeling and transduc-\ntion models in various tasks, allowing modeling of dependencies without regard to their distance in\nthe input or output sequences [2, 19]. In all but a few cases [27], however, such attention mechanisms\nare used in conjunction with a recurrent network.\n\nIn this work we propose the Transformer, a model architecture eschewing recurrence and instead\nrelying entirely on an attention mechanism to draw global dependencies between input and output.\nThe Transformer allows for significantly more parallelization and can reach a new state of the art in\ntranslation quality after being trained for as little as twelve hours on eight P100 GPUs.\n\n\n",
+          "publication_id": 1,
+          "title": "Attention Is All You Need",
+          "doi": null,
+          "sha256": "bdfaa68d8984f0dc02beaca527b76f207d99b666d31d1da728ee0728182df697",
+          "relative_path": "bdfaa68d8984f0dc02beaca527b76f207d99b666d31d1da728ee0728182df697.pdf",
+          "score": 9.693159265295053
+        }
+      ]
+    },
+    {
+      "question": "What BLEU score did the Transformer achieve on WMT 2014 English-to-German translation?",
+      "evidence": [
+        {
+          "id": 40,
+          "document_id": "550ffe72f2734b33af1c902df947c713",
+          "page": 8,
+          "start_char": 1636,
+          "end_char": 2518,
+          "section": "6.1  Machine Translation",
+          "text": "6.1  Machine Translation\n\nOn the WMT 2014 English-to-German translation task, the big transformer model (Transformer (big)\nin Table 2) outperforms the best previously reported models (including ensembles) by more than 2.0\nBLEU, establishing a new state-of-the-art BLEU score of 28.4. The configuration of this model is\nlisted in the bottom line of Table 3. Training took 3.5 days on 8 P100 GPUs. Even our base model\nsurpasses all previously published models and ensembles, at a fraction of the training cost of any of\nthe competitive models.\n\nOn the WMT 2014 English-to-French translation task, our big model achieves a BLEU score of 41.0,\noutperforming all of the previously published single models, at less than 1/4 the training cost of the\nprevious state-of-the-art model. The Transformer (big) model trained for English-to-French used\ndropout rate Pdrop = 0.1, instead of 0.3.\n\n",
+          "publication_id": 1,
+          "title": "Attention Is All You Need",
+          "doi": null,
+          "sha256": "bdfaa68d8984f0dc02beaca527b76f207d99b666d31d1da728ee0728182df697",
+          "relative_path": "bdfaa68d8984f0dc02beaca527b76f207d99b666d31d1da728ee0728182df697.pdf",
+          "score": 32.45050240813477
+        },
+        {
+          "id": 3,
+          "document_id": "550ffe72f2734b33af1c902df947c713",
+          "page": 1,
+          "start_char": 1018,
+          "end_char": 2218,
+          "section": "Abstract",
+          "text": "                                                 Abstract\n\n\n                         The dominant sequence transduction models are based on complex recurrent or\n                               convolutional neural networks that include an encoder and a decoder. The best\n                             performing models also connect the encoder and decoder through an attention\n                           mechanism. We propose a new simple network architecture, the Transformer,\n                              based solely on attention mechanisms, dispensing with recurrence and convolutions\n                                    entirely. Experiments on two machine translation tasks show these models to\n                            be superior in quality while being more parallelizable and requiring significantly\n                                   less time to train. Our model achieves 28.4 BLEU on the WMT 2014 English-\n                           to-German translation task, improving over the existing best results, including\n                               ensembles, by over 2 BLEU. On the WMT 2014 English-to-French translation task,\n                               our model establishes a new sing",
+          "publication_id": 1,
+          "title": "Attention Is All You Need",
+          "doi": null,
+          "sha256": "bdfaa68d8984f0dc02beaca527b76f207d99b666d31d1da728ee0728182df697",
+          "relative_path": "bdfaa68d8984f0dc02beaca527b76f207d99b666d31d1da728ee0728182df697.pdf",
+          "score": 26.976986431546983
+        },
+        {
+          "id": 64,
+          "document_id": "550ffe72f2734b33af1c902df947c713",
+          "page": 10,
+          "start_char": 1695,
+          "end_char": 2802,
+          "section": "7  Conclusion",
+          "text": "7  Conclusion\n\nIn this work, we presented the Transformer, the first sequence transduction model based entirely on\nattention, replacing the recurrent layers most commonly used in encoder-decoder architectures with\nmulti-headed self-attention.\n\nFor translation tasks, the Transformer can be trained significantly faster than architectures based\non recurrent or convolutional layers. On both WMT 2014 English-to-German and WMT 2014\nEnglish-to-French translation tasks, we achieve a new state of the art. In the former task our best\nmodel outperforms even all previously reported ensembles.\n\nWe are excited about the future of attention-based models and plan to apply them to other tasks. We\nplan to extend the Transformer to problems involving input and output modalities other than text and\nto investigate local, restricted attention mechanisms to efficiently handle large inputs and outputs\nsuch as images, audio and video. Making generation less sequential is another research goals of ours.\n\nThe code we used to train and evaluate our models is available at https://github.com/\ntensorflow/tensor2tensor.\n\n",
+          "publication_id": 1,
+          "title": "Attention Is All You Need",
+          "doi": null,
+          "sha256": "bdfaa68d8984f0dc02beaca527b76f207d99b666d31d1da728ee0728182df697",
+          "relative_path": "bdfaa68d8984f0dc02beaca527b76f207d99b666d31d1da728ee0728182df697.pdf",
+          "score": 24.321903583359912
+        }
+      ]
+    },
+    {
+      "question": "What GPU memory reduction did LoRA report compared with GPT-3 175B fine-tuned with Adam?",
+      "evidence": [
+        {
+          "id": 164,
+          "document_id": "ce4e28379dd44314bd1286d17fd0681f",
+          "page": 1,
+          "start_char": 470,
+          "end_char": 1670,
+          "section": "2021                                   ABSTRACT",
+          "text": "2021                                   ABSTRACT\n\n                      An important paradigm of natural language processing consists of large-scale pre-Oct                           training on general domain data and adaptation to particular tasks or domains. As\n                       we pre-train larger models, full ﬁne-tuning, which retrains all model parameters,\n                           becomes less feasible. Using GPT-3 175B as an example – deploying indepen-16\n                               dent instances of ﬁne-tuned models, each with 175B parameters, is prohibitively\n                                expensive. We propose Low-Rank Adaptation, or LoRA, which freezes the pre-\n                                  trained model weights and injects trainable rank decomposition matrices into each\n                                 layer of the Transformer architecture, greatly reducing the number of trainable pa-\n                               rameters for downstream tasks. Compared to GPT-3 175B ﬁne-tuned with Adam,\n                     LoRA can reduce the number of trainable parameters by 10,000 times and the[cs.CL]                GPU memory requirement by 3 times. LoRA performs on-",
+          "publication_id": 4,
+          "title": "LoRA: Low-Rank Adaptation of Large Language Models",
+          "doi": null,
+          "sha256": "e9a0d3128767db616085dc0f4e6e455e672e89af823e8ed1282793682787395a",
+          "relative_path": "e9a0d3128767db616085dc0f4e6e455e672e89af823e8ed1282793682787395a.pdf",
+          "score": 23.55333175560983
+        },
+        {
+          "id": 186,
+          "document_id": "ce4e28379dd44314bd1286d17fd0681f",
+          "page": 5,
+          "start_char": 880,
+          "end_char": 2080,
+          "section": "4.2  APPLYING LORA TO TRANSFORMER",
+          "text": "n 7.1. We leave the empirical investigation of adapting the MLP\nlayers, LayerNorm layers, and biases to a future work.\n\nPractical Beneﬁts and Limitations.  The most signiﬁcant beneﬁt comes from the reduction in\nmemory and storage usage. For a large Transformer trained with Adam, we reduce that VRAM\nusage by up to 2/3 if r ≪dmodel as we do not need to store the optimizer states for the frozen\nparameters. On GPT-3 175B, we reduce the VRAM consumption during training from 1.2TB to\n350GB. With r = 4 and only the query and value projection matrices being adapted, the checkpoint\nsize is reduced by roughly 10,000× (from 350GB to 35MB)4. This allows us to train with signiﬁ-\ncantly fewer GPUs and avoid I/O bottlenecks. Another beneﬁt is that we can switch between tasks\nwhile deployed at a much lower cost by only swapping the LoRA weights as opposed to all the\nparameters. This allows for the creation of many customized models that can be swapped in and out\non the ﬂy on machines that store the pre-trained weights in VRAM. We also observe a 25% speedup\nduring training on GPT-3 175B compared to full ﬁne-tuning5 as we do not need to calculate the\ngradient for the vast majority of the parameters.",
+          "publication_id": 4,
+          "title": "LoRA: Low-Rank Adaptation of Large Language Models",
+          "doi": null,
+          "sha256": "e9a0d3128767db616085dc0f4e6e455e672e89af823e8ed1282793682787395a",
+          "relative_path": "e9a0d3128767db616085dc0f4e6e455e672e89af823e8ed1282793682787395a.pdf",
+          "score": 15.033579027393944
+        },
+        {
+          "id": 312,
+          "document_id": "ce4e28379dd44314bd1286d17fd0681f",
+          "page": 26,
+          "start_char": 3023,
+          "end_char": 3799,
+          "section": "1024    1.17      69.37   8.7495   0.4659      0.7149      2.5090",
+          "text": "           1024    1.17      69.37   8.7495   0.4659      0.7149      2.5090\n\nTable 18: Validation loss and test set metrics on E2E NLG Challenge achieved by LoRA with\ndifferent rank r using GPT-2 Medium. Unlike on GPT-3 where r = 1 sufﬁces for many tasks, here\nthe performance peaks at r = 16 for validation loss and r = 4 for BLEU, suggesting the GPT-2\nMedium has a similar intrinsic rank for adaptation compared to GPT-3 175B. Note that some of our\nhyperparameters are tuned on r = 4, which matches the parameter count of another baseline, and\nthus might not be optimal for other choices of r.\n\n                            Wq                          Random\n            (Wq, Ar = 4, i, j)        (Wq, Ar = 8, i, j)       (Wq, Ar = 64, i, j)       (Wq, Arand, i, j)\n    451\n",
+          "publication_id": 4,
+          "title": "LoRA: Low-Rank Adaptation of Large Language Models",
+          "doi": null,
+          "sha256": "e9a0d3128767db616085dc0f4e6e455e672e89af823e8ed1282793682787395a",
+          "relative_path": "e9a0d3128767db616085dc0f4e6e455e672e89af823e8ed1282793682787395a.pdf",
+          "score": 13.230602742114597
+        }
+      ]
+    },
+    {
+      "question": "What did the Transformer achieve for English-to-German BLEU and what GPU memory reduction did LoRA report?",
+      "evidence": [
+        {
+          "id": 40,
+          "document_id": "550ffe72f2734b33af1c902df947c713",
+          "page": 8,
+          "start_char": 1636,
+          "end_char": 2518,
+          "section": "6.1  Machine Translation",
+          "text": "6.1  Machine Translation\n\nOn the WMT 2014 English-to-German translation task, the big transformer model (Transformer (big)\nin Table 2) outperforms the best previously reported models (including ensembles) by more than 2.0\nBLEU, establishing a new state-of-the-art BLEU score of 28.4. The configuration of this model is\nlisted in the bottom line of Table 3. Training took 3.5 days on 8 P100 GPUs. Even our base model\nsurpasses all previously published models and ensembles, at a fraction of the training cost of any of\nthe competitive models.\n\nOn the WMT 2014 English-to-French translation task, our big model achieves a BLEU score of 41.0,\noutperforming all of the previously published single models, at less than 1/4 the training cost of the\nprevious state-of-the-art model. The Transformer (big) model trained for English-to-French used\ndropout rate Pdrop = 0.1, instead of 0.3.\n\n",
+          "publication_id": 1,
+          "title": "Attention Is All You Need",
+          "doi": null,
+          "sha256": "bdfaa68d8984f0dc02beaca527b76f207d99b666d31d1da728ee0728182df697",
+          "relative_path": "bdfaa68d8984f0dc02beaca527b76f207d99b666d31d1da728ee0728182df697.pdf",
+          "score": 14.498428897854286
+        },
+        {
+          "id": 37,
+          "document_id": "550ffe72f2734b33af1c902df947c713",
+          "page": 8,
+          "start_char": 0,
+          "end_char": 1124,
+          "section": null,
+          "text": "Table 2: The Transformer achieves better BLEU scores than previous state-of-the-art models on the\nEnglish-to-German and English-to-French newstest2014 tests at a fraction of the training cost.\n\n                               BLEU           Training Cost (FLOPs)\n      Model\n                              EN-DE  EN-FR     EN-DE    EN-FR\n      ByteNet [18]                       23.75\n      Deep-Att + PosUnk [39]                       39.2                   1.0 · 1020\n    GNMT + RL [38]                    24.6     39.92      2.3 · 1019   1.4 · 1020\n     ConvS2S [9]                       25.16    40.46      9.6 · 1018   1.5 · 1020\n    MoE [32]                          26.03    40.56      2.0 · 1019   1.2 · 1020\n      Deep-Att + PosUnk Ensemble [39]              40.4                   8.0 · 1020\n    GNMT + RL Ensemble [38]         26.30    41.16      1.8 · 1020   1.1 · 1021\n     ConvS2S Ensemble [9]              26.36    41.29      7.7 · 1019   1.2 · 1021\n      Transformer (base model)             27.3     38.1           3.3 · 1018\n      Transformer (big)                    28.4     41.8             2.3 · 1019\n\n\n\n",
+          "publication_id": 1,
+          "title": "Attention Is All You Need",
+          "doi": null,
+          "sha256": "bdfaa68d8984f0dc02beaca527b76f207d99b666d31d1da728ee0728182df697",
+          "relative_path": "bdfaa68d8984f0dc02beaca527b76f207d99b666d31d1da728ee0728182df697.pdf",
+          "score": 13.326091187829903
+        },
+        {
+          "id": 3,
+          "document_id": "550ffe72f2734b33af1c902df947c713",
+          "page": 1,
+          "start_char": 1018,
+          "end_char": 2218,
+          "section": "Abstract",
+          "text": "                                                 Abstract\n\n\n                         The dominant sequence transduction models are based on complex recurrent or\n                               convolutional neural networks that include an encoder and a decoder. The best\n                             performing models also connect the encoder and decoder through an attention\n                           mechanism. We propose a new simple network architecture, the Transformer,\n                              based solely on attention mechanisms, dispensing with recurrence and convolutions\n                                    entirely. Experiments on two machine translation tasks show these models to\n                            be superior in quality while being more parallelizable and requiring significantly\n                                   less time to train. Our model achieves 28.4 BLEU on the WMT 2014 English-\n                           to-German translation task, improving over the existing best results, including\n                               ensembles, by over 2 BLEU. On the WMT 2014 English-to-French translation task,\n                               our model establishes a new sing",
+          "publication_id": 1,
+          "title": "Attention Is All You Need",
+          "doi": null,
+          "sha256": "bdfaa68d8984f0dc02beaca527b76f207d99b666d31d1da728ee0728182df697",
+          "relative_path": "bdfaa68d8984f0dc02beaca527b76f207d99b666d31d1da728ee0728182df697.pdf",
+          "score": 13.185643444322455
+        }
+      ]
+    },
+    {
+      "question": "xylophonezz",
+      "evidence": []
+    }
+  ]
+}

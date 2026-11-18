@@ -213,6 +213,8 @@ Official references: [Ollama Windows](https://docs.ollama.com/windows), [Ollama 
 
 ## Persistent corpus foundation
 
+The corpus workspace supports scientific QA over one indexed PDF or the full corpus. Responses include quotations with PDF page and character offsets, validation outcomes and a bounded retrieval trace. The MCP server exposes the same query and evidence search through stdio. See the [pipeline](docs/RAG_PIPELINE.md), [MCP workflow](docs/MCP_GUIDE.md), and [Windows demonstration](docs/WINDOWS_RUN_GUIDE.md).
+
 The first scalable research increment is available alongside the original four-agent PDF analysis. See [RESEARCH_PLATFORM_PLAN.md](RESEARCH_PLATFORM_PLAN.md) for the phased plan, verification results and remaining work. This increment stores publications, processes PDFs in resumable bounded batches, and retrieves exact source evidence. Discovery providers and comparative research reports are later phases; no placeholder academic reports are generated.
 
 Start Streamlit as usual, expand **Research corpus — persistent evidence library**, and enable the workspace. Enter a real publication title and optional DOI, import a lawfully held PDF, then click **Process / resume next batch**. Repeat until the document table shows completion. Search using **Keyword**, or install the optional local embedding model and index batches before choosing **Local semantic**. Progress is per document/page. Each click runs a bounded slice; there is no invisible background worker. For hundreds of local papers, use the CLI to register verified metadata and schedule ingestion without retaining uploaded files in Streamlit's memory.

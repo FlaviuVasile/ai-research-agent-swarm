@@ -8,6 +8,7 @@ import time
 import httpx
 
 from research_swarm.config import Settings
+from research_swarm.llm import chunks
 from research_swarm.providers import OllamaProvider
 from .config import CorpusConfig
 from .store import CorpusStore
@@ -31,7 +32,20 @@ class LocalEmbeddings:
         self.guard = OllamaProvider(Settings(model=config.embedding_model, ollama_url=config.ollama_url))
 
     async def identity(self):
-        return await self.guard.identity()
+        return f"{await self.guard.identity()}:byte-segments-v1:{self.config.embedding_context}"
+
+    async def _request(self, client, texts):
+        response = await client.post("/api/embed", json={"model": self.config.embedding_model,
+            "input": texts, "truncate": False, "keep_alive": "1m",
+            "options": {"num_ctx": self.config.embedding_context}})
+        response.raise_for_status()
+        vectors = response.json()["embeddings"]
+        if not isinstance(vectors, list) or len(vectors) != len(texts):
+            raise ValueError("Missing embedding rows")
+        vectors = [unit_vector(row) for row in vectors]
+        if len({len(row) for row in vectors}) != 1:
+            raise ValueError("Inconsistent embedding dimensions")
+        return vectors
 
     async def embed(self, texts):
         if not 1 <= len(texts) <= 16 or any(not text.strip() or len(text) > 2000 for text in texts):
@@ -41,16 +55,25 @@ class LocalEmbeddings:
             # The embedding guard validates loopback HTTP; redirects remain disabled.
             async with httpx.AsyncClient(base_url=self.config.ollama_url, timeout=120,
                                          trust_env=False, follow_redirects=False, verify=False) as client:
-                response = await client.post("/api/embed", json={"model":self.config.embedding_model,
-                    "input":texts, "truncate":False, "keep_alive":"1m", "options":{"num_ctx":self.config.embedding_context}})
-                response.raise_for_status()
-                vectors = response.json()["embeddings"]
-                if not isinstance(vectors,list) or len(vectors) != len(texts):
-                    raise ValueError("Missing embedding rows")
-                vectors = [unit_vector(row) for row in vectors]
+                normalized = [" ".join(text.split()) for text in texts]
+                if all(len(text.encode()) <= 120 for text in normalized):
+                    return await self._request(client, normalized)
+                # Keep segments below small native model limits and pool them so
+                # every part of the passage contributes to its search vector.
+                groups = [chunks(text, 120) for text in normalized]
+                flat = [segment for group in groups for segment in group]
+                vectors = []
+                for start in range(0, len(flat), 16):
+                    vectors.extend(await self._request(client, flat[start:start + 16]))
                 if len({len(row) for row in vectors}) != 1:
                     raise ValueError("Inconsistent embedding dimensions")
-                return vectors
+                offset = 0
+                pooled = []
+                for group in groups:
+                    block = vectors[offset:offset + len(group)]
+                    pooled.append(unit_vector([sum(values) for values in zip(*block)]))
+                    offset += len(group)
+                return pooled
         except (httpx.HTTPError, KeyError, TypeError, ValueError):
             raise ValueError("Local embedding failed. Check the installed embedding model and passage size; no remote fallback used.") from None
 
@@ -66,7 +89,7 @@ class EvidenceRetrieval:
             raise ValueError("Retrieval limit must be 1–50.")
         return limit
 
-    def keyword(self, query, limit=None, publication_id=None):
+    def keyword(self, query, limit=None, publication_id=None, *, document_id=None):
         limit = self._limit(limit)
         if not query.strip() or len(query) > 1000:
             raise ValueError("Enter a query of 1–1000 characters.")
@@ -80,6 +103,9 @@ class EvidenceRetrieval:
         if publication_id is not None:
             where = " AND d.publication_id=?"
             params.append(publication_id)
+        if document_id is not None:
+            where += " AND d.id=?"
+            params.append(document_id)
         params.append(limit)
         with self.store.connect() as db:
             rows = db.execute("SELECT e.id,bm25(passage_fts) score FROM passage_fts JOIN passages e ON e.id=passage_fts.rowid "
@@ -124,7 +150,7 @@ class EvidenceRetrieval:
             count += len(rows)
         return count
 
-    async def semantic(self, query, limit=None, publication_id=None):
+    async def semantic(self, query, limit=None, publication_id=None, *, document_id=None):
         limit = self._limit(limit)
         if not query.strip() or len(query) > 1000:
             raise ValueError("Enter a query of 1–1000 characters.")
@@ -135,6 +161,9 @@ class EvidenceRetrieval:
         if publication_id is not None:
             where += " AND d.publication_id=?"
             params.append(publication_id)
+        if document_id is not None:
+            where += " AND d.id=?"
+            params.append(document_id)
         with self.store.connect() as db:
             count = db.execute("SELECT COUNT(*) FROM vectors v JOIN passages e ON e.id=v.passage_id "
                 "JOIN documents d ON d.id=e.document_id WHERE " + where, params).fetchone()[0]
@@ -163,6 +192,29 @@ class EvidenceRetrieval:
             ranked, self.store.evidence_many(identifier for _, identifier in ranked))]
         self.store.record_retrieval(query,"semantic",[row["id"] for row in results])
         return results
+
+    async def search(self, query, *, mode="keyword", limit=None, document_id=None):
+        limit = self._limit(limit)
+        if document_id is not None:
+            self.store.document(document_id)
+        if mode == "keyword":
+            return self.keyword(query, limit, document_id=document_id)
+        if mode == "semantic":
+            return await self.semantic(query, limit, document_id=document_id)
+        if mode != "hybrid":
+            raise ValueError("Unknown retrieval method.")
+        candidates = min(50, limit * 3)
+        lexical = self.keyword(query, candidates, document_id=document_id)
+        semantic = await self.semantic(query, candidates, document_id=document_id)
+        scores, rows = {}, {}
+        for ranking in (lexical, semantic):
+            for rank, row in enumerate(ranking, 1):
+                identifier = row["id"]
+                rows[identifier] = row
+                scores[identifier] = scores.get(identifier, 0) + 1 / (60 + rank)
+        ranked = sorted(scores, key=lambda identifier: (-scores[identifier], identifier))[:limit]
+        self.store.record_retrieval(query, "hybrid", ranked)
+        return [dict(rows[identifier], score=scores[identifier]) for identifier in ranked]
 
 
 def evidence_reference(row):

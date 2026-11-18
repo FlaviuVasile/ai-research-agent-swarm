@@ -1,9 +1,10 @@
 """Official MCP SDK stdio adapter. No Streamlit import or duplicated agent logic."""
 import argparse
+from dataclasses import replace
 from functools import wraps
 import logging
 from pathlib import Path
-from typing import Literal
+from typing import Any, Literal
 
 from mcp.server import MCPServer
 from mcp.server.mcpserver.exceptions import ToolError
@@ -12,8 +13,10 @@ from research_swarm.config import ROOT, Settings
 from research_swarm.models import (AnalysisResponse, PaperSource, Questions, SummaryResponse,
     QuestionsResponse, LiteratureResponse)
 from research_swarm.service import ResearchService
+from research_swarm.corpus.config import CorpusConfig
 
 Mode = Literal["FAST_RESEARCH_MODE", "FULL_RESEARCH_MODE"]
+RetrievalMode = Literal["keyword", "semantic", "hybrid"]
 
 
 def create_server(service: ResearchService) -> MCPServer:
@@ -60,6 +63,34 @@ def create_server(service: ResearchService) -> MCPServer:
         """Read a previously completed analysis by its returned run ID without rerunning agents."""
         return await service.result(run_id)
 
+    @tool
+    async def ingest_paper(pdf_path: str, title: str, doi: str | None = None) -> dict[str, Any]:
+        """Register a root-relative PDF and process one bounded batch. Repeat to resume."""
+        return await service.ingest(pdf_path, title, doi)
+
+    @tool
+    async def list_indexed_papers(limit: int = 50, offset: int = 0) -> dict[str, list[dict[str, Any]]]:
+        """List stored papers and indexing progress."""
+        return {"papers": await service.list_papers(limit, offset)}
+
+    @tool
+    async def search_evidence(query: str, document_id: str | None = None,
+                              mode: RetrievalMode = "keyword", top_k: int = 5) -> dict[str, list[dict[str, Any]]]:
+        """Retrieve ranked indexed PDF passages. Semantic and hybrid require indexed embeddings."""
+        rows = await service.search_evidence(query, document_id=document_id, mode=mode, limit=top_k)
+        return {"evidence": rows}
+
+    @tool
+    async def inspect_evidence(chunk_id: int) -> dict[str, Any]:
+        """Read an indexed passage with its document, page, offsets and checksum."""
+        return await service.inspect_evidence(chunk_id)
+
+    @tool
+    async def ask_scientific_question(question: str, document_id: str | None = None,
+                                      mode: RetrievalMode = "keyword", top_k: int = 5) -> dict[str, Any]:
+        """Run bounded corpus QA and return supported claims, citations and a validation trace."""
+        return await service.ask_corpus(question, document_id=document_id, mode=mode, top_k=top_k)
+
     return server
 
 
@@ -67,10 +98,14 @@ def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--pdf-root",type=Path,default=ROOT / "deCitit")
     parser.add_argument("--output-root",type=Path,default=ROOT / "output" / "mcp")
+    parser.add_argument("--corpus-root", type=Path)
     args = parser.parse_args()
     logging.basicConfig(level=logging.WARNING)  # stderr only; stdout belongs to MCP.
     logging.getLogger("httpx").setLevel(logging.WARNING)
-    service = ResearchService(args.pdf_root,args.output_root,Settings.from_env())
+    corpus = CorpusConfig.from_env()
+    if args.corpus_root is not None:
+        corpus = replace(corpus, root=args.corpus_root.resolve())
+    service = ResearchService(args.pdf_root,args.output_root,Settings.from_env(),corpus)
     create_server(service).run(transport="stdio")
 
 

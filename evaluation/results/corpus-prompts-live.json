@@ -1,0 +1,272 @@
+[
+  {
+    "variant": "baseline",
+    "retrieval": "keyword",
+    "question": "What BLEU score did the Transformer achieve on WMT 2014 English-to-German translation?",
+    "expected": "28.4",
+    "result": {
+      "status": "insufficient_evidence",
+      "claims": [],
+      "trace": [
+        {
+          "query": "What BLEU score did the Transformer achieve on WMT 2014 English-to-German translation?",
+          "retrieved": [
+            40,
+            3,
+            64,
+            4,
+            32
+          ],
+          "provided": [
+            40,
+            3,
+            64,
+            4
+          ],
+          "omitted": 1,
+          "provenance_rejected": 1,
+          "numeric_rejected": 2,
+          "semantic_rejected": 1,
+          "requested_follow_up": null
+        }
+      ],
+      "prompt_version": "6f116b092c249052d46ac8f0b33b06196c6cf3d14c2827b52f40fe93a8a8f432",
+      "coverage": "Ranked excerpts within a fixed context and two retrieval attempts. Semantic support is model-assessed.",
+      "seconds": 76.439
+    }
+  },
+  {
+    "variant": "baseline",
+    "retrieval": "keyword",
+    "question": "What GPU memory reduction did LoRA report compared with GPT-3 175B fine-tuned with Adam?",
+    "expected": "3 times",
+    "result": {
+      "status": "insufficient_evidence",
+      "claims": [],
+      "trace": [
+        {
+          "query": "What GPU memory reduction did LoRA report compared with GPT-3 175B fine-tuned with Adam?",
+          "retrieved": [
+            164,
+            186,
+            312,
+            286,
+            189
+          ],
+          "provided": [
+            164,
+            186,
+            312,
+            286
+          ],
+          "omitted": 1,
+          "provenance_rejected": 1,
+          "numeric_rejected": 0,
+          "semantic_rejected": 1,
+          "requested_follow_up": null
+        }
+      ],
+      "prompt_version": "6f116b092c249052d46ac8f0b33b06196c6cf3d14c2827b52f40fe93a8a8f432",
+      "coverage": "Ranked excerpts within a fixed context and two retrieval attempts. Semantic support is model-assessed.",
+      "seconds": 83.948
+    }
+  },
+  {
+    "variant": "baseline",
+    "retrieval": "keyword",
+    "question": "What was the participant dropout rate in the randomized clinical trial?",
+    "expected": null,
+    "result": {
+      "error": "LLM request time budget exceeded. Completed summary steps are saved; retry to resume."
+    }
+  },
+  {
+    "variant": "evidence",
+    "retrieval": "keyword",
+    "question": "What BLEU score did the Transformer achieve on WMT 2014 English-to-German translation?",
+    "expected": "28.4",
+    "result": {
+      "status": "insufficient_evidence",
+      "claims": [],
+      "trace": [
+        {
+          "query": "What BLEU score did the Transformer achieve on WMT 2014 English-to-German translation?",
+          "retrieved": [
+            40,
+            3,
+            64,
+            4,
+            32
+          ],
+          "provided": [
+            40,
+            3,
+            64,
+            4
+          ],
+          "omitted": 1,
+          "provenance_rejected": 0,
+          "numeric_rejected": 1,
+          "semantic_rejected": 0,
+          "requested_follow_up": null
+        }
+      ],
+      "prompt_version": "3bdfca9d911e155d642fb38f41f04161042245763f063c0a1ec0ab2d788b6209",
+      "coverage": "Ranked excerpts within a fixed context and two retrieval attempts. Semantic support is model-assessed.",
+      "seconds": 53.407
+    }
+  },
+  {
+    "variant": "evidence",
+    "retrieval": "keyword",
+    "question": "What GPU memory reduction did LoRA report compared with GPT-3 175B fine-tuned with Adam?",
+    "expected": "3 times",
+    "result": {
+      "status": "insufficient_evidence",
+      "claims": [],
+      "trace": [
+        {
+          "query": "What GPU memory reduction did LoRA report compared with GPT-3 175B fine-tuned with Adam?",
+          "retrieved": [
+            164,
+            186,
+            312,
+            286,
+            189
+          ],
+          "provided": [
+            164,
+            186,
+            312
+          ],
+          "omitted": 2,
+          "provenance_rejected": 3,
+          "numeric_rejected": 0,
+          "semantic_rejected": 0,
+          "requested_follow_up": null
+        }
+      ],
+      "prompt_version": "3bdfca9d911e155d642fb38f41f04161042245763f063c0a1ec0ab2d788b6209",
+      "coverage": "Ranked excerpts within a fixed context and two retrieval attempts. Semantic support is model-assessed.",
+      "seconds": 57.684
+    }
+  },
+  {
+    "variant": "evidence",
+    "retrieval": "keyword",
+    "question": "What was the participant dropout rate in the randomized clinical trial?",
+    "expected": null,
+    "result": {
+      "status": "insufficient_evidence",
+      "claims": [],
+      "trace": [
+        {
+          "query": "What was the participant dropout rate in the randomized clinical trial?",
+          "retrieved": [
+            38,
+            271,
+            77,
+            76,
+            140
+          ],
+          "provided": [
+            38,
+            271,
+            77,
+            76,
+            140
+          ],
+          "omitted": 0,
+          "provenance_rejected": 0,
+          "numeric_rejected": 1,
+          "semantic_rejected": 0,
+          "requested_follow_up": null
+        }
+      ],
+      "prompt_version": "3bdfca9d911e155d642fb38f41f04161042245763f063c0a1ec0ab2d788b6209",
+      "coverage": "Ranked excerpts within a fixed context and two retrieval attempts. Semantic support is model-assessed.",
+      "seconds": 37.793
+    }
+  },
+  {
+    "variant": "evidence",
+    "retrieval": "hybrid",
+    "question": "What BLEU score did the Transformer achieve on WMT 2014 English-to-German translation?",
+    "expected": "28.4",
+    "result": {
+      "status": "insufficient_evidence",
+      "claims": [],
+      "trace": [
+        {
+          "query": "What BLEU score did the Transformer achieve on WMT 2014 English-to-German translation?",
+          "retrieved": [
+            40,
+            3,
+            4,
+            37,
+            32
+          ],
+          "provided": [
+            40,
+            3,
+            4,
+            37
+          ],
+          "omitted": 1,
+          "provenance_rejected": 0,
+          "numeric_rejected": 1,
+          "semantic_rejected": 0,
+          "requested_follow_up": null
+        }
+      ],
+      "prompt_version": "3bdfca9d911e155d642fb38f41f04161042245763f063c0a1ec0ab2d788b6209",
+      "coverage": "Ranked excerpts within a fixed context and two retrieval attempts. Semantic support is model-assessed.",
+      "seconds": 43.869
+    }
+  },
+  {
+    "variant": "evidence",
+    "retrieval": "hybrid",
+    "question": "What GPU memory reduction did LoRA report compared with GPT-3 175B fine-tuned with Adam?",
+    "expected": "3 times",
+    "result": {
+      "status": "insufficient_evidence",
+      "claims": [],
+      "trace": [
+        {
+          "query": "What GPU memory reduction did LoRA report compared with GPT-3 175B fine-tuned with Adam?",
+          "retrieved": [
+            164,
+            165,
+            189,
+            186,
+            269
+          ],
+          "provided": [
+            164,
+            165,
+            189,
+            269
+          ],
+          "omitted": 1,
+          "provenance_rejected": 0,
+          "numeric_rejected": 1,
+          "semantic_rejected": 0,
+          "requested_follow_up": null
+        }
+      ],
+      "prompt_version": "3bdfca9d911e155d642fb38f41f04161042245763f063c0a1ec0ab2d788b6209",
+      "coverage": "Ranked excerpts within a fixed context and two retrieval attempts. Semantic support is model-assessed.",
+      "seconds": 20.638
+    }
+  },
+  {
+    "variant": "evidence",
+    "retrieval": "hybrid",
+    "question": "What was the participant dropout rate in the randomized clinical trial?",
+    "expected": null,
+    "result": {
+      "error": "LLM request time budget exceeded. Completed summary steps are saved; retry to resume."
+    }
+  }
+]

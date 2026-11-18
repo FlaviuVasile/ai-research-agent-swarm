@@ -1,0 +1,229 @@
+{
+  "tools": [
+    "extract_paper_text",
+    "summarize_paper",
+    "find_research_questions",
+    "search_literature",
+    "analyze_paper",
+    "get_analysis_result",
+    "ingest_paper",
+    "list_indexed_papers",
+    "search_evidence",
+    "inspect_evidence",
+    "ask_scientific_question"
+  ],
+  "indexed": [
+    {
+      "id": "550ffe72f2734b33af1c902df947c713",
+      "publication_id": 1,
+      "sha256": "bdfaa68d8984f0dc02beaca527b76f207d99b666d31d1da728ee0728182df697",
+      "relative_path": "bdfaa68d8984f0dc02beaca527b76f207d99b666d31d1da728ee0728182df697.pdf",
+      "status": "complete",
+      "page_count": 15,
+      "last_page": 15,
+      "profile": "{\"overlap\": 120, \"pymupdf\": \"1.28.2\", \"size\": 1200, \"version\": 1}",
+      "owner": null,
+      "lease_until": null,
+      "error": null,
+      "updated": 1795018430.3663616,
+      "title": "Attention Is All You Need"
+    },
+    {
+      "id": "9ce52cbab79e44ba89d58c903b006fd2",
+      "publication_id": 3,
+      "sha256": "eab9c73ae2ceda884b94830bda99312254bac4806f6c9f045cbab90721ecda31",
+      "relative_path": "eab9c73ae2ceda884b94830bda99312254bac4806f6c9f045cbab90721ecda31.pdf",
+      "status": "complete",
+      "page_count": 15,
+      "last_page": 15,
+      "profile": "{\"overlap\": 120, \"pymupdf\": \"1.28.2\", \"size\": 1200, \"version\": 1}",
+      "owner": null,
+      "lease_until": null,
+      "error": null,
+      "updated": 1795018510.6565857,
+      "title": "Adam: A Method for Stochastic Optimization"
+    },
+    {
+      "id": "ce4e28379dd44314bd1286d17fd0681f",
+      "publication_id": 4,
+      "sha256": "e9a0d3128767db616085dc0f4e6e455e672e89af823e8ed1282793682787395a",
+      "relative_path": "e9a0d3128767db616085dc0f4e6e455e672e89af823e8ed1282793682787395a.pdf",
+      "status": "complete",
+      "page_count": 26,
+      "last_page": 26,
+      "profile": "{\"overlap\": 120, \"pymupdf\": \"1.28.2\", \"size\": 1200, \"version\": 1}",
+      "owner": null,
+      "lease_until": null,
+      "error": null,
+      "updated": 1795018512.4320097,
+      "title": "LoRA: Low-Rank Adaptation of Large Language Models"
+    }
+  ],
+  "answers": [
+    {
+      "question": "What architectural mechanism replaces recurrence and convolutions in the Transformer?",
+      "status": "insufficient_evidence",
+      "claims": [],
+      "trace": [
+        {
+          "query": "What architectural mechanism replaces recurrence and convolutions in the Transformer?",
+          "retrieved": [
+            3,
+            9,
+            7,
+            76,
+            77
+          ],
+          "provided": [
+            3,
+            9,
+            7,
+            76
+          ],
+          "omitted": 1,
+          "revision": false,
+          "provenance_rejected": 1,
+          "numeric_rejected": 0,
+          "semantic_rejected": 0,
+          "requested_follow_up": null
+        },
+        {
+          "query": "What architectural mechanism replaces recurrence and convolutions in the Transformer?",
+          "retrieved": [],
+          "provided": [
+            3,
+            9,
+            7,
+            76
+          ],
+          "omitted": 1,
+          "revision": true,
+          "provenance_rejected": 0,
+          "numeric_rejected": 0,
+          "semantic_rejected": 1,
+          "requested_follow_up": null
+        }
+      ],
+      "prompt_version": "a3a069c1dd68503c0c887e42c3257159847c6cd7cab44f62727c2d69e58b1ffb",
+      "coverage": "Ranked excerpts within a fixed context and two draft attempts. Semantic support is model-assessed.",
+      "seconds": 87.562
+    },
+    {
+      "question": "What BLEU score did the Transformer achieve on WMT 2014 English-to-German translation?",
+      "error": [
+        "Error executing tool ask_scientific_question: LLM request time budget exceeded. Completed summary steps are saved; retry to resume."
+      ]
+    },
+    {
+      "question": "What GPU memory reduction did LoRA report compared with GPT-3 175B fine-tuned with Adam?",
+      "status": "insufficient_evidence",
+      "claims": [],
+      "trace": [
+        {
+          "query": "What GPU memory reduction did LoRA report compared with GPT-3 175B fine-tuned with Adam?",
+          "retrieved": [
+            164,
+            186,
+            312,
+            286,
+            189
+          ],
+          "provided": [
+            164,
+            186,
+            312
+          ],
+          "omitted": 2,
+          "revision": false,
+          "provenance_rejected": 0,
+          "numeric_rejected": 2,
+          "semantic_rejected": 1,
+          "requested_follow_up": null
+        },
+        {
+          "query": "What GPU memory reduction did LoRA report compared with GPT-3 175B fine-tuned with Adam?",
+          "retrieved": [],
+          "provided": [
+            164,
+            186,
+            312
+          ],
+          "omitted": 2,
+          "revision": true,
+          "provenance_rejected": 0,
+          "numeric_rejected": 1,
+          "semantic_rejected": 0,
+          "requested_follow_up": null
+        }
+      ],
+      "prompt_version": "a3a069c1dd68503c0c887e42c3257159847c6cd7cab44f62727c2d69e58b1ffb",
+      "coverage": "Ranked excerpts within a fixed context and two draft attempts. Semantic support is model-assessed.",
+      "seconds": 88.743
+    },
+    {
+      "question": "What did the Transformer achieve for English-to-German BLEU and what GPU memory reduction did LoRA report?",
+      "status": "insufficient_evidence",
+      "claims": [],
+      "trace": [
+        {
+          "query": "What did the Transformer achieve for English-to-German BLEU and what GPU memory reduction did LoRA report?",
+          "retrieved": [
+            40,
+            37,
+            3,
+            43,
+            64
+          ],
+          "provided": [
+            40,
+            37,
+            3,
+            43
+          ],
+          "omitted": 1,
+          "revision": false,
+          "provenance_rejected": 2,
+          "numeric_rejected": 0,
+          "semantic_rejected": 2,
+          "requested_follow_up": null
+        },
+        {
+          "query": "What did the Transformer achieve for English-to-German BLEU and what GPU memory reduction did LoRA report?",
+          "retrieved": [],
+          "provided": [
+            40,
+            37,
+            3,
+            43
+          ],
+          "omitted": 1,
+          "revision": true,
+          "provenance_rejected": 0,
+          "numeric_rejected": 0,
+          "semantic_rejected": 1,
+          "requested_follow_up": null
+        }
+      ],
+      "prompt_version": "a3a069c1dd68503c0c887e42c3257159847c6cd7cab44f62727c2d69e58b1ffb",
+      "coverage": "Ranked excerpts within a fixed context and two draft attempts. Semantic support is model-assessed.",
+      "seconds": 112.685
+    },
+    {
+      "question": "xylophonezz",
+      "status": "insufficient_evidence",
+      "claims": [],
+      "trace": [
+        {
+          "query": "xylophonezz",
+          "retrieved": [],
+          "provided": [],
+          "omitted": 0,
+          "revision": false
+        }
+      ],
+      "prompt_version": "a3a069c1dd68503c0c887e42c3257159847c6cd7cab44f62727c2d69e58b1ffb",
+      "coverage": "Ranked excerpts within a fixed context and two draft attempts. Semantic support is model-assessed.",
+      "seconds": 0.023
+    }
+  ]
+}

@@ -2,6 +2,7 @@
 import asyncio
 from dataclasses import replace
 import hashlib
+from io import BytesIO
 from pathlib import Path, PureWindowsPath
 import re
 import threading
@@ -18,13 +19,19 @@ from research_swarm.models import (PaperSource, SourcePage, AnalysisResponse, Sc
 from research_swarm.prompt_loader import prompt_fingerprint
 from research_swarm.tools.openalex import OpenAlexClient
 from research_swarm.budgets import document_budget, timeboxed
+from research_swarm.corpus.config import CorpusConfig
+from research_swarm.corpus.ingest import CorpusPipeline
+from research_swarm.corpus.qa import CorpusQA
+from research_swarm.corpus.retrieval import EvidenceRetrieval
 
 
 class ResearchService:
-    def __init__(self, pdf_root: Path, output_root: Path, settings: Settings | None = None):
+    def __init__(self, pdf_root: Path, output_root: Path, settings: Settings | None = None,
+                 corpus_config: CorpusConfig | None = None):
         self.pdf_root = Path(pdf_root).resolve()
         self.output_root = Path(output_root).resolve()
         self.settings = settings or Settings.from_env()
+        self.corpus_config = corpus_config or CorpusConfig.from_env()
         self._worker = threading.Lock()
 
     def _run_async(self, awaitable):
@@ -69,6 +76,33 @@ class ResearchService:
 
     async def extract(self, relative_path: str) -> PaperSource:
         return await self._bounded(lambda: self._source(self.read_pdf(relative_path))[1])
+
+    async def ingest(self, relative_path: str, title: str, doi: str | None = None) -> dict:
+        def work():
+            data = self.read_pdf(relative_path)
+            pipeline = CorpusPipeline(self.corpus_config)
+            publication = pipeline.store.add_publication(title, doi, document_sha=hashlib.sha256(data).hexdigest())
+            identifier = pipeline.collect(publication, BytesIO(data))
+            pipeline.process(identifier)
+            return pipeline.store.document(identifier)
+        return await self._bounded(work)
+
+    async def list_papers(self, limit: int, offset: int) -> list[dict]:
+        return await self._bounded(lambda: CorpusPipeline(self.corpus_config).store.documents(limit, offset))
+
+    async def inspect_evidence(self, chunk_id: int) -> dict:
+        return await self._bounded(lambda: CorpusPipeline(self.corpus_config).store.evidence(chunk_id))
+
+    async def search_evidence(self, query, **options) -> list[dict]:
+        def work():
+            pipeline = CorpusPipeline(self.corpus_config)
+            retrieval = EvidenceRetrieval(pipeline.store, pipeline.config)
+            return self._run_async(retrieval.search(query, **options))
+        return await self._bounded(work)
+
+    async def ask_corpus(self, question, **options) -> dict:
+        return await self._bounded(lambda: self._run_async(
+            CorpusQA(CorpusPipeline(self.corpus_config), self.settings).ask(question, **options)))
 
     async def summarize(self, relative_path: str, mode: str = "FAST_RESEARCH_MODE") -> SummaryResponse:
         settings = replace(self.settings, research_mode=mode)

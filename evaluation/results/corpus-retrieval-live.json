@@ -1,0 +1,290 @@
+{
+  "keyword": {
+    "cases": [
+      {
+        "question": "What BLEU score did the Transformer achieve on WMT 2014 English-to-German translation?",
+        "expected_ids": [
+          3
+        ],
+        "returned_ids": [
+          40,
+          3,
+          64,
+          4,
+          32
+        ],
+        "precision_at_5": 0.2,
+        "recall_at_5": 1.0,
+        "reciprocal_rank": 0.5,
+        "seconds": 0.0414
+      },
+      {
+        "question": "What GPU memory reduction did LoRA report compared with GPT-3 175B fine-tuned with Adam?",
+        "expected_ids": [
+          164,
+          165
+        ],
+        "returned_ids": [
+          164,
+          186,
+          312,
+          286,
+          189
+        ],
+        "precision_at_5": 0.2,
+        "recall_at_5": 0.5,
+        "reciprocal_rank": 1.0,
+        "seconds": 0.0409
+      },
+      {
+        "question": "Which estimates are used in Adam's adaptive stochastic optimization method?",
+        "expected_ids": [
+          79
+        ],
+        "returned_ids": [
+          83,
+          79,
+          82,
+          102,
+          78
+        ],
+        "precision_at_5": 0.2,
+        "recall_at_5": 1.0,
+        "reciprocal_rank": 0.5,
+        "seconds": 0.0391
+      },
+      {
+        "question": "What did the Transformer achieve for English-to-German BLEU and what GPU memory reduction did LoRA report?",
+        "expected_ids": [
+          3,
+          164,
+          165
+        ],
+        "returned_ids": [
+          40,
+          37,
+          3,
+          43,
+          64
+        ],
+        "precision_at_5": 0.2,
+        "recall_at_5": 0.3333333333333333,
+        "reciprocal_rank": 0.3333333333333333,
+        "seconds": 0.0384
+      },
+      {
+        "question": "What was the participant dropout rate in the randomized clinical trial?",
+        "expected_ids": [],
+        "returned_ids": [
+          38,
+          271,
+          77,
+          76,
+          140
+        ],
+        "precision_at_5": 0.0,
+        "recall_at_5": null,
+        "reciprocal_rank": 0,
+        "seconds": 0.037
+      }
+    ],
+    "mean_answerable": {
+      "precision_at_5": 0.2,
+      "recall_at_5": 0.7083333333333334,
+      "reciprocal_rank": 0.5833333333333334,
+      "seconds": 0.03995
+    }
+  },
+  "semantic": {
+    "cases": [
+      {
+        "question": "What BLEU score did the Transformer achieve on WMT 2014 English-to-German translation?",
+        "expected_ids": [
+          3
+        ],
+        "returned_ids": [
+          40,
+          4,
+          37,
+          3,
+          61
+        ],
+        "precision_at_5": 0.2,
+        "recall_at_5": 1.0,
+        "reciprocal_rank": 0.25,
+        "seconds": 0.1108
+      },
+      {
+        "question": "What GPU memory reduction did LoRA report compared with GPT-3 175B fine-tuned with Adam?",
+        "expected_ids": [
+          164,
+          165
+        ],
+        "returned_ids": [
+          165,
+          275,
+          164,
+          189,
+          271
+        ],
+        "precision_at_5": 0.4,
+        "recall_at_5": 1.0,
+        "reciprocal_rank": 1.0,
+        "seconds": 0.1154
+      },
+      {
+        "question": "Which estimates are used in Adam's adaptive stochastic optimization method?",
+        "expected_ids": [
+          79
+        ],
+        "returned_ids": [
+          83,
+          80,
+          102,
+          115,
+          86
+        ],
+        "precision_at_5": 0.0,
+        "recall_at_5": 0.0,
+        "reciprocal_rank": 0,
+        "seconds": 0.0995
+      },
+      {
+        "question": "What did the Transformer achieve for English-to-German BLEU and what GPU memory reduction did LoRA report?",
+        "expected_ids": [
+          3,
+          164,
+          165
+        ],
+        "returned_ids": [
+          40,
+          4,
+          233,
+          210,
+          37
+        ],
+        "precision_at_5": 0.0,
+        "recall_at_5": 0.0,
+        "reciprocal_rank": 0,
+        "seconds": 0.1243
+      },
+      {
+        "question": "What was the participant dropout rate in the randomized clinical trial?",
+        "expected_ids": [],
+        "returned_ids": [
+          39,
+          119,
+          110,
+          264,
+          41
+        ],
+        "precision_at_5": 0.0,
+        "recall_at_5": null,
+        "reciprocal_rank": 0,
+        "seconds": 0.1313
+      }
+    ],
+    "mean_answerable": {
+      "precision_at_5": 0.15000000000000002,
+      "recall_at_5": 0.5,
+      "reciprocal_rank": 0.3125,
+      "seconds": 0.1125
+    }
+  },
+  "hybrid": {
+    "cases": [
+      {
+        "question": "What BLEU score did the Transformer achieve on WMT 2014 English-to-German translation?",
+        "expected_ids": [
+          3
+        ],
+        "returned_ids": [
+          40,
+          3,
+          4,
+          37,
+          32
+        ],
+        "precision_at_5": 0.2,
+        "recall_at_5": 1.0,
+        "reciprocal_rank": 0.5,
+        "seconds": 0.1658
+      },
+      {
+        "question": "What GPU memory reduction did LoRA report compared with GPT-3 175B fine-tuned with Adam?",
+        "expected_ids": [
+          164,
+          165
+        ],
+        "returned_ids": [
+          164,
+          165,
+          189,
+          186,
+          269
+        ],
+        "precision_at_5": 0.4,
+        "recall_at_5": 1.0,
+        "reciprocal_rank": 1.0,
+        "seconds": 0.18
+      },
+      {
+        "question": "Which estimates are used in Adam's adaptive stochastic optimization method?",
+        "expected_ids": [
+          79
+        ],
+        "returned_ids": [
+          83,
+          102,
+          79,
+          82,
+          80
+        ],
+        "precision_at_5": 0.2,
+        "recall_at_5": 1.0,
+        "reciprocal_rank": 0.3333333333333333,
+        "seconds": 0.1696
+      },
+      {
+        "question": "What did the Transformer achieve for English-to-German BLEU and what GPU memory reduction did LoRA report?",
+        "expected_ids": [
+          3,
+          164,
+          165
+        ],
+        "returned_ids": [
+          40,
+          37,
+          4,
+          64,
+          42
+        ],
+        "precision_at_5": 0.0,
+        "recall_at_5": 0.0,
+        "reciprocal_rank": 0,
+        "seconds": 0.1641
+      },
+      {
+        "question": "What was the participant dropout rate in the randomized clinical trial?",
+        "expected_ids": [],
+        "returned_ids": [
+          119,
+          38,
+          271,
+          110,
+          264
+        ],
+        "precision_at_5": 0.0,
+        "recall_at_5": null,
+        "reciprocal_rank": 0,
+        "seconds": 0.1689
+      }
+    ],
+    "mean_answerable": {
+      "precision_at_5": 0.2,
+      "recall_at_5": 0.75,
+      "reciprocal_rank": 0.4583333333333333,
+      "seconds": 0.169875
+    }
+  }
+}

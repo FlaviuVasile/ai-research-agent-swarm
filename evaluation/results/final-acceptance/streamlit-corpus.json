@@ -1,0 +1,22 @@
+{
+  "steps": [
+    "health endpoint returned HTTP 200",
+    "uploaded and indexed 1412.6980v9.pdf",
+    "retrieved and displayed evidence with PDF page"
+  ],
+  "browser_errors": [],
+  "command": [
+    "C:\\Users\\flavi\\OneDrive\\Documente\\neuro\\.venv-swarm\\Scripts\\python.exe",
+    "-m",
+    "streamlit",
+    "run",
+    "app.py",
+    "--server.headless=true",
+    "--server.address=127.0.0.1",
+    "--server.port=60736",
+    "--browser.gatherUsageStats=false"
+  ],
+  "alerts": [
+    "Corpus: LLM request time budget exceeded. Completed summary steps are saved; retry to resume."
+  ]
+}

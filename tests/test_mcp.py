@@ -71,8 +71,21 @@ def test_real_stdio_client_discovers_and_invokes_agents(tmp_path):
         async with Client(params,read_timeout_seconds=90) as client:
             tools = (await client.list_tools()).tools
             assert {t.name for t in tools} == {"extract_paper_text","summarize_paper",
-                "find_research_questions","search_literature","analyze_paper","get_analysis_result"}
+                "find_research_questions","search_literature","analyze_paper","get_analysis_result",
+                "ingest_paper","list_indexed_papers","search_evidence","inspect_evidence","ask_scientific_question"}
             assert all(t.output_schema for t in tools)
+            indexed = await client.call_tool("ingest_paper", {"pdf_path": "paper.pdf", "title": "Fixture"})
+            assert not indexed.is_error, indexed
+            listing = await client.call_tool("list_indexed_papers", {})
+            assert listing.structured_content["papers"][0]["id"] == indexed.structured_content["id"]
+            duplicate = await client.call_tool("ingest_paper", {"pdf_path": "paper.pdf", "title": "Fixture"})
+            assert duplicate.structured_content["id"] == indexed.structured_content["id"]
+            search = await client.call_tool("search_evidence", {"query": "simulation", "document_id": indexed.structured_content["id"]})
+            passage = search.structured_content["evidence"][0]
+            evidence = await client.call_tool("inspect_evidence", {"chunk_id": passage["id"]})
+            assert evidence.structured_content["page"] == 1
+            missing = await client.call_tool("ask_scientific_question", {"question": "xylophonezz"})
+            assert missing.structured_content["status"] == "insufficient_evidence"
             extracted = await client.call_tool("extract_paper_text",{"pdf_path":"paper.pdf"})
             assert not extracted.is_error and extracted.structured_content["pages"][0]["page"] == 1
             summary = await client.call_tool("summarize_paper",{"pdf_path":"paper.pdf"})

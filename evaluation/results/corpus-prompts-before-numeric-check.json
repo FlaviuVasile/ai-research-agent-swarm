@@ -1,0 +1,372 @@
+[
+  {
+    "variant": "baseline",
+    "retrieval": "keyword",
+    "question": "What BLEU score did the Transformer achieve on WMT 2014 English-to-German translation?",
+    "expected": "28.4",
+    "result": {
+      "status": "supported_claims",
+      "claims": [
+        {
+          "claim": "28.4",
+          "citation": {
+            "document_id": "550ffe72f2734b33af1c902df947c713",
+            "publication_id": 1,
+            "title": "Attention Is All You Need",
+            "page": 8,
+            "sha256": "bdfaa68d8984f0dc02beaca527b76f207d99b666d31d1da728ee0728182df697",
+            "chunk_id": 40,
+            "quote": "establishing a new state-of-the-art BLEU score of 28.4",
+            "start_char": 1864,
+            "end_char": 1918
+          }
+        },
+        {
+          "claim": "41.0",
+          "citation": {
+            "document_id": "550ffe72f2734b33af1c902df947c713",
+            "publication_id": 1,
+            "title": "Attention Is All You Need",
+            "page": 8,
+            "sha256": "bdfaa68d8984f0dc02beaca527b76f207d99b666d31d1da728ee0728182df697",
+            "chunk_id": 40,
+            "quote": "outperforming all of the previously published single models, at less than 1/4 the training cost of the\nprevious state-of-the-art model.",
+            "start_char": 2276,
+            "end_char": 2411
+          }
+        }
+      ],
+      "trace": [
+        {
+          "query": "What BLEU score did the Transformer achieve on WMT 2014 English-to-German translation?",
+          "retrieved": [
+            40,
+            3,
+            64,
+            4,
+            32
+          ],
+          "provided": [
+            40,
+            3,
+            64,
+            4
+          ],
+          "omitted": 1,
+          "provenance_rejected": 1,
+          "semantic_rejected": 0,
+          "requested_follow_up": null
+        }
+      ],
+      "prompt_version": "e272981a172bed7423eb2fd6eb68d95097ed4b74dcd0e3ebd051078492815684",
+      "coverage": "Ranked excerpts within a fixed context and two retrieval attempts. Semantic support is model-assessed.",
+      "seconds": 4.857
+    }
+  },
+  {
+    "variant": "baseline",
+    "retrieval": "keyword",
+    "question": "What GPU memory reduction did LoRA report compared with GPT-3 175B fine-tuned with Adam?",
+    "expected": "3 times",
+    "result": {
+      "status": "insufficient_evidence",
+      "claims": [],
+      "trace": [
+        {
+          "query": "What GPU memory reduction did LoRA report compared with GPT-3 175B fine-tuned with Adam?",
+          "retrieved": [
+            164,
+            186,
+            312,
+            286,
+            189
+          ],
+          "provided": [
+            164,
+            186,
+            312,
+            286
+          ],
+          "omitted": 1,
+          "provenance_rejected": 1,
+          "semantic_rejected": 1,
+          "requested_follow_up": null
+        }
+      ],
+      "prompt_version": "e272981a172bed7423eb2fd6eb68d95097ed4b74dcd0e3ebd051078492815684",
+      "coverage": "Ranked excerpts within a fixed context and two retrieval attempts. Semantic support is model-assessed.",
+      "seconds": 4.75
+    }
+  },
+  {
+    "variant": "baseline",
+    "retrieval": "keyword",
+    "question": "What was the participant dropout rate in the randomized clinical trial?",
+    "expected": null,
+    "result": {
+      "status": "supported_claims",
+      "claims": [
+        {
+          "claim": "The participant dropout rate in the randomized clinical trial was not specified in the provided documents.",
+          "citation": {
+            "document_id": "550ffe72f2734b33af1c902df947c713",
+            "publication_id": 1,
+            "title": "Attention Is All You Need",
+            "page": 1,
+            "sha256": "bdfaa68d8984f0dc02beaca527b76f207d99b666d31d1da728ee0728182df697",
+            "chunk_id": 1,
+            "quote": "Provided proper attribution is provided, Google hereby grants permission to\n                     reproduce the tables and figures in this paper solely for use in journalistic or\n                                                     scholarly works.",
+            "start_char": 21,
+            "end_char": 268
+          }
+        }
+      ],
+      "trace": [
+        {
+          "query": "What was the participant dropout rate in the randomized clinical trial?",
+          "retrieved": [
+            38,
+            271,
+            77,
+            76,
+            140
+          ],
+          "provided": [
+            38,
+            271,
+            77,
+            76,
+            140
+          ],
+          "omitted": 0,
+          "provenance_rejected": 2,
+          "semantic_rejected": 0,
+          "requested_follow_up": "No follow-up question provided."
+        },
+        {
+          "query": "No follow-up question provided.",
+          "retrieved": [
+            1,
+            259,
+            188,
+            170,
+            216
+          ],
+          "provided": [
+            1,
+            259,
+            188,
+            170,
+            216
+          ],
+          "omitted": 5,
+          "provenance_rejected": 3,
+          "semantic_rejected": 0,
+          "requested_follow_up": null
+        }
+      ],
+      "prompt_version": "e272981a172bed7423eb2fd6eb68d95097ed4b74dcd0e3ebd051078492815684",
+      "coverage": "Ranked excerpts within a fixed context and two retrieval attempts. Semantic support is model-assessed.",
+      "seconds": 57.295
+    }
+  },
+  {
+    "variant": "evidence",
+    "retrieval": "keyword",
+    "question": "What BLEU score did the Transformer achieve on WMT 2014 English-to-German translation?",
+    "expected": "28.4",
+    "result": {
+      "status": "insufficient_evidence",
+      "claims": [],
+      "trace": [
+        {
+          "query": "What BLEU score did the Transformer achieve on WMT 2014 English-to-German translation?",
+          "retrieved": [
+            40,
+            3,
+            64,
+            4,
+            32
+          ],
+          "provided": [
+            40,
+            3,
+            64,
+            4
+          ],
+          "omitted": 1,
+          "provenance_rejected": 0,
+          "semantic_rejected": 1,
+          "requested_follow_up": null
+        }
+      ],
+      "prompt_version": "c474d826a4bbbbde830ef5da601d5f5dcfb878fa83d34aaa942da600be70a7eb",
+      "coverage": "Ranked excerpts within a fixed context and two retrieval attempts. Semantic support is model-assessed.",
+      "seconds": 10.955
+    }
+  },
+  {
+    "variant": "evidence",
+    "retrieval": "keyword",
+    "question": "What GPU memory reduction did LoRA report compared with GPT-3 175B fine-tuned with Adam?",
+    "expected": "3 times",
+    "result": {
+      "status": "insufficient_evidence",
+      "claims": [],
+      "trace": [
+        {
+          "query": "What GPU memory reduction did LoRA report compared with GPT-3 175B fine-tuned with Adam?",
+          "retrieved": [
+            164,
+            186,
+            312,
+            286,
+            189
+          ],
+          "provided": [
+            164,
+            186,
+            312
+          ],
+          "omitted": 2,
+          "provenance_rejected": 3,
+          "semantic_rejected": 0,
+          "requested_follow_up": null
+        }
+      ],
+      "prompt_version": "c474d826a4bbbbde830ef5da601d5f5dcfb878fa83d34aaa942da600be70a7eb",
+      "coverage": "Ranked excerpts within a fixed context and two retrieval attempts. Semantic support is model-assessed.",
+      "seconds": 28.897
+    }
+  },
+  {
+    "variant": "evidence",
+    "retrieval": "keyword",
+    "question": "What was the participant dropout rate in the randomized clinical trial?",
+    "expected": null,
+    "result": {
+      "status": "supported_claims",
+      "claims": [
+        {
+          "claim": "The dropout rate for the Transformer (big) model was 28.4%.",
+          "citation": {
+            "document_id": "550ffe72f2734b33af1c902df947c713",
+            "publication_id": 1,
+            "title": "Attention Is All You Need",
+            "page": 8,
+            "sha256": "bdfaa68d8984f0dc02beaca527b76f207d99b666d31d1da728ee0728182df697",
+            "chunk_id": 38,
+            "quote": "28.4     41.8             2.3 · 1019",
+            "start_char": 1084,
+            "end_char": 1120
+          }
+        }
+      ],
+      "trace": [
+        {
+          "query": "What was the participant dropout rate in the randomized clinical trial?",
+          "retrieved": [
+            38,
+            271,
+            77,
+            76,
+            140
+          ],
+          "provided": [
+            38,
+            271,
+            77,
+            76,
+            140
+          ],
+          "omitted": 0,
+          "provenance_rejected": 0,
+          "semantic_rejected": 0,
+          "requested_follow_up": null
+        }
+      ],
+      "prompt_version": "c474d826a4bbbbde830ef5da601d5f5dcfb878fa83d34aaa942da600be70a7eb",
+      "coverage": "Ranked excerpts within a fixed context and two retrieval attempts. Semantic support is model-assessed.",
+      "seconds": 10.063
+    }
+  },
+  {
+    "variant": "evidence",
+    "retrieval": "hybrid",
+    "question": "What BLEU score did the Transformer achieve on WMT 2014 English-to-German translation?",
+    "expected": "28.4",
+    "result": {
+      "status": "insufficient_evidence",
+      "claims": [],
+      "trace": [
+        {
+          "query": "What BLEU score did the Transformer achieve on WMT 2014 English-to-German translation?",
+          "retrieved": [
+            40,
+            42,
+            4,
+            3,
+            43
+          ],
+          "provided": [
+            40,
+            42,
+            4,
+            3
+          ],
+          "omitted": 1,
+          "provenance_rejected": 0,
+          "semantic_rejected": 1,
+          "requested_follow_up": null
+        }
+      ],
+      "prompt_version": "c474d826a4bbbbde830ef5da601d5f5dcfb878fa83d34aaa942da600be70a7eb",
+      "coverage": "Ranked excerpts within a fixed context and two retrieval attempts. Semantic support is model-assessed.",
+      "seconds": 11.984
+    }
+  },
+  {
+    "variant": "evidence",
+    "retrieval": "hybrid",
+    "question": "What GPU memory reduction did LoRA report compared with GPT-3 175B fine-tuned with Adam?",
+    "expected": "3 times",
+    "result": {
+      "status": "insufficient_evidence",
+      "claims": [],
+      "trace": [
+        {
+          "query": "What GPU memory reduction did LoRA report compared with GPT-3 175B fine-tuned with Adam?",
+          "retrieved": [
+            165,
+            164,
+            189,
+            269,
+            215
+          ],
+          "provided": [
+            165,
+            164,
+            189,
+            269
+          ],
+          "omitted": 1,
+          "provenance_rejected": 1,
+          "semantic_rejected": 0,
+          "requested_follow_up": null
+        }
+      ],
+      "prompt_version": "c474d826a4bbbbde830ef5da601d5f5dcfb878fa83d34aaa942da600be70a7eb",
+      "coverage": "Ranked excerpts within a fixed context and two retrieval attempts. Semantic support is model-assessed.",
+      "seconds": 23.514
+    }
+  },
+  {
+    "variant": "evidence",
+    "retrieval": "hybrid",
+    "question": "What was the participant dropout rate in the randomized clinical trial?",
+    "expected": null,
+    "result": {
+      "error": "LLM request time budget exceeded. Completed summary steps are saved; retry to resume."
+    }
+  }
+]

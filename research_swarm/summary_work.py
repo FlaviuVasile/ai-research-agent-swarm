@@ -84,8 +84,7 @@ def select_corpus_evidence(pdf, settings, journal, progress_path=None):
             raise ValueError("Evidence indexing is owned by another worker or could not advance; retry after its lease expires.")
     retrieval=EvidenceRetrieval(journal.store,config)
     hits=retrieval.keyword("architecture operating system runtime scheduling safety security licensing introduction conclusions limitations",
-                           limit=32,publication_id=row["publication_id"])
-    hits=[hit for hit in hits if hit["document_id"]==document]
+                           limit=32,document_id=document)
     # Fall back to genuine source passages, never inferred automotive claims.
     if not hits:
         with journal.store.connect() as db:

@@ -1,0 +1,135 @@
+{
+  "model": "ollama:http://127.0.0.1:11434:llama3.2:latest:a80c4f17acd55265feec403c7aef86be0c25983ab279d83f3bcd3abbcb5b8b72",
+  "prompt_fingerprint": "6d4f46470e6c12dd4879c38bc241cfd73eedb0c2eb640bae787231eeb59a257f",
+  "configuration": {
+    "context_tokens": 8192,
+    "summary_context_tokens": 8192,
+    "summary_output_tokens": 256,
+    "max_output_tokens": 1200,
+    "ollama_gpu_layers": 99,
+    "chunk_tokens": 2000
+  },
+  "cache_enabled": false,
+  "journal_enabled": false,
+  "temperature": 0,
+  "scope": "Three real paper abstracts, one paired pass; not full-paper or held-out validation",
+  "rows": [
+    {
+      "paper": "1706.03762v7",
+      "variant": "baseline",
+      "operation": "summary",
+      "evidence_sha256": "9bf4a692ebe6c7e57d358f14d808aa38618801eece60c0f3bc386408484867a8",
+      "output": "> FULL_RESEARCH_MODE: 1 source chunks processed; final synthesis uses selected bounded note excerpts.\n\n**Summary**\n\nThe Transformer model proposes a new simple network architecture based solely on attention mechanisms, replacing recurrent and convolutional neural networks. Experiments show that the Transformer achieves superior quality in machine translation tasks, with significant improvements in parallelizability and training time. The model achieves state-of-the-art results in two tasks, including English-to-French translation, and generalizes well to other tasks.",
+      "valid": true,
+      "seconds": 34.54676219999965,
+      "usage": [
+        {
+          "prompt_eval_count": 359,
+          "eval_count": 79,
+          "load_duration": 13386300,
+          "prompt_eval_duration": 1149873000,
+          "eval_duration": 18982687000,
+          "total_duration": 34461349900
+        }
+      ]
+    },
+    {
+      "paper": "1706.03762v7",
+      "variant": "baseline",
+      "operation": "questions",
+      "evidence_sha256": "9bf4a692ebe6c7e57d358f14d808aa38618801eece60c0f3bc386408484867a8",
+      "output": {
+        "questions": [
+          {
+            "question": "Can simple neural network architectures based on attention mechanisms outperform complex models in machine translation tasks?",
+            "why_it_matters": "Improving machine translation efficiency and quality could have significant impacts on fields such as language translation, text summarization, and language learning.",
+            "evidence": "Experiments on two machine translation tasks show these models to be superior in quality while being more parallelizable and requiring significantly less time to train.",
+            "kind": "Explicit limitation",
+            "search_query": "Transformer neural networks for machine translation"
+          }
+        ]
+      },
+      "valid": true,
+      "seconds": 77.29989639999985,
+      "usage": [
+        {
+          "prompt_eval_count": 657,
+          "eval_count": 233,
+          "load_duration": 11073600,
+          "prompt_eval_duration": 2240939000,
+          "eval_duration": 57808530000,
+          "total_duration": 77286166500
+        }
+      ]
+    },
+    {
+      "paper": "1706.03762v7",
+      "variant": "baseline",
+      "operation": "literature",
+      "evidence_sha256": "9bf4a692ebe6c7e57d358f14d808aa38618801eece60c0f3bc386408484867a8",
+      "output": {
+        "explanation": "The proposed method, Attention Is All You Need, improves computational efficiency by utilizing self-attention mechanisms that allow for parallel processing of inputs, reducing the need for recurrent neural networks (RNNs) and their associated computational overhead. This enables the model to process sequences in parallel, making it more efficient than traditional sequence-to-sequence models."
+      },
+      "valid": true,
+      "seconds": 40.37791819999984,
+      "usage": [
+        {
+          "prompt_eval_count": 209,
+          "eval_count": 74,
+          "load_duration": 14778500,
+          "prompt_eval_duration": 767078000,
+          "eval_duration": 17824463000,
+          "total_duration": 40367226800
+        }
+      ]
+    },
+    {
+      "paper": "1706.03762v7",
+      "variant": "fields",
+      "operation": "summary",
+      "evidence_sha256": "9bf4a692ebe6c7e57d358f14d808aa38618801eece60c0f3bc386408484867a8",
+      "output": "> FULL_RESEARCH_MODE: 1 source chunks processed; final synthesis uses selected bounded note excerpts.\n\n**Objective**: Develop a new simple network architecture, the Transformer, based solely on attention mechanisms for machine translation tasks.\n\n**Method**: The Transformer model uses attention mechanisms, dispensing with recurrence and convolutions entirely.\n\n**Findings**: The Transformer model achieves superior quality in machine translation tasks, with 28.4 BLEU on WMT 2014 Englishto-German and 41.8 BLEU on WMT 2014 English-to-French, outperforming existing models.\n\n**Limitations**: Not reported.",
+      "valid": true,
+      "seconds": 59.279424199999994,
+      "usage": [
+        {
+          "prompt_eval_count": 395,
+          "eval_count": 108,
+          "load_duration": 18864700,
+          "prompt_eval_duration": 1261112000,
+          "eval_duration": 26066375000,
+          "total_duration": 59148566300
+        }
+      ]
+    },
+    {
+      "paper": "1706.03762v7",
+      "variant": "fields",
+      "operation": "questions",
+      "evidence_sha256": "9bf4a692ebe6c7e57d358f14d808aa38618801eece60c0f3bc386408484867a8",
+      "output": {
+        "questions": [
+          {
+            "question": "Can a simple network architecture based solely on attention mechanisms outperform complex recurrent or convolutional neural networks?",
+            "why_it_matters": "This question matters because it addresses the limitations of current sequence transduction models and has implications for the development of more efficient and effective machine learning models.",
+            "evidence": "The best performing models also connect the encoder and decoder through an attention mechanism. Our model achieves 28.4 BLEU on the WMT 2014 Englishto-German translation task, improving over the existing best results, including ensembles, by over 2 BLEU.",
+            "kind": "Explicit limitation",
+            "search_query": "Transformer architecture vs complex recurrent or convolutional neural networks"
+          }
+        ]
+      },
+      "valid": true,
+      "seconds": 100.15963310000006,
+      "usage": [
+        {
+          "prompt_eval_count": 702,
+          "eval_count": 268,
+          "load_duration": 17569500,
+          "prompt_eval_duration": 2439072000,
+          "eval_duration": 66799700000,
+          "total_duration": 100146704600
+        }
+      ]
+    }
+  ]
+}

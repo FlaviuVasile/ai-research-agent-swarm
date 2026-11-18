@@ -76,7 +76,7 @@ class CorpusStore:
         finally:
             db.close()
 
-    def add_publication(self, title, doi=None, authors=(), year=None, source_url=None):
+    def add_publication(self, title, doi=None, authors=(), year=None, source_url=None, *, document_sha=None):
         title = title.strip()
         if not title or len(title) > 2000:
             raise ValueError("A publication title of 1–2000 characters is required.")
@@ -89,9 +89,16 @@ class CorpusStore:
         normalized = " ".join(re.findall(r"\w+", unicodedata.normalize("NFKC", title).casefold()))
         identity = (hashlib.sha256(json.dumps(
             [normalized, year, authors[0].casefold()], ensure_ascii=False).encode()).hexdigest()
-            if year and authors else f"doi:{doi}" if doi else uuid4().hex)
+            if year and authors else f"doi:{doi}" if doi else f"pdf:{document_sha}" if document_sha else uuid4().hex)
         with self.connect() as db:
             db.execute("BEGIN IMMEDIATE")
+            if document_sha:
+                document = db.execute("""SELECT p.id,p.doi FROM documents d
+                    JOIN publications p ON p.id=d.publication_id WHERE d.sha256=?""", (document_sha,)).fetchone()
+                if document:
+                    if doi and doi != document["doi"]:
+                        raise ValueError("This PDF is already registered with different DOI metadata.")
+                    return document["id"]
             existing = db.execute("SELECT id,doi FROM publications WHERE doi=? OR identity=? ORDER BY doi=? DESC", (doi, identity,doi)).fetchone()
             if existing:
                 if doi and existing["doi"] and doi != existing["doi"]:

@@ -1,0 +1,1 @@
+The previous draft did not pass citation or claim checks. Try one narrower answer using an exact sentence from the supplied excerpts. Include enough of the sentence to show the study conditions, comparison and result. Use only wording that the quotation supports. Return no claim if the evidence does not answer the question.

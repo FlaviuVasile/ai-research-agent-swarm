@@ -1,7 +1,10 @@
 """Optional corpus workspace, leaving the original single-paper interface intact."""
 import asyncio
+import json
 import sqlite3
 import streamlit as st
+from research_swarm.config import ROOT
+from research_swarm.service import ResearchService
 from .config import CorpusConfig
 from .ingest import CorpusPipeline
 from .retrieval import EvidenceRetrieval, evidence_reference
@@ -15,8 +18,10 @@ def render_corpus():
             config = CorpusConfig.from_env()
             pipeline = CorpusPipeline(config)
             retrieval = EvidenceRetrieval(pipeline.store,config)
+            service = ResearchService(config.pdf_dir, ROOT / "output" / "mcp", corpus_config=config)
             if st.session_state.get("corpus_database") != str(config.database.resolve()):
                 st.session_state.pop("corpus_results",None)
+                st.session_state.pop("corpus_answer",None)
                 st.session_state["corpus_database"] = str(config.database.resolve())
             st.caption("Local metadata and page evidence. Import only PDFs you are entitled to store. "
                        "Discovery, automatic downloads and comparative reports are planned phases.")
@@ -41,7 +46,8 @@ def render_corpus():
             st.caption(f"Each batch: at most {config.pages_per_run} pages, {config.documents_per_run} documents; "
                        f"{config.seconds_per_run}s soft deadline. Click again to continue after a checkpoint.")
             offset = st.number_input("Document list offset",min_value=0,step=50,key="corpus_offset")
-            st.dataframe(pipeline.store.documents(offset=int(offset)),use_container_width=True)
+            documents = pipeline.store.documents(offset=int(offset))
+            st.dataframe(documents,use_container_width=True)
             st.caption("Semantic indexing is optional and uses only installed local embedding weights. "
                        "Run ollama pull all-minilm:latest first if you choose this feature.")
             if st.button("Index next local embedding batch",key="corpus_index"):
@@ -49,11 +55,26 @@ def render_corpus():
                     count = asyncio.run(retrieval.index())
                 st.success(f"Indexed {count} passages; rerun for the next batch.")
             query = st.text_input("Find evidence",key="corpus_query")
-            mode = st.selectbox("Retrieval method",["Keyword", "Local semantic"],key="corpus_mode")
+            methods = {"Keyword": "keyword", "Local semantic": "semantic", "Hybrid": "hybrid"}
+            mode = st.selectbox("Retrieval method",list(methods),key="corpus_mode")
+            titles = {row["id"]: row["title"] for row in documents}
+            document_id = st.selectbox("Paper scope", [None, *titles], key="corpus_scope",
+                                       format_func=lambda item: f"{titles[item]} ({item[:8]})" if item else "Entire corpus")
             if st.button("Retrieve evidence",disabled=not query.strip(),key="corpus_search"):
-                rows = (retrieval.keyword(query) if mode == "Keyword"
-                        else asyncio.run(retrieval.semantic(query)))
-                st.session_state["corpus_results"] = rows
+                st.session_state["corpus_results"] = asyncio.run(service.search_evidence(
+                    query, mode=methods[mode], document_id=document_id))
+            if st.button("Answer scientific question", disabled=not query.strip(), key="corpus_ask"):
+                st.session_state.pop("corpus_answer", None)
+                try:
+                    with st.spinner("Checking source evidence"):
+                        st.session_state["corpus_answer"] = asyncio.run(service.ask_corpus(
+                            query, mode=methods[mode], document_id=document_id))
+                except TimeoutError:
+                    st.error("The question exceeded the configured time limit.")
+            if answer := st.session_state.get("corpus_answer"):
+                st.json(answer)
+                st.download_button("Download answer JSON", json.dumps(answer, ensure_ascii=False, indent=2),
+                                   "corpus-answer.json", "application/json")
             for cached in st.session_state.get("corpus_results",[]):
                 try:
                     row = pipeline.store.evidence(cached["id"])

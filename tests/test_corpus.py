@@ -265,6 +265,18 @@ def test_semantic_scan_limit_is_explicit(pipeline):
         asyncio.run(retrieval.semantic("QNX"))
 
 
+def test_hybrid_search_filters_pdf_versions_before_ranking(pipeline):
+    _, first = register(pipeline, pdf(pages=1))
+    _, second = register(pipeline, pdf(pages=2))
+    pipeline.run()
+    retrieval = EvidenceRetrieval(pipeline.store, pipeline.config, FakeEmbeddings())
+    asyncio.run(retrieval.index())
+    for mode in ("keyword", "semantic", "hybrid"):
+        for identifier in (first, second):
+            hits = asyncio.run(retrieval.search("QNX", mode=mode, document_id=identifier, limit=1))
+            assert [hit["document_id"] for hit in hits] == [identifier]
+
+
 @pytest.mark.parametrize("vector", [[0.,0.],[float("nan"),1.],["text"],[]])
 def test_invalid_vectors_are_rejected(vector):
     with pytest.raises(ValueError):
