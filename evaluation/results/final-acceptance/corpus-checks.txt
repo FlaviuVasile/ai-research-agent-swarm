@@ -1,0 +1,2 @@
+﻿Pinned SHA matches: [('1706.03762v7', True), ('1412.6980v9', True), ('2106.09685v2', True)]
+Document pages and passage counts: [('Adam: A Method for Stochastic Optimization', 15, 85), ('Attention Is All You Need', 15, 77), ('Canary study', 1, 1), ('LoRA: Low-Rank Adaptation of Large Language Models', 26, 153)]

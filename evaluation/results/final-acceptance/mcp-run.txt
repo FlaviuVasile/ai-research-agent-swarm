@@ -1,0 +1,41 @@
+﻿ingest_paper 1.34 False
+ingest_paper 1.022 False
+ingest_paper 2.009 False
+ingest_paper 0.716 False
+ingest_paper 0.136 False
+list_indexed_papers 0.03 False
+search_evidence 0.046 False
+inspect_evidence 0.02 False
+ask_scientific_question 57.492 False
+search_evidence 0.088 False
+inspect_evidence 0.033 False
+ask_scientific_question 45.069 True
+search_evidence 0.044 False
+inspect_evidence 0.022 False
+ask_scientific_question 76.715 False
+search_evidence 0.065 False
+inspect_evidence 0.033 False
+ask_scientific_question 45.091 True
+search_evidence 0.056 False
+inspect_evidence 0.021 False
+ask_scientific_question 45.06 True
+search_evidence 0.044 False
+inspect_evidence 0.028 False
+ask_scientific_question 45.065 True
+search_evidence 0.045 False
+inspect_evidence 0.044 False
+ask_scientific_question 45.091 True
+search_evidence 0.044 False
+inspect_evidence 0.023 False
+ask_scientific_question 45.052 True
+ingest_paper 0.006 True
+search_evidence 0.02 True
+inspect_evidence 0.023 True
+./.venv-swarm/Scripts/python.exe : ERROR:orchestrator:Workflow failed at Open Questions Finder (BudgetExceeded)
+At line:2 char:1
++ ./.venv-swarm/Scripts/python.exe -m evaluation.acceptance_sdk *> eval ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (ERROR:orchestra...BudgetExceeded):String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+analyze_paper 84.24 True

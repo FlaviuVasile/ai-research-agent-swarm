@@ -1,0 +1,17 @@
+﻿2026-11-18 18:44:42.939 Uvicorn server started on 127.0.0.1:57848
+
+  You can now view your Streamlit app in your browser.
+
+  URL: http://127.0.0.1:57848
+
+2026-11-18 18:44:59,299 INFO research_swarm.agents.pdf_master: Extracted 15 text pages
+2026-11-18 18:45:29,815 INFO research_swarm.providers: Ollama context=8192, conservative_prompt_budget=2691, prompt_eval_count=575, eval_count=109
+2026-11-18 18:46:04,272 INFO research_swarm.providers: Ollama context=8192, conservative_prompt_budget=4388, prompt_eval_count=992, eval_count=123
+2026-11-18 18:46:11,790 ERROR asyncio: Exception in callback _ProactorBasePipeTransport._call_connection_lost(None)
+handle: <Handle _ProactorBasePipeTransport._call_connection_lost(None)>
+Traceback (most recent call last):
+  File "C:\Users\flavi\AppData\Local\Programs\Python\Python311\Lib\asyncio\events.py", line 84, in _run
+    self._context.run(self._callback, *self._args)
+  File "C:\Users\flavi\AppData\Local\Programs\Python\Python311\Lib\asyncio\proactor_events.py", line 165, in _call_connection_lost
+    self._sock.shutdown(socket.SHUT_RDWR)
+ConnectionResetError: [WinError 10054] An existing connection was forcibly closed by the remote host

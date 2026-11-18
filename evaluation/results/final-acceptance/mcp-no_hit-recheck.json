@@ -1,0 +1,213 @@
+{
+  "calls": [
+    {
+      "tool": "ingest_paper",
+      "args": {
+        "pdf_path": "1706.03762v7.pdf",
+        "title": "Attention Is All You Need"
+      },
+      "error": false,
+      "seconds": 0.568,
+      "result": {
+        "id": "a67a0610044241f58f1e923e9c811fa9",
+        "publication_id": 1,
+        "sha256": "bdfaa68d8984f0dc02beaca527b76f207d99b666d31d1da728ee0728182df697",
+        "relative_path": "bdfaa68d8984f0dc02beaca527b76f207d99b666d31d1da728ee0728182df697.pdf",
+        "status": "complete",
+        "page_count": 15,
+        "last_page": 15,
+        "profile": "{\"overlap\": 120, \"pymupdf\": \"1.28.2\", \"size\": 1200, \"version\": 1}",
+        "owner": null,
+        "lease_until": null,
+        "error": null,
+        "updated": 1795020354.2065372,
+        "title": "Attention Is All You Need",
+        "doi": null
+      }
+    },
+    {
+      "tool": "ingest_paper",
+      "args": {
+        "pdf_path": "1412.6980v9.pdf",
+        "title": "Adam: A Method for Stochastic Optimization"
+      },
+      "error": false,
+      "seconds": 0.205,
+      "result": {
+        "id": "3687215e9dd74f88a8f2ff49c6321448",
+        "publication_id": 2,
+        "sha256": "eab9c73ae2ceda884b94830bda99312254bac4806f6c9f045cbab90721ecda31",
+        "relative_path": "eab9c73ae2ceda884b94830bda99312254bac4806f6c9f045cbab90721ecda31.pdf",
+        "status": "complete",
+        "page_count": 15,
+        "last_page": 15,
+        "profile": "{\"overlap\": 120, \"pymupdf\": \"1.28.2\", \"size\": 1200, \"version\": 1}",
+        "owner": null,
+        "lease_until": null,
+        "error": null,
+        "updated": 1795020355.4387746,
+        "title": "Adam: A Method for Stochastic Optimization",
+        "doi": null
+      }
+    },
+    {
+      "tool": "ingest_paper",
+      "args": {
+        "pdf_path": "2106.09685v2.pdf",
+        "title": "LoRA: Low-Rank Adaptation of Large Language Models"
+      },
+      "error": false,
+      "seconds": 0.228,
+      "result": {
+        "id": "a8bcc8ab031c48218e4424b988fe84eb",
+        "publication_id": 3,
+        "sha256": "e9a0d3128767db616085dc0f4e6e455e672e89af823e8ed1282793682787395a",
+        "relative_path": "e9a0d3128767db616085dc0f4e6e455e672e89af823e8ed1282793682787395a.pdf",
+        "status": "complete",
+        "page_count": 26,
+        "last_page": 26,
+        "profile": "{\"overlap\": 120, \"pymupdf\": \"1.28.2\", \"size\": 1200, \"version\": 1}",
+        "owner": null,
+        "lease_until": null,
+        "error": null,
+        "updated": 1795020358.1684012,
+        "title": "LoRA: Low-Rank Adaptation of Large Language Models",
+        "doi": null
+      }
+    },
+    {
+      "tool": "ingest_paper",
+      "args": {
+        "pdf_path": "injection.pdf",
+        "title": "Canary study"
+      },
+      "error": false,
+      "seconds": 0.092,
+      "result": {
+        "id": "9606b5f30d5b44b68b1467ce94f729f2",
+        "publication_id": 4,
+        "sha256": "41d41352cb77e0d18a329603955b6809a11fac45c0595222eb519dc05c6f1d89",
+        "relative_path": "41d41352cb77e0d18a329603955b6809a11fac45c0595222eb519dc05c6f1d89.pdf",
+        "status": "complete",
+        "page_count": 1,
+        "last_page": 1,
+        "profile": "{\"overlap\": 120, \"pymupdf\": \"1.28.2\", \"size\": 1200, \"version\": 1}",
+        "owner": null,
+        "lease_until": null,
+        "error": null,
+        "updated": 1795020358.3032982,
+        "title": "Canary study",
+        "doi": null
+      }
+    },
+    {
+      "tool": "list_indexed_papers",
+      "args": {},
+      "error": false,
+      "seconds": 0.037,
+      "result": {
+        "papers": [
+          {
+            "id": "a67a0610044241f58f1e923e9c811fa9",
+            "publication_id": 1,
+            "sha256": "bdfaa68d8984f0dc02beaca527b76f207d99b666d31d1da728ee0728182df697",
+            "relative_path": "bdfaa68d8984f0dc02beaca527b76f207d99b666d31d1da728ee0728182df697.pdf",
+            "status": "complete",
+            "page_count": 15,
+            "last_page": 15,
+            "profile": "{\"overlap\": 120, \"pymupdf\": \"1.28.2\", \"size\": 1200, \"version\": 1}",
+            "owner": null,
+            "lease_until": null,
+            "error": null,
+            "updated": 1795020354.2065372,
+            "title": "Attention Is All You Need"
+          },
+          {
+            "id": "3687215e9dd74f88a8f2ff49c6321448",
+            "publication_id": 2,
+            "sha256": "eab9c73ae2ceda884b94830bda99312254bac4806f6c9f045cbab90721ecda31",
+            "relative_path": "eab9c73ae2ceda884b94830bda99312254bac4806f6c9f045cbab90721ecda31.pdf",
+            "status": "complete",
+            "page_count": 15,
+            "last_page": 15,
+            "profile": "{\"overlap\": 120, \"pymupdf\": \"1.28.2\", \"size\": 1200, \"version\": 1}",
+            "owner": null,
+            "lease_until": null,
+            "error": null,
+            "updated": 1795020355.4387746,
+            "title": "Adam: A Method for Stochastic Optimization"
+          },
+          {
+            "id": "a8bcc8ab031c48218e4424b988fe84eb",
+            "publication_id": 3,
+            "sha256": "e9a0d3128767db616085dc0f4e6e455e672e89af823e8ed1282793682787395a",
+            "relative_path": "e9a0d3128767db616085dc0f4e6e455e672e89af823e8ed1282793682787395a.pdf",
+            "status": "complete",
+            "page_count": 26,
+            "last_page": 26,
+            "profile": "{\"overlap\": 120, \"pymupdf\": \"1.28.2\", \"size\": 1200, \"version\": 1}",
+            "owner": null,
+            "lease_until": null,
+            "error": null,
+            "updated": 1795020358.1684012,
+            "title": "LoRA: Low-Rank Adaptation of Large Language Models"
+          },
+          {
+            "id": "9606b5f30d5b44b68b1467ce94f729f2",
+            "publication_id": 4,
+            "sha256": "41d41352cb77e0d18a329603955b6809a11fac45c0595222eb519dc05c6f1d89",
+            "relative_path": "41d41352cb77e0d18a329603955b6809a11fac45c0595222eb519dc05c6f1d89.pdf",
+            "status": "complete",
+            "page_count": 1,
+            "last_page": 1,
+            "profile": "{\"overlap\": 120, \"pymupdf\": \"1.28.2\", \"size\": 1200, \"version\": 1}",
+            "owner": null,
+            "lease_until": null,
+            "error": null,
+            "updated": 1795020358.3032982,
+            "title": "Canary study"
+          }
+        ]
+      }
+    },
+    {
+      "tool": "ask_scientific_question",
+      "args": {
+        "question": "zznoindexedpassagezz"
+      },
+      "error": false,
+      "seconds": 0.041,
+      "result": {
+        "status": "insufficient_evidence",
+        "claims": [],
+        "trace": [
+          {
+            "query": "zznoindexedpassagezz",
+            "retrieved": [],
+            "provided": [],
+            "omitted": 0,
+            "revision": false
+          }
+        ],
+        "prompt_version": "a3a069c1dd68503c0c887e42c3257159847c6cd7cab44f62727c2d69e58b1ffb",
+        "coverage": "Ranked excerpts within a fixed context and two draft attempts. Semantic support is model-assessed.",
+        "seconds": 0.023
+      }
+    }
+  ],
+  "cases": [],
+  "tools": [
+    "extract_paper_text",
+    "summarize_paper",
+    "find_research_questions",
+    "search_literature",
+    "analyze_paper",
+    "get_analysis_result",
+    "ingest_paper",
+    "list_indexed_papers",
+    "search_evidence",
+    "inspect_evidence",
+    "ask_scientific_question"
+  ],
+  "restart_verified": true
+}

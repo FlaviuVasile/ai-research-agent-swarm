@@ -1,0 +1,6 @@
+﻿1706.03762v7 baseline summary True 34.55
+1706.03762v7 baseline questions True 77.3
+1706.03762v7 baseline literature True 40.38
+1706.03762v7 fields summary True 59.28
+1706.03762v7 fields questions True 100.16
+1706.03762v7 fields literature True 97.57

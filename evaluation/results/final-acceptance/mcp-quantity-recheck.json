@@ -1,0 +1,377 @@
+{
+  "calls": [
+    {
+      "tool": "ingest_paper",
+      "args": {
+        "pdf_path": "1706.03762v7.pdf",
+        "title": "Attention Is All You Need"
+      },
+      "error": false,
+      "seconds": 0.387,
+      "result": {
+        "id": "a67a0610044241f58f1e923e9c811fa9",
+        "publication_id": 1,
+        "sha256": "bdfaa68d8984f0dc02beaca527b76f207d99b666d31d1da728ee0728182df697",
+        "relative_path": "bdfaa68d8984f0dc02beaca527b76f207d99b666d31d1da728ee0728182df697.pdf",
+        "status": "complete",
+        "page_count": 15,
+        "last_page": 15,
+        "profile": "{\"overlap\": 120, \"pymupdf\": \"1.28.2\", \"size\": 1200, \"version\": 1}",
+        "owner": null,
+        "lease_until": null,
+        "error": null,
+        "updated": 1795020354.2065372,
+        "title": "Attention Is All You Need",
+        "doi": null
+      }
+    },
+    {
+      "tool": "ingest_paper",
+      "args": {
+        "pdf_path": "1412.6980v9.pdf",
+        "title": "Adam: A Method for Stochastic Optimization"
+      },
+      "error": false,
+      "seconds": 0.099,
+      "result": {
+        "id": "3687215e9dd74f88a8f2ff49c6321448",
+        "publication_id": 2,
+        "sha256": "eab9c73ae2ceda884b94830bda99312254bac4806f6c9f045cbab90721ecda31",
+        "relative_path": "eab9c73ae2ceda884b94830bda99312254bac4806f6c9f045cbab90721ecda31.pdf",
+        "status": "complete",
+        "page_count": 15,
+        "last_page": 15,
+        "profile": "{\"overlap\": 120, \"pymupdf\": \"1.28.2\", \"size\": 1200, \"version\": 1}",
+        "owner": null,
+        "lease_until": null,
+        "error": null,
+        "updated": 1795020355.4387746,
+        "title": "Adam: A Method for Stochastic Optimization",
+        "doi": null
+      }
+    },
+    {
+      "tool": "ingest_paper",
+      "args": {
+        "pdf_path": "2106.09685v2.pdf",
+        "title": "LoRA: Low-Rank Adaptation of Large Language Models"
+      },
+      "error": false,
+      "seconds": 0.118,
+      "result": {
+        "id": "a8bcc8ab031c48218e4424b988fe84eb",
+        "publication_id": 3,
+        "sha256": "e9a0d3128767db616085dc0f4e6e455e672e89af823e8ed1282793682787395a",
+        "relative_path": "e9a0d3128767db616085dc0f4e6e455e672e89af823e8ed1282793682787395a.pdf",
+        "status": "complete",
+        "page_count": 26,
+        "last_page": 26,
+        "profile": "{\"overlap\": 120, \"pymupdf\": \"1.28.2\", \"size\": 1200, \"version\": 1}",
+        "owner": null,
+        "lease_until": null,
+        "error": null,
+        "updated": 1795020358.1684012,
+        "title": "LoRA: Low-Rank Adaptation of Large Language Models",
+        "doi": null
+      }
+    },
+    {
+      "tool": "ingest_paper",
+      "args": {
+        "pdf_path": "injection.pdf",
+        "title": "Canary study"
+      },
+      "error": false,
+      "seconds": 0.059,
+      "result": {
+        "id": "9606b5f30d5b44b68b1467ce94f729f2",
+        "publication_id": 4,
+        "sha256": "41d41352cb77e0d18a329603955b6809a11fac45c0595222eb519dc05c6f1d89",
+        "relative_path": "41d41352cb77e0d18a329603955b6809a11fac45c0595222eb519dc05c6f1d89.pdf",
+        "status": "complete",
+        "page_count": 1,
+        "last_page": 1,
+        "profile": "{\"overlap\": 120, \"pymupdf\": \"1.28.2\", \"size\": 1200, \"version\": 1}",
+        "owner": null,
+        "lease_until": null,
+        "error": null,
+        "updated": 1795020358.3032982,
+        "title": "Canary study",
+        "doi": null
+      }
+    },
+    {
+      "tool": "list_indexed_papers",
+      "args": {},
+      "error": false,
+      "seconds": 0.051,
+      "result": {
+        "papers": [
+          {
+            "id": "a67a0610044241f58f1e923e9c811fa9",
+            "publication_id": 1,
+            "sha256": "bdfaa68d8984f0dc02beaca527b76f207d99b666d31d1da728ee0728182df697",
+            "relative_path": "bdfaa68d8984f0dc02beaca527b76f207d99b666d31d1da728ee0728182df697.pdf",
+            "status": "complete",
+            "page_count": 15,
+            "last_page": 15,
+            "profile": "{\"overlap\": 120, \"pymupdf\": \"1.28.2\", \"size\": 1200, \"version\": 1}",
+            "owner": null,
+            "lease_until": null,
+            "error": null,
+            "updated": 1795020354.2065372,
+            "title": "Attention Is All You Need"
+          },
+          {
+            "id": "3687215e9dd74f88a8f2ff49c6321448",
+            "publication_id": 2,
+            "sha256": "eab9c73ae2ceda884b94830bda99312254bac4806f6c9f045cbab90721ecda31",
+            "relative_path": "eab9c73ae2ceda884b94830bda99312254bac4806f6c9f045cbab90721ecda31.pdf",
+            "status": "complete",
+            "page_count": 15,
+            "last_page": 15,
+            "profile": "{\"overlap\": 120, \"pymupdf\": \"1.28.2\", \"size\": 1200, \"version\": 1}",
+            "owner": null,
+            "lease_until": null,
+            "error": null,
+            "updated": 1795020355.4387746,
+            "title": "Adam: A Method for Stochastic Optimization"
+          },
+          {
+            "id": "a8bcc8ab031c48218e4424b988fe84eb",
+            "publication_id": 3,
+            "sha256": "e9a0d3128767db616085dc0f4e6e455e672e89af823e8ed1282793682787395a",
+            "relative_path": "e9a0d3128767db616085dc0f4e6e455e672e89af823e8ed1282793682787395a.pdf",
+            "status": "complete",
+            "page_count": 26,
+            "last_page": 26,
+            "profile": "{\"overlap\": 120, \"pymupdf\": \"1.28.2\", \"size\": 1200, \"version\": 1}",
+            "owner": null,
+            "lease_until": null,
+            "error": null,
+            "updated": 1795020358.1684012,
+            "title": "LoRA: Low-Rank Adaptation of Large Language Models"
+          },
+          {
+            "id": "9606b5f30d5b44b68b1467ce94f729f2",
+            "publication_id": 4,
+            "sha256": "41d41352cb77e0d18a329603955b6809a11fac45c0595222eb519dc05c6f1d89",
+            "relative_path": "41d41352cb77e0d18a329603955b6809a11fac45c0595222eb519dc05c6f1d89.pdf",
+            "status": "complete",
+            "page_count": 1,
+            "last_page": 1,
+            "profile": "{\"overlap\": 120, \"pymupdf\": \"1.28.2\", \"size\": 1200, \"version\": 1}",
+            "owner": null,
+            "lease_until": null,
+            "error": null,
+            "updated": 1795020358.3032982,
+            "title": "Canary study"
+          }
+        ]
+      }
+    },
+    {
+      "tool": "search_evidence",
+      "args": {
+        "query": "What BLEU score did Transformer big achieve on WMT 2014 English-to-German?",
+        "document_id": "a67a0610044241f58f1e923e9c811fa9",
+        "top_k": 3
+      },
+      "error": false,
+      "seconds": 0.07,
+      "result": {
+        "evidence": [
+          {
+            "id": 40,
+            "document_id": "a67a0610044241f58f1e923e9c811fa9",
+            "page": 8,
+            "start_char": 1636,
+            "end_char": 2518,
+            "section": "6.1  Machine Translation",
+            "text": "6.1  Machine Translation\n\nOn the WMT 2014 English-to-German translation task, the big transformer model (Transformer (big)\nin Table 2) outperforms the best previously reported models (including ensembles) by more than 2.0\nBLEU, establishing a new state-of-the-art BLEU score of 28.4. The configuration of this model is\nlisted in the bottom line of Table 3. Training took 3.5 days on 8 P100 GPUs. Even our base model\nsurpasses all previously published models and ensembles, at a fraction of the training cost of any of\nthe competitive models.\n\nOn the WMT 2014 English-to-French translation task, our big model achieves a BLEU score of 41.0,\noutperforming all of the previously published single models, at less than 1/4 the training cost of the\nprevious state-of-the-art model. The Transformer (big) model trained for English-to-French used\ndropout rate Pdrop = 0.1, instead of 0.3.\n\n",
+            "publication_id": 1,
+            "title": "Attention Is All You Need",
+            "doi": null,
+            "sha256": "bdfaa68d8984f0dc02beaca527b76f207d99b666d31d1da728ee0728182df697",
+            "relative_path": "bdfaa68d8984f0dc02beaca527b76f207d99b666d31d1da728ee0728182df697.pdf",
+            "score": 34.43862176808114
+          },
+          {
+            "id": 3,
+            "document_id": "a67a0610044241f58f1e923e9c811fa9",
+            "page": 1,
+            "start_char": 1018,
+            "end_char": 2218,
+            "section": "Abstract",
+            "text": "                                                 Abstract\n\n\n                         The dominant sequence transduction models are based on complex recurrent or\n                               convolutional neural networks that include an encoder and a decoder. The best\n                             performing models also connect the encoder and decoder through an attention\n                           mechanism. We propose a new simple network architecture, the Transformer,\n                              based solely on attention mechanisms, dispensing with recurrence and convolutions\n                                    entirely. Experiments on two machine translation tasks show these models to\n                            be superior in quality while being more parallelizable and requiring significantly\n                                   less time to train. Our model achieves 28.4 BLEU on the WMT 2014 English-\n                           to-German translation task, improving over the existing best results, including\n                               ensembles, by over 2 BLEU. On the WMT 2014 English-to-French translation task,\n                               our model establishes a new sing",
+            "publication_id": 1,
+            "title": "Attention Is All You Need",
+            "doi": null,
+            "sha256": "bdfaa68d8984f0dc02beaca527b76f207d99b666d31d1da728ee0728182df697",
+            "relative_path": "bdfaa68d8984f0dc02beaca527b76f207d99b666d31d1da728ee0728182df697.pdf",
+            "score": 22.743708289027513
+          },
+          {
+            "id": 64,
+            "document_id": "a67a0610044241f58f1e923e9c811fa9",
+            "page": 10,
+            "start_char": 1695,
+            "end_char": 2802,
+            "section": "7  Conclusion",
+            "text": "7  Conclusion\n\nIn this work, we presented the Transformer, the first sequence transduction model based entirely on\nattention, replacing the recurrent layers most commonly used in encoder-decoder architectures with\nmulti-headed self-attention.\n\nFor translation tasks, the Transformer can be trained significantly faster than architectures based\non recurrent or convolutional layers. On both WMT 2014 English-to-German and WMT 2014\nEnglish-to-French translation tasks, we achieve a new state of the art. In the former task our best\nmodel outperforms even all previously reported ensembles.\n\nWe are excited about the future of attention-based models and plan to apply them to other tasks. We\nplan to extend the Transformer to problems involving input and output modalities other than text and\nto investigate local, restricted attention mechanisms to efficiently handle large inputs and outputs\nsuch as images, audio and video. Making generation less sequential is another research goals of ours.\n\nThe code we used to train and evaluate our models is available at https://github.com/\ntensorflow/tensor2tensor.\n\n",
+            "publication_id": 1,
+            "title": "Attention Is All You Need",
+            "doi": null,
+            "sha256": "bdfaa68d8984f0dc02beaca527b76f207d99b666d31d1da728ee0728182df697",
+            "relative_path": "bdfaa68d8984f0dc02beaca527b76f207d99b666d31d1da728ee0728182df697.pdf",
+            "score": 21.07221470788791
+          }
+        ]
+      }
+    },
+    {
+      "tool": "inspect_evidence",
+      "args": {
+        "chunk_id": 40
+      },
+      "error": false,
+      "seconds": 0.036,
+      "result": {
+        "id": 40,
+        "document_id": "a67a0610044241f58f1e923e9c811fa9",
+        "page": 8,
+        "start_char": 1636,
+        "end_char": 2518,
+        "section": "6.1  Machine Translation",
+        "text": "6.1  Machine Translation\n\nOn the WMT 2014 English-to-German translation task, the big transformer model (Transformer (big)\nin Table 2) outperforms the best previously reported models (including ensembles) by more than 2.0\nBLEU, establishing a new state-of-the-art BLEU score of 28.4. The configuration of this model is\nlisted in the bottom line of Table 3. Training took 3.5 days on 8 P100 GPUs. Even our base model\nsurpasses all previously published models and ensembles, at a fraction of the training cost of any of\nthe competitive models.\n\nOn the WMT 2014 English-to-French translation task, our big model achieves a BLEU score of 41.0,\noutperforming all of the previously published single models, at less than 1/4 the training cost of the\nprevious state-of-the-art model. The Transformer (big) model trained for English-to-French used\ndropout rate Pdrop = 0.1, instead of 0.3.\n\n",
+        "publication_id": 1,
+        "title": "Attention Is All You Need",
+        "doi": null,
+        "sha256": "bdfaa68d8984f0dc02beaca527b76f207d99b666d31d1da728ee0728182df697",
+        "relative_path": "bdfaa68d8984f0dc02beaca527b76f207d99b666d31d1da728ee0728182df697.pdf"
+      }
+    },
+    {
+      "tool": "ask_scientific_question",
+      "args": {
+        "question": "What BLEU score did Transformer big achieve on WMT 2014 English-to-German?",
+        "document_id": "a67a0610044241f58f1e923e9c811fa9",
+        "top_k": 3
+      },
+      "error": false,
+      "seconds": 50.277,
+      "result": {
+        "status": "insufficient_evidence",
+        "claims": [],
+        "trace": [
+          {
+            "query": "What BLEU score did Transformer big achieve on WMT 2014 English-to-German?",
+            "retrieved": [
+              40,
+              3,
+              64
+            ],
+            "provided": [
+              40,
+              3,
+              64
+            ],
+            "omitted": 0,
+            "revision": false,
+            "provenance_rejected": 0,
+            "numeric_rejected": 1,
+            "semantic_rejected": 0,
+            "requested_follow_up": null
+          },
+          {
+            "query": "What BLEU score did Transformer big achieve on WMT 2014 English-to-German?",
+            "retrieved": [],
+            "provided": [
+              40,
+              3,
+              64
+            ],
+            "omitted": 0,
+            "revision": true,
+            "provenance_rejected": 1,
+            "numeric_rejected": 0,
+            "semantic_rejected": 0,
+            "requested_follow_up": null
+          }
+        ],
+        "prompt_version": "a3a069c1dd68503c0c887e42c3257159847c6cd7cab44f62727c2d69e58b1ffb",
+        "coverage": "Ranked excerpts within a fixed context and two draft attempts. Semantic support is model-assessed.",
+        "seconds": 50.252
+      }
+    }
+  ],
+  "cases": [
+    {
+      "kind": "quantity",
+      "gold": "28.4, Transformer PDF p.8, section 6.1",
+      "exact_retrieved_offsets": [
+        true,
+        true,
+        true
+      ],
+      "answer": {
+        "status": "insufficient_evidence",
+        "claims": [],
+        "trace": [
+          {
+            "query": "What BLEU score did Transformer big achieve on WMT 2014 English-to-German?",
+            "retrieved": [
+              40,
+              3,
+              64
+            ],
+            "provided": [
+              40,
+              3,
+              64
+            ],
+            "omitted": 0,
+            "revision": false,
+            "provenance_rejected": 0,
+            "numeric_rejected": 1,
+            "semantic_rejected": 0,
+            "requested_follow_up": null
+          },
+          {
+            "query": "What BLEU score did Transformer big achieve on WMT 2014 English-to-German?",
+            "retrieved": [],
+            "provided": [
+              40,
+              3,
+              64
+            ],
+            "omitted": 0,
+            "revision": true,
+            "provenance_rejected": 1,
+            "numeric_rejected": 0,
+            "semantic_rejected": 0,
+            "requested_follow_up": null
+          }
+        ],
+        "prompt_version": "a3a069c1dd68503c0c887e42c3257159847c6cd7cab44f62727c2d69e58b1ffb",
+        "coverage": "Ranked excerpts within a fixed context and two draft attempts. Semantic support is model-assessed.",
+        "seconds": 50.252
+      },
+      "exact_claim_offsets": []
+    }
+  ],
+  "tools": [
+    "extract_paper_text",
+    "summarize_paper",
+    "find_research_questions",
+    "search_literature",
+    "analyze_paper",
+    "get_analysis_result",
+    "ingest_paper",
+    "list_indexed_papers",
+    "search_evidence",
+    "inspect_evidence",
+    "ask_scientific_question"
+  ],
+  "restart_verified": true
+}

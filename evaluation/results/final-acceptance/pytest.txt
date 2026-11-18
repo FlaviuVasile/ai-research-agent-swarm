@@ -1,0 +1,320 @@
+﻿........................................................................ [ 44%]
+........................................................................ [ 88%]
+...................                                                      [100%]
+=================================== PASSES ====================================
+______________ test_failed_experiments_persist_results_and_raise ______________
+---------------------------- Captured stdout call -----------------------------
+1706.03762v7 baseline summary False 0.01
+1706.03762v7 baseline questions False 0.0
+1706.03762v7 baseline literature False 0.0
+1706.03762v7 fields summary False 0.01
+1706.03762v7 fields questions False 0.0
+1706.03762v7 fields literature False 0.0
+1706.03762v7 evidence summary False 0.01
+1706.03762v7 evidence questions False 0.0
+1706.03762v7 evidence literature False 0.0
+1412.6980v9 fields summary False 0.01
+1412.6980v9 fields questions False 0.0
+1412.6980v9 fields literature False 0.0
+1412.6980v9 evidence summary False 0.01
+1412.6980v9 evidence questions False 0.0
+1412.6980v9 evidence literature False 0.0
+1412.6980v9 baseline summary False 0.01
+1412.6980v9 baseline questions False 0.0
+1412.6980v9 baseline literature False 0.0
+2106.09685v2 evidence summary False 0.01
+2106.09685v2 evidence questions False 0.0
+2106.09685v2 evidence literature False 0.0
+2106.09685v2 baseline summary False 0.01
+2106.09685v2 baseline questions False 0.0
+2106.09685v2 baseline literature False 0.0
+2106.09685v2 fields summary False 0.01
+2106.09685v2 fields questions False 0.0
+2106.09685v2 fields literature False 0.0
+______________ test_repeat_review_requires_exact_output_equality ______________
+---------------------------- Captured stdout call -----------------------------
+{"model_and_configuration_match": true, "compared": 27, "changed_outputs": [], "exact_output_matches": 27, "source_results": "C:\\Users\\flavi\\OneDrive\\Documente\\neuro\\.runtime\\final-acceptance-regression\\test_repeat_review_requires_ex0\\previous.json", "repeat_results": "C:\\Users\\flavi\\OneDrive\\Documente\\neuro\\.runtime\\final-acceptance-regression\\test_repeat_review_requires_ex0\\current.json"}
+_________________ test_cache_expiry_and_unavailable_directory _________________
+------------------------------ Captured log call ------------------------------
+WARNING  research_swarm.cache:cache.py:34 LLM cache unavailable; continuing without cached output.
+WARNING  research_swarm.cache:cache.py:43 Could not save LLM cache; generated reports remain available.
+_______________ test_initial_interface_renders_without_secrets ________________
+---------------------------- Captured stderr call -----------------------------
+2026-11-18 18:44:39.914 WARNING streamlit.runtime.scriptrunner_utils.script_run_context: Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+------------------------------ Captured log call ------------------------------
+WARNING  streamlit.runtime.scriptrunner_utils.script_run_context:script_run_context.py:508 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+_________________ test_upload_analysis_progress_and_downloads _________________
+---------------------------- Captured stderr call -----------------------------
+2026-11-18 18:44:41.740 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+------------------------------ Captured log call ------------------------------
+WARNING  streamlit.runtime.scriptrunner_utils.script_run_context:script_run_context.py:508 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+________________ test_failed_analysis_clears_previous_results _________________
+---------------------------- Captured stderr call -----------------------------
+2026-11-18 18:44:43.870 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+2026-11-18 18:44:44.127 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+------------------------------ Captured log call ------------------------------
+WARNING  streamlit.runtime.scriptrunner_utils.script_run_context:script_run_context.py:508 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+WARNING  streamlit.runtime.scriptrunner_utils.script_run_context:script_run_context.py:508 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+_______________ test_offline_mode_runs_real_orchestrator_in_ui ________________
+---------------------------- Captured stderr call -----------------------------
+2026-11-18 18:44:44.208 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+------------------------------ Captured log call ------------------------------
+WARNING  streamlit.runtime.scriptrunner_utils.script_run_context:script_run_context.py:508 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+_____________ test_corpus_registration_checkpoint_and_evidence_ui _____________
+---------------------------- Captured stderr call -----------------------------
+2026-11-18 18:44:44.853 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+2026-11-18 18:44:45.186 Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2026-11-18 18:44:45.247 Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2026-11-18 18:44:45.332 Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2026-11-18 18:44:45.456 Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2026-11-18 18:44:45.511 Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2026-11-18 18:44:45.562 Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+------------------------------ Captured log call ------------------------------
+WARNING  streamlit.runtime.scriptrunner_utils.script_run_context:script_run_context.py:508 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+WARNING  streamlit.deprecation_util:deprecation_util.py:81 Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+WARNING  streamlit.deprecation_util:deprecation_util.py:81 Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+WARNING  streamlit.deprecation_util:deprecation_util.py:81 Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+WARNING  streamlit.deprecation_util:deprecation_util.py:81 Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+WARNING  streamlit.deprecation_util:deprecation_util.py:81 Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+WARNING  streamlit.deprecation_util:deprecation_util.py:81 Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+____ test_dashboard_remains_responsive_and_reruns_do_not_restart_slow_work ____
+---------------------------- Captured stderr call -----------------------------
+2026-11-18 18:44:45.628 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+2026-11-18 18:44:45.988 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+------------------------------ Captured log call ------------------------------
+WARNING  streamlit.runtime.scriptrunner_utils.script_run_context:script_run_context.py:508 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+WARNING  streamlit.runtime.scriptrunner_utils.script_run_context:script_run_context.py:508 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+________________________ test_invalid_and_blank_pdfs[] ________________________
+------------------------------ Captured log call ------------------------------
+ERROR    orchestrator:orchestrator.py:106 Workflow failed at PDF Master (ValueError)
+___________________ test_invalid_and_blank_pdfs[not a pdf] ____________________
+------------------------------ Captured log call ------------------------------
+ERROR    orchestrator:orchestrator.py:106 Workflow failed at PDF Master (ValueError)
+_____________________ test_invalid_and_blank_pdfs[data2] ______________________
+------------------------------ Captured log call ------------------------------
+ERROR    orchestrator:orchestrator.py:106 Workflow failed at PDF Master (ValueError)
+_________________ test_api_failure_preserves_completed_output _________________
+------------------------------ Captured log call ------------------------------
+ERROR    orchestrator:orchestrator.py:106 Workflow failed at Summary Agent (RuntimeError)
+_______________________ test_missing_key_is_actionable ________________________
+------------------------------ Captured log call ------------------------------
+ERROR    orchestrator:orchestrator.py:106 Workflow failed at Summary Agent (ProviderError)
+_______________ test_sdk_validation_error_does_not_expose_input _______________
+------------------------------ Captured log call ------------------------------
+ERROR    orchestrator:orchestrator.py:106 Workflow failed at Summary Agent (ProviderError)
+__________________ test_questions_failure_preserves_summary ___________________
+------------------------------ Captured log call ------------------------------
+ERROR    orchestrator:orchestrator.py:106 Workflow failed at Open Questions Finder (RuntimeError)
+=========================== short test summary info ===========================
+PASSED tests/test_audit_regressions.py::test_mcp_operation_document_budget
+PASSED tests/test_audit_regressions.py::test_saved_metadata_is_validated
+PASSED tests/test_audit_regressions.py::test_windows_device_and_stream_paths_are_rejected_before_open
+PASSED tests/test_configuration.py::test_intended_configuration_and_project_relative_loading
+PASSED tests/test_configuration.py::test_file_edits_are_read_without_stale_process_values
+PASSED tests/test_configuration.py::test_invalid_old_file_can_be_corrected_in_same_process
+PASSED tests/test_configuration.py::test_real_environment_overrides_file_and_error_identifies_source
+PASSED tests/test_configuration.py::test_valid_environment_override_is_respected
+PASSED tests/test_configuration.py::test_optional_key_stays_in_settings_without_enabling_paid_provider
+PASSED tests/test_configuration.py::test_explicit_optional_provider_can_use_file_key_without_global_mutation
+PASSED tests/test_configuration.py::test_utf8_chunk_budget_preserves_all_text
+PASSED tests/test_configuration.py::test_ollama_receives_exact_context_and_schema_once
+PASSED tests/test_configuration.py::test_actual_prompt_and_schema_are_checked_before_generation
+PASSED tests/test_configuration.py::test_default_summary_context_matches_main_context
+PASSED tests/test_configuration.py::test_invalid_gpu_placement_is_rejected[-2]
+PASSED tests/test_configuration.py::test_invalid_gpu_placement_is_rejected[1000]
+PASSED tests/test_configuration.py::test_invalid_gpu_placement_is_rejected[True]
+PASSED tests/test_configuration.py::test_invalid_gpu_placement_is_rejected[99]
+PASSED tests/test_configuration.py::test_gpu_placement_can_be_configured_or_left_automatic
+PASSED tests/test_corpus.py::test_storage_doi_identity_deduplication_and_persistence
+PASSED tests/test_corpus.py::test_incomplete_metadata_does_not_guess_duplicates
+PASSED tests/test_corpus.py::test_collection_hash_dedup_and_references
+PASSED tests/test_corpus.py::test_invalid_collection_leaves_no_document[]
+PASSED tests/test_corpus.py::test_invalid_collection_leaves_no_document[not a PDF]
+PASSED tests/test_corpus.py::test_invalid_collection_leaves_no_document[%PDF-1.7\ninvalid truncated data]
+PASSED tests/test_corpus.py::test_encrypted_and_oversize_collection
+PASSED tests/test_corpus.py::test_resumable_page_slices_and_exact_evidence
+PASSED tests/test_corpus.py::test_exception_keeps_committed_pages_and_resumes
+PASSED tests/test_corpus.py::test_abandoned_worker_lease_recovers_after_expiry
+PASSED tests/test_corpus.py::test_page_transaction_rolls_back_evidence_and_checkpoint
+PASSED tests/test_corpus.py::test_pdf_change_is_detected_before_resume
+PASSED tests/test_corpus.py::test_limits_blank_pages_and_section_splitting
+PASSED tests/test_corpus.py::test_changed_extraction_profile_requires_explicit_reset
+PASSED tests/test_corpus.py::test_hundreds_of_records_and_long_document_are_bounded
+PASSED tests/test_corpus.py::test_keyword_query_safety_limits_and_history
+PASSED tests/test_corpus.py::test_persistent_semantic_vectors_resume_and_retrieve
+PASSED tests/test_corpus.py::test_semantic_scan_limit_is_explicit
+PASSED tests/test_corpus.py::test_hybrid_search_filters_pdf_versions_before_ranking
+PASSED tests/test_corpus.py::test_invalid_vectors_are_rejected[vector0]
+PASSED tests/test_corpus.py::test_invalid_vectors_are_rejected[vector1]
+PASSED tests/test_corpus.py::test_invalid_vectors_are_rejected[vector2]
+PASSED tests/test_corpus.py::test_invalid_vectors_are_rejected[vector3]
+PASSED tests/test_corpus.py::test_embedding_api_is_local_and_does_not_truncate
+PASSED tests/test_corpus.py::test_evidence_batch_preserves_rank_and_uses_one_connection
+PASSED tests/test_corpus_qa.py::test_corpus_qa_retrieves_follow_up_and_rejects_unsupported_claims
+PASSED tests/test_dashboard.py::test_real_completed_counts_and_eta_threshold
+PASSED tests/test_dashboard.py::test_eta_waits_for_comparable_non_cached_observations
+PASSED tests/test_dashboard.py::test_stall_measures_last_actual_response_and_freezes_on_failure
+PASSED tests/test_dashboard.py::test_checkpoint_survives_lost_worker_and_never_claims_completion
+PASSED tests/test_dashboard.py::test_background_slow_llm_does_not_restart_on_attachment
+PASSED tests/test_dashboard.py::test_streamed_response_events_arrive_before_request_completion
+PASSED tests/test_dashboard.py::test_failed_chunk_is_not_counted_as_completed
+PASSED tests/test_dashboard.py::test_checkpoint_failure_is_visible_without_aborting_analysis
+PASSED tests/test_dashboard.py::test_eta_never_reports_zero_for_an_unfinished_overdue_chunk
+PASSED tests/test_evaluation.py::test_failed_experiments_persist_results_and_raise
+PASSED tests/test_evaluation.py::test_scoring_rejects_reviews_for_different_outputs
+PASSED tests/test_evaluation.py::test_saved_experiment_is_paired_and_metrics_reproduce
+PASSED tests/test_evaluation.py::test_repeat_review_requires_exact_output_equality
+PASSED tests/test_mcp.py::test_service_paths_sources_and_saved_results
+PASSED tests/test_mcp.py::test_service_busy_worker_and_embedded_page_marker
+PASSED tests/test_mcp.py::test_real_stdio_client_discovers_and_invokes_agents
+PASSED tests/test_performance_modes.py::test_fast_is_one_bounded_call_and_full_is_map_plus_one_synthesis
+PASSED tests/test_performance_modes.py::test_failed_full_run_resumes_from_durable_steps_without_llm_cache
+PASSED tests/test_performance_modes.py::test_request_budget_cancels_slow_provider
+PASSED tests/test_performance_modes.py::test_document_budget_keeps_completed_steps
+PASSED tests/test_performance_modes.py::test_wall_clock_jump_does_not_extend_a_deadline
+PASSED tests/test_performance_modes.py::test_fast_evidence_reuses_corpus_and_keeps_exact_references
+PASSED tests/test_performance_modes.py::test_chunk_boundaries_preserve_greedy_utf8_behavior[4-text0]
+PASSED tests/test_performance_modes.py::test_chunk_boundaries_preserve_greedy_utf8_behavior[4-text1]
+PASSED tests/test_performance_modes.py::test_chunk_boundaries_preserve_greedy_utf8_behavior[4-text2]
+PASSED tests/test_performance_modes.py::test_chunk_boundaries_preserve_greedy_utf8_behavior[5-text0]
+PASSED tests/test_performance_modes.py::test_chunk_boundaries_preserve_greedy_utf8_behavior[5-text1]
+PASSED tests/test_performance_modes.py::test_chunk_boundaries_preserve_greedy_utf8_behavior[5-text2]
+PASSED tests/test_performance_modes.py::test_chunk_boundaries_preserve_greedy_utf8_behavior[7-text0]
+PASSED tests/test_performance_modes.py::test_chunk_boundaries_preserve_greedy_utf8_behavior[7-text1]
+PASSED tests/test_performance_modes.py::test_chunk_boundaries_preserve_greedy_utf8_behavior[7-text2]
+PASSED tests/test_performance_modes.py::test_chunk_boundaries_preserve_greedy_utf8_behavior[31-text0]
+PASSED tests/test_performance_modes.py::test_chunk_boundaries_preserve_greedy_utf8_behavior[31-text1]
+PASSED tests/test_performance_modes.py::test_chunk_boundaries_preserve_greedy_utf8_behavior[31-text2]
+PASSED tests/test_performance_modes.py::test_chunk_boundaries_preserve_greedy_utf8_behavior[2000-text0]
+PASSED tests/test_performance_modes.py::test_chunk_boundaries_preserve_greedy_utf8_behavior[2000-text1]
+PASSED tests/test_performance_modes.py::test_chunk_boundaries_preserve_greedy_utf8_behavior[2000-text2]
+PASSED tests/test_prompts.py::test_baseline_and_strict_single_pass_substitution
+PASSED tests/test_prompts.py::test_prompt_edit_is_loaded_and_fingerprinted
+PASSED tests/test_prompts.py::test_agent_reloads_prompt_and_schema_wrapper_invalidates_cache
+PASSED tests/test_prompts.py::test_question_agent_uses_external_prompt
+PASSED tests/test_prompts.py::test_variants_are_distinct_and_keep_dynamic_contract
+PASSED tests/test_prompts.py::test_baseline_files_match_preserved_hashes
+PASSED tests/test_prompts.py::test_windows_encoding_missing_variant_and_invalid_selection
+PASSED tests/test_providers.py::test_default_is_local_even_with_old_openai_key
+PASSED tests/test_providers.py::test_paid_provider_requires_both_opt_ins[ollama-False]
+PASSED tests/test_providers.py::test_paid_provider_requires_both_opt_ins[ollama-True]
+PASSED tests/test_providers.py::test_paid_provider_requires_both_opt_ins[openai-False]
+PASSED tests/test_providers.py::test_full_ollama_workflow_without_key_and_cached_rerun
+PASSED tests/test_providers.py::test_free_test_mode_is_fully_offline_and_labelled
+PASSED tests/test_providers.py::test_remote_ollama_endpoints_are_rejected[https://ollama.com]
+PASSED tests/test_providers.py::test_remote_ollama_endpoints_are_rejected[http://example.com]
+PASSED tests/test_providers.py::test_remote_ollama_endpoints_are_rejected[http://localhost@evil.test]
+PASSED tests/test_providers.py::test_remote_ollama_endpoints_are_rejected[http://127.0.0.1/path]
+PASSED tests/test_providers.py::test_cloud_model_name_is_blocked_without_network
+PASSED tests/test_providers.py::test_remote_model_metadata_is_blocked[metadata0]
+PASSED tests/test_providers.py::test_remote_model_metadata_is_blocked[metadata1]
+PASSED tests/test_providers.py::test_remote_model_metadata_is_blocked[metadata2]
+PASSED tests/test_providers.py::test_remote_model_metadata_is_blocked[metadata3]
+PASSED tests/test_providers.py::test_remote_show_metadata_is_blocked
+PASSED tests/test_providers.py::test_missing_model_is_actionable
+PASSED tests/test_providers.py::test_invalid_ollama_output_is_not_cached[-None]
+PASSED tests/test_providers.py::test_invalid_ollama_output_is_not_cached[not JSON-Questions]
+PASSED tests/test_providers.py::test_invalid_ollama_output_is_not_cached[{}-Questions]
+PASSED tests/test_providers.py::test_cache_keys_cover_prompt_schema_model_and_generation_settings
+PASSED tests/test_providers.py::test_cache_disabled_and_corrupt_entries
+PASSED tests/test_providers.py::test_cache_expiry_and_unavailable_directory
+PASSED tests/test_providers.py::test_cached_paid_output_cannot_bypass_consent
+PASSED tests/test_providers.py::test_bad_environment_is_rejected[ALLOW_PAID_API-yes]
+PASSED tests/test_providers.py::test_bad_environment_is_rejected[LLM_PROVIDER-unknown]
+PASSED tests/test_providers.py::test_bad_environment_is_rejected[LOCAL_TEST_MODE-maybe]
+PASSED tests/test_providers.py::test_bad_environment_is_rejected[LLM_CACHE_ENABLED-1]
+PASSED tests/test_providers.py::test_test_mode_blocks_direct_paid_calls
+PASSED tests/test_providers.py::test_local_workflow_without_optional_sdk_or_tokenizer
+PASSED tests/test_providers.py::test_ollama_timeout_has_actionable_safe_message
+PASSED tests/test_providers.py::test_truncated_ollama_output_is_rejected
+PASSED tests/test_providers.py::test_ollama_keeps_model_warm_and_reports_prompt_timing
+PASSED tests/test_providers.py::test_ollama_gpu_placement_is_optional_and_http_skips_tls_setup[None]
+PASSED tests/test_providers.py::test_ollama_gpu_placement_is_optional_and_http_skips_tls_setup[0]
+PASSED tests/test_providers.py::test_ollama_gpu_placement_is_optional_and_http_skips_tls_setup[99]
+PASSED tests/test_ui.py::test_initial_interface_renders_without_secrets
+PASSED tests/test_ui.py::test_upload_analysis_progress_and_downloads
+PASSED tests/test_ui.py::test_failed_analysis_clears_previous_results
+PASSED tests/test_ui.py::test_offline_mode_runs_real_orchestrator_in_ui
+PASSED tests/test_ui.py::test_corpus_registration_checkpoint_and_evidence_ui
+PASSED tests/test_ui.py::test_dashboard_remains_responsive_and_reruns_do_not_restart_slow_work
+PASSED tests/test_workflow.py::test_full_workflow_mocked_sdk_and_openalex
+PASSED tests/test_workflow.py::test_invalid_and_blank_pdfs[]
+PASSED tests/test_workflow.py::test_invalid_and_blank_pdfs[not a pdf]
+PASSED tests/test_workflow.py::test_invalid_and_blank_pdfs[data2]
+PASSED tests/test_workflow.py::test_partial_pdf_warning
+PASSED tests/test_workflow.py::test_password_protected_pdf_is_rejected
+PASSED tests/test_workflow.py::test_api_failure_preserves_completed_output
+PASSED tests/test_workflow.py::test_missing_key_is_actionable
+PASSED tests/test_workflow.py::test_long_document_is_fully_chunked_and_reduced
+PASSED tests/test_workflow.py::test_cost_limit_rejects_without_model_calls
+PASSED tests/test_workflow.py::test_empty_openalex_results
+PASSED tests/test_workflow.py::test_openalex_failure_is_partial_success
+PASSED tests/test_workflow.py::test_openalex_retries_and_sanitizes_errors
+PASSED tests/test_workflow.py::test_metadata_deduplication_and_missing_doi
+PASSED tests/test_workflow.py::test_unicode_chunking_preserves_text
+PASSED tests/test_workflow.py::test_malformed_openalex_payload_is_safe[None]
+PASSED tests/test_workflow.py::test_malformed_openalex_payload_is_safe[payload1]
+PASSED tests/test_workflow.py::test_malformed_openalex_payload_is_safe[payload2]
+PASSED tests/test_workflow.py::test_malformed_openalex_payload_is_safe[payload3]
+PASSED tests/test_workflow.py::test_optional_metadata_and_unsafe_links
+PASSED tests/test_workflow.py::test_invalid_text_model_output[None]
+PASSED tests/test_workflow.py::test_invalid_text_model_output[]
+PASSED tests/test_workflow.py::test_invalid_text_model_output[   ]
+PASSED tests/test_workflow.py::test_invalid_text_model_output[42]
+PASSED tests/test_workflow.py::test_invalid_structured_model_output
+PASSED tests/test_workflow.py::test_sdk_validation_error_does_not_expose_input
+PASSED tests/test_workflow.py::test_questions_failure_preserves_summary
+PASSED tests/test_workflow.py::test_invalid_settings[settings0]
+PASSED tests/test_workflow.py::test_invalid_settings[settings1]
+PASSED tests/test_workflow.py::test_invalid_settings[settings2]
+PASSED tests/test_workflow.py::test_whitespace_structured_output_is_rejected
+PASSED tests/test_workflow.py::test_model_clients_are_closed_between_event_loops
+163 passed in 54.89s
