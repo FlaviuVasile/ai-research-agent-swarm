@@ -27,9 +27,9 @@ class Orchestrator:
         llm = LLM(settings=self.settings) if self.settings.local_test_mode else (llm or LLM(settings=self.settings))
         self.pdf = PDFMaster(self.settings)
         self.summary = SummaryAgent(llm, self.settings)
-        self.questions = QuestionsAgent(llm, self.settings.max_questions)
+        self.questions = QuestionsAgent(llm, self.settings.max_questions, self.settings.prompt_variant)
         self.literature = LiteratureAgent(llm, openalex or OpenAlexClient(self.settings.openalex_key),
-                                          self.settings.papers_per_question)
+                                          self.settings.papers_per_question, self.settings.prompt_variant)
         if self.settings.local_test_mode:
             # Test mode never reaches OpenAlex, even with an injected client.
             class OfflineSearch:
@@ -64,7 +64,7 @@ class Orchestrator:
         try:
             self.output_dir.mkdir(parents=True, exist_ok=True)
             # Remove only this application's old artifacts so failed runs cannot expose stale results.
-            for name in ("extracted_text.txt", "summary.md", "open_questions.md", "literature_review.md"):
+            for name in ("extracted_text.txt", "summary.md", "open_questions.md", "literature_review.md", "summary_chunks.md", "selection.json"):
                 (self.output_dir / name).unlink(missing_ok=True)
             notify(stage, "running")
             extraction = self.pdf.extract(pdf)
@@ -97,7 +97,10 @@ class Orchestrator:
             warnings.extend(search_warnings)
             save("literature_review.md", literature)
             notify(stage, "complete with warnings" if search_warnings else "complete")
-            return AnalysisResult(files, warnings, str(self.output_dir))
+            return AnalysisResult(files, warnings, str(self.output_dir), dict(summary=summary,
+                questions=questions.model_dump(), literature=self.literature.records,
+                coverage=("selected source excerpts" if self.settings.research_mode == "FAST_RESEARCH_MODE"
+                          else "all input chunks processed; final synthesis samples bounded notes")))
         except Exception as exc:
             notify(stage, "failed")
             logger.error("Workflow failed at %s (%s)", stage, type(exc).__name__)

@@ -1,0 +1,1 @@
+Produce concise academic Markdown with headings Research topic, Objectives, Methodology, Findings, Conclusions, and Limitations. Say 'Not reported' when absent. Preserve page references when present. Retain explicit limitations and future work. Do not confuse cited background studies with this paper's findings. Keep the entire response below 180 words, using concise bullets.

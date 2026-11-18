@@ -1,0 +1,192 @@
+{
+  "command": [
+    "C:\\Users\\flavi\\OneDrive\\Documente\\neuro\\.venv-swarm\\Scripts\\python.exe",
+    "-m",
+    "streamlit",
+    "run",
+    "C:\\Users\\flavi\\OneDrive\\Documente\\neuro\\app.py",
+    "--server.headless=true",
+    "--server.address=127.0.0.1",
+    "--server.port=52682",
+    "--browser.gatherUsageStats=false"
+  ],
+  "paper": "1412.6980v9.pdf",
+  "pdf_sha256": "eab9c73ae2ceda884b94830bda99312254bac4806f6c9f045cbab90721ecda31",
+  "model": "llama3.2:latest",
+  "provider": "ollama",
+  "prompt_variant": "selected",
+  "synthetic": false,
+  "controlled_limits": {
+    "max_questions": 1,
+    "papers_per_question": 1
+  },
+  "errors": [],
+  "health_ok": true,
+  "initial_page_rendered": true,
+  "run_id": "1c212296d0a74c259ec03b3d0e769f7c",
+  "progress": {
+    "version": 1,
+    "run_id": "1c212296d0a74c259ec03b3d0e769f7c",
+    "provider": "ollama",
+    "model": "llama3.2:latest",
+    "state": "completed",
+    "started_at": 1794916561.5189056,
+    "updated_at": 1794916645.3621414,
+    "finished_at": 1794916645.3621414,
+    "stages": {
+      "PDF Master": "completed",
+      "Summary Agent": "completed",
+      "Open Questions Finder": "completed",
+      "Literature Search Agent": "completed"
+    },
+    "stage": "Literature Search Agent",
+    "activity": "Analysis complete",
+    "summary": {
+      "total": 1,
+      "completed": 1,
+      "current": null,
+      "phase": "chunks",
+      "durations": [
+        27.19775269999991
+      ],
+      "reduction_round": 0,
+      "reduction_total": 0,
+      "reduction_completed": 0,
+      "mode": "FAST_RESEARCH_MODE",
+      "raw_total": 33
+    },
+    "request": {
+      "agent": "Literature Search Agent",
+      "started_at": 1794916626.313874,
+      "last_response_at": 1794916645.3336458,
+      "characters": 440,
+      "fragments": 76,
+      "cached": false,
+      "state": "completed",
+      "sequence": 3,
+      "phase": "chunks",
+      "chunk": null,
+      "reduction_round": 0,
+      "prompt_eval_count": 236,
+      "eval_count": 76,
+      "load_duration": 12126100,
+      "prompt_eval_duration": 398244000,
+      "eval_duration": 18429523000,
+      "total_duration": 19009243300,
+      "finished_at": 1794916645.3390849,
+      "wall_seconds": 19.025210857391357
+    },
+    "request_history": [
+      {
+        "agent": "Summary Agent",
+        "started_at": 1794916565.710439,
+        "last_response_at": 1794916592.867284,
+        "characters": 567,
+        "fragments": 109,
+        "cached": false,
+        "state": "completed",
+        "sequence": 1,
+        "phase": "chunks",
+        "chunk": 1,
+        "reduction_round": 0,
+        "prompt_eval_count": 575,
+        "eval_count": 109,
+        "load_duration": 22758000,
+        "prompt_eval_duration": 256968000,
+        "eval_duration": 26719147000,
+        "total_duration": 27140030500,
+        "finished_at": 1794916592.8728309,
+        "wall_seconds": 27.162391901016235
+      },
+      {
+        "agent": "Open Questions Finder",
+        "started_at": 1794916592.9178877,
+        "last_response_at": 1794916624.5173368,
+        "characters": 603,
+        "fragments": 123,
+        "cached": false,
+        "state": "completed",
+        "sequence": 2,
+        "phase": "chunks",
+        "chunk": null,
+        "reduction_round": 0,
+        "prompt_eval_count": 992,
+        "eval_count": 123,
+        "load_duration": 17078000,
+        "prompt_eval_duration": 436299000,
+        "eval_duration": 30947684000,
+        "total_duration": 31582190100,
+        "finished_at": 1794916624.524673,
+        "wall_seconds": 31.6067852973938
+      },
+      {
+        "agent": "Literature Search Agent",
+        "started_at": 1794916626.313874,
+        "last_response_at": 1794916645.3336458,
+        "characters": 440,
+        "fragments": 76,
+        "cached": false,
+        "state": "completed",
+        "sequence": 3,
+        "phase": "chunks",
+        "chunk": null,
+        "reduction_round": 0,
+        "prompt_eval_count": 236,
+        "eval_count": 76,
+        "load_duration": 12126100,
+        "prompt_eval_duration": 398244000,
+        "eval_duration": 18429523000,
+        "total_duration": 19009243300,
+        "finished_at": 1794916645.3390849,
+        "wall_seconds": 19.025210857391357
+      }
+    ],
+    "error": null,
+    "limits": {
+      "request_seconds": 120,
+      "document_seconds": 600,
+      "summary_output_tokens": 256,
+      "research_mode": "FAST_RESEARCH_MODE"
+    }
+  },
+  "report_tabs": [
+    "Summary",
+    "Research questions",
+    "Literature"
+  ],
+  "downloads": [
+    {
+      "name": "extracted_text.txt",
+      "bytes": 64991,
+      "sha256": "1f426213e5fed5b45aad78d3ddefa9681a32e0447787c21e99f8367e675cc316",
+      "matches_saved": true,
+      "comparison": "UTF-8 text with universal newline normalization"
+    },
+    {
+      "name": "summary.md",
+      "bytes": 662,
+      "sha256": "8eee52460e45f5b9ea5e6bf48a53271c5650ae831e189f0722a63a8b2c1828ec",
+      "matches_saved": true,
+      "comparison": "UTF-8 text with universal newline normalization"
+    },
+    {
+      "name": "open_questions.md",
+      "bytes": 673,
+      "sha256": "42900df05d23cc8951a51baeac37f4f0c54b7a19544f12baeaf31a6f16ac69d5",
+      "matches_saved": true,
+      "comparison": "UTF-8 text with universal newline normalization"
+    },
+    {
+      "name": "literature_review.md",
+      "bytes": 1073,
+      "sha256": "81f2a316a03881fcd605574c822a31ed9cea446a03a3cc094a585045cd9c749f",
+      "matches_saved": true,
+      "comparison": "UTF-8 text with universal newline normalization"
+    }
+  ],
+  "warnings": [],
+  "application_complete": true,
+  "seconds": 100.53723979999995,
+  "server_log": "C:\\Users\\flavi\\OneDrive\\Documente\\neuro\\.runtime\\browser-verification-a7f44f8f90094b5693589ee430896a39\\streamlit.log",
+  "server_stopped": true
+}

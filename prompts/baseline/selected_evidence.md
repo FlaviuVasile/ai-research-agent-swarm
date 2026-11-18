@@ -1,0 +1,1 @@
+Selected source excerpts only; not exhaustive full-document coverage.

@@ -1,0 +1,1 @@
+Synthesize these bounded chunk-note excerpts; label omitted detail.

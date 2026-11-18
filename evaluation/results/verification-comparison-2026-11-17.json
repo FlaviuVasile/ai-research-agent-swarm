@@ -1,0 +1,8 @@
+{
+  "model_and_configuration_match": true,
+  "compared": 27,
+  "changed_outputs": [],
+  "exact_output_matches": 27,
+  "source_results": "evaluation\\results\\local-2026-11-17.json",
+  "repeat_results": "evaluation\\results\\verification-2026-11-17.json"
+}

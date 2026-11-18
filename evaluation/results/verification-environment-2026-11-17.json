@@ -1,0 +1,95 @@
+{
+  "python": "3.11.9",
+  "dependencies": [
+    {
+      "requirement": "PyMuPDF<2.0,>=1.26.0",
+      "installed": "1.28.2",
+      "satisfied": true
+    },
+    {
+      "requirement": "python-dotenv<2.0,>=1.1.0",
+      "installed": "1.2.4",
+      "satisfied": true
+    },
+    {
+      "requirement": "streamlit<2.0,>=1.45.0",
+      "installed": "1.66.1",
+      "satisfied": true
+    },
+    {
+      "requirement": "httpx<1.0,>=0.28.0",
+      "installed": "0.28.1",
+      "satisfied": true
+    },
+    {
+      "requirement": "pydantic<3.0,>=2.11.0",
+      "installed": "2.14.1",
+      "satisfied": true
+    },
+    {
+      "requirement": "pytest<10.0,>=8.3.0",
+      "installed": "9.2.0",
+      "satisfied": true
+    },
+    {
+      "requirement": "mcp==2.3.0",
+      "installed": "2.3.0",
+      "satisfied": true
+    }
+  ],
+  "pip_check": "No broken requirements found.",
+  "model_identity": "ollama:http://127.0.0.1:11434:llama3.2:latest:a80c4f17acd55265feec403c7aef86be0c25983ab279d83f3bcd3abbcb5b8b72",
+  "ollama_running_models": {
+    "models": [
+      {
+        "name": "llama3.2:latest",
+        "model": "llama3.2:latest",
+        "size": 3034956430,
+        "digest": "a80c4f17acd55265feec403c7aef86be0c25983ab279d83f3bcd3abbcb5b8b72",
+        "details": {
+          "parent_model": "",
+          "format": "gguf",
+          "family": "llama",
+          "families": [
+            "llama"
+          ],
+          "parameter_size": "3.2B",
+          "quantization_level": "Q4_K_M"
+        },
+        "expires_at": "2026-11-17T13:34:15.9628222+02:00",
+        "size_vram": 3034956430,
+        "context_length": 8192,
+        "runner": "llamacpp"
+      }
+    ]
+  },
+  "effective_settings": {
+    "provider": "ollama",
+    "model": "llama3.2:latest",
+    "local_test_mode": false,
+    "prompt_variant": "selected",
+    "context_tokens": 8192,
+    "summary_context_tokens": 8192,
+    "ollama_gpu_layers": 99
+  },
+  "papers": [
+    {
+      "id": "1706.03762v7",
+      "pages": 15,
+      "sha256": "bdfaa68d8984f0dc02beaca527b76f207d99b666d31d1da728ee0728182df697",
+      "source": "https://arxiv.org/pdf/1706.03762v7"
+    },
+    {
+      "id": "1412.6980v9",
+      "pages": 15,
+      "sha256": "eab9c73ae2ceda884b94830bda99312254bac4806f6c9f045cbab90721ecda31",
+      "source": "https://arxiv.org/pdf/1412.6980v9"
+    },
+    {
+      "id": "2106.09685v2",
+      "pages": 26,
+      "sha256": "e9a0d3128767db616085dc0f4e6e455e672e89af823e8ed1282793682787395a",
+      "source": "https://arxiv.org/pdf/2106.09685v2"
+    }
+  ]
+}

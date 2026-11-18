@@ -1,5 +1,29 @@
 # AI Research Agent Swarm
 
+For setup and reliable Windows commands, start with
+[WINDOWS_RUN_GUIDE.md](WINDOWS_RUN_GUIDE.md). The latest code audit, fixes and
+fresh browser/MCP verification are in [FINAL_AUDIT_REPORT.md](FINAL_AUDIT_REPORT.md).
+
+## Professor feedback implementation
+
+Agent instructions now live in editable `prompts/` Markdown files. The default
+`PROMPT_VARIANT=selected` uses measured per-agent choices; `baseline`, `fields`,
+and `evidence` remain available. The three-paper, 27-response experiment found
+better summary checklist recall for field-based prompts, but did not establish
+reliable research-gap discovery or title-only relevance. See
+[evaluation/REPORT.md](evaluation/REPORT.md) for raw results, metrics and limits.
+
+An optional local stdio MCP server exposes real extraction, summary, questions,
+literature and complete-analysis operations with validated structured results
+and physical source pages. See [MCP_GUIDE.md](MCP_GUIDE.md) for the pinned SDK,
+installation and a real-client example. Existing Streamlit usage is preserved.
+The requirement-to-file mapping is in
+[IMPLEMENTATION_REPORT.md](IMPLEMENTATION_REPORT.md).
+
+Fresh real-browser, local-model, prompt-repeat and MCP execution evidence,
+including exact commands and the latest 155-test result, is in
+[evaluation/EXECUTION_REPORT.md](evaluation/EXECUTION_REPORT.md).
+
 A Python 3.11+ university project: PDF → PDF Master → Summary Agent → Open Questions Finder → Literature Search Agent → downloadable results. **Ollama is the default local LLM provider. No OpenAI key or paid AI API is required.**
 
 ## Install and run

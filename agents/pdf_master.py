@@ -21,8 +21,10 @@ class PDFMaster:
                     raise ValueError("PDF must contain between 1 and 500 pages.")
                 pages: list[str] = []
                 unreadable: list[int] = []
+                page_text = {}
                 for number, page in enumerate(doc, 1):
                     text = page.get_text("text", sort=True).strip()
+                    page_text[number] = text
                     if text:
                         pages.append(f"[Page {number}]\n{text}")
                     else:
@@ -34,7 +36,7 @@ class PDFMaster:
                     warnings.append(f"{len(unreadable)} pages had no readable text (first pages: {unreadable[:20]}). "
                                     "Image content was not analyzed; OCR is not implemented.")
                 logger.info("Extracted %d text pages", len(pages))
-                return Extraction("\n\n".join(pages), warnings)
+                return Extraction("\n\n".join(pages), warnings, page_text)
         except ValueError:
             raise
         except Exception as exc:

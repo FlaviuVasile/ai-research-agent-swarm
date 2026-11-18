@@ -1,3 +1,4 @@
+from research_swarm.prompt_loader import load_prompt
 import json
 from research_swarm.llm import LLM
 from research_swarm.models import Questions, Relevance
@@ -11,10 +12,13 @@ def safe_text(value: str) -> str:
     return value.replace("\n", " ")
 
 class LiteratureAgent:
-    def __init__(self, llm: LLM, client: OpenAlexClient, limit: int) -> None:
+    def __init__(self, llm: LLM, client: OpenAlexClient, limit: int, prompt_variant: str = "baseline") -> None:
         self.llm, self.client, self.limit = llm, client, limit
+        self.prompt_variant = prompt_variant
+        self.records = []
 
     async def search(self, questions: Questions) -> tuple[str, list[str]]:
+        self.records = []
         sections = ["# Literature review\n",
                     "Metadata comes from OpenAlex. Relevance is an AI assessment based on titles, "
                     "not a full-text review; search matches may not answer the question.\n"]
@@ -35,11 +39,12 @@ class LiteratureAgent:
                 emit("activity",text=f"Assessing literature for question {number}: paper {paper_index} of {len(papers)}")
                 assessment = await self.llm.run(
                     "Literature Search Agent",
-                    "Explain potential relevance to the question in 1–2 sentences based ONLY on "
-                    "the supplied title. State the limits of title-only evidence. If irrelevant, "
-                    "say so. Do not add authors, citations, methods or findings.",
+                    load_prompt("literature", variant=self.prompt_variant),
                     json.dumps({"question": question.question, "title": paper.title}), Relevance)
                 assert isinstance(assessment, Relevance)
+                self.records.append(dict(question=question.question, search_query=question.search_query,
+                    openalex_id=paper.id, title=paper.title, authors=list(paper.authors), year=paper.year,
+                    doi=paper.doi, relevance=assessment.model_dump(), evidence_scope="title only"))
                 authors = ", ".join(paper.authors) or "Not available"
                 doi = f"[DOI]({paper.doi})" if paper.doi else "DOI not available"
                 sections.append(f"### {safe_text(paper.title)}\n\n"

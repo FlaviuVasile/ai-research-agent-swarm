@@ -1,4 +1,5 @@
 """Durable summary steps and bounded evidence selection over the existing corpus."""
+from research_swarm.prompt_loader import load_prompt
 import hashlib
 from io import BytesIO
 import json
@@ -106,7 +107,7 @@ def select_corpus_evidence(pdf, settings, journal, progress_path=None):
             break
     budget=settings.chunk_tokens
     per=max(40,(budget-250)//max(1,len(selected))-100)
-    evidence=["Selected source excerpts only; not exhaustive full-document coverage."]
+    evidence=[load_prompt("selected_evidence")]
     manifest=[]
     for hit in selected:
         excerpt=utf8_prefix(hit["text"],per)

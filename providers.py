@@ -1,4 +1,5 @@
 """Provider boundary: local Ollama by default, explicitly authorized OpenAI only."""
+from research_swarm.prompt_loader import load_prompt
 import asyncio
 import json
 import os
@@ -80,7 +81,7 @@ class OllamaProvider:
         if output_type:
             schema = output_type.model_json_schema()
             payload["format"] = schema
-            system += " Return JSON matching this schema: " + json.dumps(schema)
+            system += load_prompt("schema_instruction") + json.dumps(schema)
         payload["messages"] = [{"role": "system", "content": system},
                                {"role": "user", "content": evidence}]
         # Count the actual system/schema/evidence once, not just the PDF chunk.

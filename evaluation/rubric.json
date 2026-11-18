@@ -1,0 +1,17 @@
+{
+  "scope": "Only supplied abstracts; no claims about full-paper coverage. Analyst-reviewed counts, not independent human annotation.",
+  "summary_reference_facts": {
+    "1706.03762v7": ["Transformer uses attention without recurrence/convolution", "evaluated on two machine translation tasks", "28.4 BLEU English-German", "41.8 BLEU English-French", "3.5 days on eight GPUs", "English constituency parsing"],
+    "1412.6980v9": ["Adam optimizes stochastic objectives", "adaptive lower-order moment estimates", "low memory/computational efficiency", "noisy/sparse gradients or nonstationary objectives", "regret bound under online convex optimization", "AdaMax infinity-norm variant"],
+    "2106.09685v2": ["LoRA freezes pretrained weights", "trainable rank decomposition matrices", "10000 times fewer trainable parameters versus GPT-3 175B Adam finetuning", "3 times lower GPU memory", "on-par or better quality", "no additional inference latency"]
+  },
+  "review_rules": [
+    "Count factual clauses once; exclude headings, coverage notices and explicitly hypothetical questions.",
+    "Mark unsupported facts even if they might be true outside the supplied evidence.",
+    "Reference recall counts semantically correct facts, not keyword matches.",
+    "A source page citation is correct only if the associated claim is supported on the supplied page.",
+    "Questions: inferred opportunities may extend the source; evidence must remain faithful and must not be mislabeled explicit.",
+    "Literature: no method or result can be established from a title alone.",
+    "No independent reviewer, repeated-seed confidence interval or held-out generalization is claimed."
+  ]
+}

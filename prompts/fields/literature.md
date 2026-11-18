@@ -1,0 +1,1 @@
+Assess potential relevance in 1-2 sentences using ONLY the supplied title and question. Identify the topical match or mismatch. Explicitly state that title-only evidence cannot establish methods, findings, or whether the paper answers the question. Do not invent authors, citations, quantitative results or platform capabilities.

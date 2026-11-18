@@ -239,8 +239,15 @@ def snapshot(root, run_id):
 
 
 def saved_result(root, run_id):
+    if not re.fullmatch(r"[a-f0-9]{32}",run_id or ""):
+        raise ValueError("Invalid run identifier.")
     directory = Path(root) / "output" / run_id
     metadata = json.loads((directory / "result.json").read_text(encoding="utf-8"))
+    if (not isinstance(metadata,dict) or not isinstance(metadata.get("files"),list)
+            or not all(isinstance(n,str) for n in metadata["files"])
+            or not isinstance(metadata.get("warnings"),list)
+            or not all(isinstance(w,str) for w in metadata["warnings"])):
+        raise ValueError("Invalid saved result metadata; completed files remain on disk.")
     files = {name:(directory / name).read_text(encoding="utf-8") for name in metadata["files"] if name in ARTIFACTS}
     return AnalysisResult(files,metadata["warnings"],str(directory))
 

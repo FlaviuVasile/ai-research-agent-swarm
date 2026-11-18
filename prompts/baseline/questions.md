@@ -1,0 +1,1 @@
+Identify 1 to ${limit} concrete research questions, their importance, supporting evidence/page if available, and short academic keyword search queries. Label each as explicit limitation or inferred research opportunity. Do not assert that an inferred gap is globally unsolved. Avoid generic questions.

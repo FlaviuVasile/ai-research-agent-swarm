@@ -1,0 +1,3 @@
+# Official SDK API verified with the installed 2.3.0 release.
+-r requirements.txt
+mcp==2.3.0

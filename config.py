@@ -22,6 +22,7 @@ class Settings:
     llm_timeout: int = 90
     document_timeout: int = 600
     research_mode: str = "FAST_RESEARCH_MODE"
+    prompt_variant: str = "selected"
     summary_output_tokens: int = 256
     summary_context_tokens: int = 8192
     _single_prompt: bool = field(default=False,repr=False,compare=False)
@@ -38,6 +39,8 @@ class Settings:
     openalex_key: str = ""
 
     def __post_init__(self) -> None:
+        if self.prompt_variant not in {"selected", "baseline", "fields", "evidence"}:
+            raise ValueError("PROMPT_VARIANT must be selected, baseline, fields, or evidence.")
         if self.research_mode not in {"FAST_RESEARCH_MODE","FULL_RESEARCH_MODE"}:
             raise ValueError("RESEARCH_MODE must be FAST_RESEARCH_MODE or FULL_RESEARCH_MODE.")
         if not 1 <= self.document_timeout <= 3600 or not 256 <= self.summary_output_tokens <= 512:
@@ -83,7 +86,7 @@ class Settings:
     def from_env(cls) -> "Settings":
         # Read afresh on every Streamlit analysis without promoting file values
         # into os.environ, where they would otherwise shadow subsequent edits.
-        file_values = dotenv_values(ROOT / ".env")
+        file_values = dotenv_values(ROOT / ".env",encoding="utf-8-sig")
 
         def value(name: str, default: str) -> str:
             return os.environ[name] if name in os.environ else (file_values.get(name) or default)
@@ -110,6 +113,7 @@ class Settings:
                    llm_timeout=int(value("LLM_TIMEOUT_SECONDS", "90")),
                    document_timeout=int(value("DOCUMENT_TIMEOUT_SECONDS", "600")),
                    research_mode=value("RESEARCH_MODE","FAST_RESEARCH_MODE"),
+                   prompt_variant=value("PROMPT_VARIANT", "selected"),
                    summary_output_tokens=int(value("SUMMARY_OUTPUT_TOKENS","256")),
                    summary_context_tokens=int(value("SUMMARY_CONTEXT_TOKENS",
                        str(min(8192, int(value("OLLAMA_CONTEXT_TOKENS", "8192")))))),

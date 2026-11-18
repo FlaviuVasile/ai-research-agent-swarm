@@ -1,0 +1,1 @@
+FAST_RESEARCH_MODE: summarize only the selected excerpts. Explicitly label coverage as partial.

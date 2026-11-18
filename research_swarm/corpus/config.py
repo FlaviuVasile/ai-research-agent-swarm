@@ -49,7 +49,7 @@ class CorpusConfig:
 
     @classmethod
     def from_env(cls):
-        values = {**dotenv_values(ROOT / ".env"), **os.environ}
+        values = {**dotenv_values(ROOT / ".env",encoding="utf-8-sig"), **os.environ}
         fields = {"pages_per_run": "CORPUS_PAGES_PER_RUN", "documents_per_run": "CORPUS_DOCUMENTS_PER_RUN",
                   "seconds_per_run": "CORPUS_SECONDS_PER_RUN", "max_pdf_bytes": "CORPUS_MAX_PDF_BYTES",
                   "max_pages": "CORPUS_MAX_PAGES", "max_page_chars": "CORPUS_MAX_PAGE_CHARS",

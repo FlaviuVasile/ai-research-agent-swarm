@@ -2,52 +2,48 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "name": "Research Swarm (Streamlit)",
             "type": "debugpy",
             "request": "launch",
             "python": "${workspaceFolder}/.venv-swarm/Scripts/python.exe",
+            "cwd": "${workspaceFolder}",
+            "console": "integratedTerminal",
+            "justMyCode": true,
+            "name": "Research Swarm (Streamlit)",
             "module": "streamlit",
             "args": [
                 "run",
                 "${workspaceFolder}/app.py"
-            ],
+            ]
+        },
+        {
+            "type": "debugpy",
+            "request": "launch",
+            "python": "${workspaceFolder}/.venv-swarm/Scripts/python.exe",
             "cwd": "${workspaceFolder}",
             "console": "integratedTerminal",
-            "justMyCode": true
-        },
-        {
-            "name": "Summarize Sample Article",
-            "type": "debugpy",
-            "request": "launch",
-            "program": "${workspaceFolder}/main.py",
+            "justMyCode": true,
+            "name": "Research Swarm (MCP stdio)",
+            "module": "research_swarm.mcp_server",
             "args": [
-                "${workspaceFolder}/sample_article.txt"
-            ],
-            "console": "integratedTerminal"
+                "--pdf-root",
+                "${workspaceFolder}/deCitit"
+            ]
         },
         {
-            "name": "Summarize Active File in Editor",
             "type": "debugpy",
             "request": "launch",
-            "program": "${workspaceFolder}/main.py",
+            "python": "${workspaceFolder}/.venv-swarm/Scripts/python.exe",
+            "cwd": "${workspaceFolder}",
+            "console": "integratedTerminal",
+            "justMyCode": true,
+            "name": "Research Swarm (Tests)",
+            "module": "pytest",
             "args": [
-                "${file}"
-            ],
-            "console": "integratedTerminal"
-        },
-        {
-            "name": "Interactive Article Summarizer",
-            "type": "debugpy",
-            "request": "launch",
-            "program": "${workspaceFolder}/main.py",
-            "console": "integratedTerminal"
-        },
-        {
-            "name": "Run Unit Tests",
-            "type": "debugpy",
-            "request": "launch",
-            "program": "${workspaceFolder}/test_article_summarizer.py",
-            "console": "integratedTerminal"
+                "-q",
+                "-p",
+                "no:cacheprovider",
+                "--basetemp=.runtime/pytest-vscode"
+            ]
         }
     ]
 }

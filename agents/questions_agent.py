@@ -1,18 +1,17 @@
+from research_swarm.prompt_loader import load_prompt
 from research_swarm.llm import LLM
 from research_swarm.models import Questions
 
 class QuestionsAgent:
-    def __init__(self, llm: LLM, limit: int) -> None:
+    def __init__(self, llm: LLM, limit: int, prompt_variant: str = "baseline") -> None:
         self.llm, self.limit = llm, limit
+        self.prompt_variant = prompt_variant
 
     async def find(self, evidence: str, summary: str) -> Questions:
         output = await self.llm.run(
             "Open Questions Finder",
-            f"Identify 1 to {self.limit} concrete research questions, their importance, "
-            "supporting evidence/page if available, and short academic keyword search queries. "
-            "Label each as explicit limitation or inferred research opportunity. "
-            "Do not assert that an inferred gap is globally unsolved. Avoid generic questions.",
-            f"PDF evidence:\n{evidence}\n\nSummary:\n{summary}", Questions)
+            load_prompt("questions", variant=self.prompt_variant, limit=self.limit),
+            load_prompt("questions_input", evidence=evidence, summary=summary), Questions)
         assert isinstance(output, Questions)
         output.questions = output.questions[:self.limit]
         return output
