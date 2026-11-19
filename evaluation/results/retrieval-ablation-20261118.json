@@ -1,0 +1,869 @@
+{
+  "schema": "scientific-retrieval-ablation-v1",
+  "annotation_status": "Existing source-anchored pilot labels; human review pending.",
+  "corpus_documents": 4,
+  "scientific_questions": 6,
+  "top_k": 10,
+  "arms": {
+    "bm25_raw": {
+      "retriever": "keyword",
+      "normalized_query": false,
+      "clause_decomposition": false,
+      "top_k_per_part": 10,
+      "answerable_cases": 5,
+      "metrics": {
+        "target_recall": 1.0,
+        "precision_at_k": 0.24000000000000002,
+        "recall_at_k": 0.9333333333333333,
+        "mrr_targets": 0.6766666666666666,
+        "seconds": 0.02452
+      },
+      "cases": [
+        {
+          "split": "development",
+          "question": "What BLEU score did Transformer big achieve on WMT 2014 English-to-German?",
+          "target_count": 1,
+          "relevant_passage_count": 4,
+          "returned_ids": [
+            40,
+            3,
+            64,
+            32,
+            4,
+            37,
+            43,
+            38,
+            42,
+            61
+          ],
+          "target_ranks": [
+            1
+          ],
+          "target_recall": 1.0,
+          "precision_at_k": 0.4,
+          "recall_at_k": 1.0,
+          "mrr_targets": 1.0,
+          "seconds": 0.022
+        },
+        {
+          "split": "development",
+          "question": "What English-to-German BLEU did Transformer achieve and what GPU memory reduction did LoRA report?",
+          "target_count": 2,
+          "relevant_passage_count": 6,
+          "returned_ids": [
+            40,
+            37,
+            3,
+            43,
+            64,
+            77,
+            76,
+            216,
+            42,
+            164
+          ],
+          "target_ranks": [
+            1,
+            10
+          ],
+          "target_recall": 1.0,
+          "precision_at_k": 0.4,
+          "recall_at_k": 0.6666666666666666,
+          "mrr_targets": 0.55,
+          "seconds": 0.0255
+        },
+        {
+          "split": "development",
+          "question": "What was the human participant dropout rate in the randomized clinical trial?",
+          "target_count": 0,
+          "relevant_passage_count": 0,
+          "returned_ids": [
+            38,
+            271,
+            77,
+            76,
+            140,
+            119,
+            216,
+            95,
+            316,
+            82
+          ],
+          "target_ranks": [],
+          "target_recall": null,
+          "precision_at_k": null,
+          "recall_at_k": null,
+          "mrr_targets": null,
+          "seconds": 0.024
+        },
+        {
+          "split": "held_out",
+          "question": "What is the AdaMax variant of Adam based on?",
+          "target_count": 1,
+          "relevant_passage_count": 2,
+          "returned_ids": [
+            80,
+            130,
+            129,
+            135,
+            79,
+            216,
+            77,
+            76,
+            103,
+            132
+          ],
+          "target_ranks": [
+            1
+          ],
+          "target_recall": 1.0,
+          "precision_at_k": 0.2,
+          "recall_at_k": 1.0,
+          "mrr_targets": 1.0,
+          "seconds": 0.0237
+        },
+        {
+          "split": "held_out",
+          "question": "What French BLEU score does the Transformer abstract report for a single model?",
+          "target_count": 1,
+          "relevant_passage_count": 1,
+          "returned_ids": [
+            40,
+            4,
+            3,
+            38,
+            37,
+            41,
+            216,
+            60,
+            164,
+            64
+          ],
+          "target_ranks": [
+            2
+          ],
+          "target_recall": 1.0,
+          "precision_at_k": 0.1,
+          "recall_at_k": 1.0,
+          "mrr_targets": 0.5,
+          "seconds": 0.0252
+        },
+        {
+          "split": "held_out",
+          "question": "Does LoRA add inference latency according to its conclusion?",
+          "target_count": 1,
+          "relevant_passage_count": 1,
+          "returned_ids": [
+            187,
+            176,
+            233,
+            253,
+            184,
+            165,
+            259,
+            178,
+            212,
+            183
+          ],
+          "target_ranks": [
+            3
+          ],
+          "target_recall": 1.0,
+          "precision_at_k": 0.1,
+          "recall_at_k": 1.0,
+          "mrr_targets": 0.3333333333333333,
+          "seconds": 0.0262
+        }
+      ]
+    },
+    "bm25_normalized": {
+      "retriever": "keyword",
+      "normalized_query": true,
+      "clause_decomposition": false,
+      "top_k_per_part": 10,
+      "answerable_cases": 5,
+      "metrics": {
+        "target_recall": 1.0,
+        "precision_at_k": 0.24000000000000002,
+        "recall_at_k": 0.9333333333333333,
+        "mrr_targets": 0.7166666666666667,
+        "seconds": 0.03116
+      },
+      "cases": [
+        {
+          "split": "development",
+          "question": "What BLEU score did Transformer big achieve on WMT 2014 English-to-German?",
+          "target_count": 1,
+          "relevant_passage_count": 4,
+          "returned_ids": [
+            40,
+            3,
+            32,
+            4,
+            64,
+            37,
+            38,
+            43,
+            42,
+            62
+          ],
+          "target_ranks": [
+            1
+          ],
+          "target_recall": 1.0,
+          "precision_at_k": 0.4,
+          "recall_at_k": 1.0,
+          "mrr_targets": 1.0,
+          "seconds": 0.0267
+        },
+        {
+          "split": "development",
+          "question": "What English-to-German BLEU did Transformer achieve and what GPU memory reduction did LoRA report?",
+          "target_count": 2,
+          "relevant_passage_count": 6,
+          "returned_ids": [
+            40,
+            37,
+            3,
+            43,
+            42,
+            164,
+            32,
+            64,
+            61,
+            4
+          ],
+          "target_ranks": [
+            1,
+            6
+          ],
+          "target_recall": 1.0,
+          "precision_at_k": 0.4,
+          "recall_at_k": 0.6666666666666666,
+          "mrr_targets": 0.5833333333333334,
+          "seconds": 0.0286
+        },
+        {
+          "split": "development",
+          "question": "What was the human participant dropout rate in the randomized clinical trial?",
+          "target_count": 0,
+          "relevant_passage_count": 0,
+          "returned_ids": [
+            38,
+            271,
+            140,
+            119,
+            110,
+            264,
+            275,
+            113,
+            270,
+            249
+          ],
+          "target_ranks": [],
+          "target_recall": null,
+          "precision_at_k": null,
+          "recall_at_k": null,
+          "mrr_targets": null,
+          "seconds": 0.0302
+        },
+        {
+          "split": "held_out",
+          "question": "What is the AdaMax variant of Adam based on?",
+          "target_count": 1,
+          "relevant_passage_count": 2,
+          "returned_ids": [
+            80,
+            130,
+            129,
+            135,
+            132,
+            79,
+            103,
+            200,
+            254,
+            64
+          ],
+          "target_ranks": [
+            1
+          ],
+          "target_recall": 1.0,
+          "precision_at_k": 0.2,
+          "recall_at_k": 1.0,
+          "mrr_targets": 1.0,
+          "seconds": 0.0335
+        },
+        {
+          "split": "held_out",
+          "question": "What French BLEU score does the Transformer abstract report for a single model?",
+          "target_count": 1,
+          "relevant_passage_count": 1,
+          "returned_ids": [
+            40,
+            4,
+            3,
+            38,
+            37,
+            41,
+            60,
+            164,
+            64,
+            43
+          ],
+          "target_ranks": [
+            2
+          ],
+          "target_recall": 1.0,
+          "precision_at_k": 0.1,
+          "recall_at_k": 1.0,
+          "mrr_targets": 0.5,
+          "seconds": 0.0363
+        },
+        {
+          "split": "held_out",
+          "question": "Does LoRA add inference latency according to its conclusion?",
+          "target_count": 1,
+          "relevant_passage_count": 1,
+          "returned_ids": [
+            176,
+            233,
+            253,
+            187,
+            184,
+            165,
+            259,
+            178,
+            183,
+            170
+          ],
+          "target_ranks": [
+            2
+          ],
+          "target_recall": 1.0,
+          "precision_at_k": 0.1,
+          "recall_at_k": 1.0,
+          "mrr_targets": 0.5,
+          "seconds": 0.0307
+        }
+      ]
+    },
+    "bm25_normalized_clause_split": {
+      "retriever": "keyword",
+      "normalized_query": true,
+      "clause_decomposition": true,
+      "top_k_per_part": 10,
+      "answerable_cases": 5,
+      "metrics": {
+        "target_recall": 1.0,
+        "precision_at_k": 0.26,
+        "recall_at_k": 0.9666666666666667,
+        "mrr_targets": 0.75,
+        "seconds": 0.0346
+      },
+      "cases": [
+        {
+          "split": "development",
+          "question": "What BLEU score did Transformer big achieve on WMT 2014 English-to-German?",
+          "target_count": 1,
+          "relevant_passage_count": 4,
+          "returned_ids": [
+            40,
+            3,
+            32,
+            4,
+            64,
+            37,
+            38,
+            43,
+            42,
+            62
+          ],
+          "target_ranks": [
+            1
+          ],
+          "target_recall": 1.0,
+          "precision_at_k": 0.4,
+          "recall_at_k": 1.0,
+          "mrr_targets": 1.0,
+          "seconds": 0.0308
+        },
+        {
+          "split": "development",
+          "question": "What English-to-German BLEU did Transformer achieve and what GPU memory reduction did LoRA report?",
+          "target_count": 2,
+          "relevant_passage_count": 6,
+          "returned_ids": [
+            40,
+            165,
+            37,
+            164,
+            3,
+            103,
+            43,
+            186,
+            42,
+            215
+          ],
+          "target_ranks": [
+            1,
+            2
+          ],
+          "target_recall": 1.0,
+          "precision_at_k": 0.5,
+          "recall_at_k": 0.8333333333333334,
+          "mrr_targets": 0.75,
+          "seconds": 0.0558
+        },
+        {
+          "split": "development",
+          "question": "What was the human participant dropout rate in the randomized clinical trial?",
+          "target_count": 0,
+          "relevant_passage_count": 0,
+          "returned_ids": [
+            38,
+            271,
+            140,
+            119,
+            110,
+            264,
+            275,
+            113,
+            270,
+            249
+          ],
+          "target_ranks": [],
+          "target_recall": null,
+          "precision_at_k": null,
+          "recall_at_k": null,
+          "mrr_targets": null,
+          "seconds": 0.0279
+        },
+        {
+          "split": "held_out",
+          "question": "What is the AdaMax variant of Adam based on?",
+          "target_count": 1,
+          "relevant_passage_count": 2,
+          "returned_ids": [
+            80,
+            130,
+            129,
+            135,
+            132,
+            79,
+            103,
+            200,
+            254,
+            64
+          ],
+          "target_ranks": [
+            1
+          ],
+          "target_recall": 1.0,
+          "precision_at_k": 0.2,
+          "recall_at_k": 1.0,
+          "mrr_targets": 1.0,
+          "seconds": 0.0296
+        },
+        {
+          "split": "held_out",
+          "question": "What French BLEU score does the Transformer abstract report for a single model?",
+          "target_count": 1,
+          "relevant_passage_count": 1,
+          "returned_ids": [
+            40,
+            4,
+            3,
+            38,
+            37,
+            41,
+            60,
+            164,
+            64,
+            43
+          ],
+          "target_ranks": [
+            2
+          ],
+          "target_recall": 1.0,
+          "precision_at_k": 0.1,
+          "recall_at_k": 1.0,
+          "mrr_targets": 0.5,
+          "seconds": 0.0292
+        },
+        {
+          "split": "held_out",
+          "question": "Does LoRA add inference latency according to its conclusion?",
+          "target_count": 1,
+          "relevant_passage_count": 1,
+          "returned_ids": [
+            176,
+            233,
+            253,
+            187,
+            184,
+            165,
+            259,
+            178,
+            183,
+            170
+          ],
+          "target_ranks": [
+            2
+          ],
+          "target_recall": 1.0,
+          "precision_at_k": 0.1,
+          "recall_at_k": 1.0,
+          "mrr_targets": 0.5,
+          "seconds": 0.0276
+        }
+      ]
+    },
+    "semantic_clause_split": {
+      "retriever": "semantic",
+      "normalized_query": null,
+      "clause_decomposition": true,
+      "top_k_per_part": 10,
+      "answerable_cases": 5,
+      "metrics": {
+        "target_recall": 1.0,
+        "precision_at_k": 0.22,
+        "recall_at_k": 0.8333333333333334,
+        "mrr_targets": 0.5866666666666667,
+        "seconds": 0.12686
+      },
+      "cases": [
+        {
+          "split": "development",
+          "question": "What BLEU score did Transformer big achieve on WMT 2014 English-to-German?",
+          "target_count": 1,
+          "relevant_passage_count": 4,
+          "returned_ids": [
+            40,
+            4,
+            37,
+            42,
+            61,
+            32,
+            210,
+            3,
+            63,
+            38
+          ],
+          "target_ranks": [
+            1
+          ],
+          "target_recall": 1.0,
+          "precision_at_k": 0.4,
+          "recall_at_k": 1.0,
+          "mrr_targets": 1.0,
+          "seconds": 0.1005
+        },
+        {
+          "split": "development",
+          "question": "What English-to-German BLEU did Transformer achieve and what GPU memory reduction did LoRA report?",
+          "target_count": 2,
+          "relevant_passage_count": 6,
+          "returned_ids": [
+            4,
+            165,
+            210,
+            275,
+            40,
+            266,
+            42,
+            164,
+            37,
+            271
+          ],
+          "target_ranks": [
+            5,
+            2
+          ],
+          "target_recall": 1.0,
+          "precision_at_k": 0.4,
+          "recall_at_k": 0.6666666666666666,
+          "mrr_targets": 0.35,
+          "seconds": 0.1841
+        },
+        {
+          "split": "development",
+          "question": "What was the human participant dropout rate in the randomized clinical trial?",
+          "target_count": 0,
+          "relevant_passage_count": 0,
+          "returned_ids": [
+            39,
+            110,
+            119,
+            41,
+            264,
+            189,
+            38,
+            40,
+            127,
+            60
+          ],
+          "target_ranks": [],
+          "target_recall": null,
+          "precision_at_k": null,
+          "recall_at_k": null,
+          "mrr_targets": null,
+          "seconds": 0.0855
+        },
+        {
+          "split": "held_out",
+          "question": "What is the AdaMax variant of Adam based on?",
+          "target_count": 1,
+          "relevant_passage_count": 2,
+          "returned_ids": [
+            80,
+            135,
+            113,
+            79,
+            86,
+            123,
+            104,
+            171,
+            108,
+            119
+          ],
+          "target_ranks": [
+            1
+          ],
+          "target_recall": 1.0,
+          "precision_at_k": 0.1,
+          "recall_at_k": 0.5,
+          "mrr_targets": 1.0,
+          "seconds": 0.0988
+        },
+        {
+          "split": "held_out",
+          "question": "What French BLEU score does the Transformer abstract report for a single model?",
+          "target_count": 1,
+          "relevant_passage_count": 1,
+          "returned_ids": [
+            40,
+            37,
+            4,
+            42,
+            38,
+            43,
+            64,
+            11,
+            210,
+            62
+          ],
+          "target_ranks": [
+            3
+          ],
+          "target_recall": 1.0,
+          "precision_at_k": 0.1,
+          "recall_at_k": 1.0,
+          "mrr_targets": 0.3333333333333333,
+          "seconds": 0.126
+        },
+        {
+          "split": "held_out",
+          "question": "Does LoRA add inference latency according to its conclusion?",
+          "target_count": 1,
+          "relevant_passage_count": 1,
+          "returned_ids": [
+            187,
+            275,
+            165,
+            233,
+            169,
+            253,
+            182,
+            170,
+            176,
+            184
+          ],
+          "target_ranks": [
+            4
+          ],
+          "target_recall": 1.0,
+          "precision_at_k": 0.1,
+          "recall_at_k": 1.0,
+          "mrr_targets": 0.25,
+          "seconds": 0.1249
+        }
+      ]
+    },
+    "hybrid_clause_split": {
+      "retriever": "hybrid",
+      "normalized_query": null,
+      "clause_decomposition": true,
+      "top_k_per_part": 10,
+      "answerable_cases": 5,
+      "metrics": {
+        "target_recall": 1.0,
+        "precision_at_k": 0.22,
+        "recall_at_k": 0.8333333333333334,
+        "mrr_targets": 0.75,
+        "seconds": 0.18309999999999998
+      },
+      "cases": [
+        {
+          "split": "development",
+          "question": "What BLEU score did Transformer big achieve on WMT 2014 English-to-German?",
+          "target_count": 1,
+          "relevant_passage_count": 4,
+          "returned_ids": [
+            40,
+            4,
+            32,
+            37,
+            3,
+            42,
+            61,
+            64,
+            38,
+            43
+          ],
+          "target_ranks": [
+            1
+          ],
+          "target_recall": 1.0,
+          "precision_at_k": 0.4,
+          "recall_at_k": 1.0,
+          "mrr_targets": 1.0,
+          "seconds": 0.1555
+        },
+        {
+          "split": "development",
+          "question": "What English-to-German BLEU did Transformer achieve and what GPU memory reduction did LoRA report?",
+          "target_count": 2,
+          "relevant_passage_count": 6,
+          "returned_ids": [
+            40,
+            165,
+            37,
+            164,
+            42,
+            186,
+            4,
+            189,
+            43,
+            275
+          ],
+          "target_ranks": [
+            1,
+            2
+          ],
+          "target_recall": 1.0,
+          "precision_at_k": 0.4,
+          "recall_at_k": 0.6666666666666666,
+          "mrr_targets": 0.75,
+          "seconds": 0.2971
+        },
+        {
+          "split": "development",
+          "question": "What was the human participant dropout rate in the randomized clinical trial?",
+          "target_count": 0,
+          "relevant_passage_count": 0,
+          "returned_ids": [
+            110,
+            119,
+            38,
+            264,
+            271,
+            41,
+            40,
+            140,
+            117,
+            60
+          ],
+          "target_ranks": [],
+          "target_recall": null,
+          "precision_at_k": null,
+          "recall_at_k": null,
+          "mrr_targets": null,
+          "seconds": 0.1644
+        },
+        {
+          "split": "held_out",
+          "question": "What is the AdaMax variant of Adam based on?",
+          "target_count": 1,
+          "relevant_passage_count": 2,
+          "returned_ids": [
+            80,
+            135,
+            79,
+            103,
+            132,
+            119,
+            113,
+            129,
+            104,
+            123
+          ],
+          "target_ranks": [
+            1
+          ],
+          "target_recall": 1.0,
+          "precision_at_k": 0.1,
+          "recall_at_k": 0.5,
+          "mrr_targets": 1.0,
+          "seconds": 0.1718
+        },
+        {
+          "split": "held_out",
+          "question": "What French BLEU score does the Transformer abstract report for a single model?",
+          "target_count": 1,
+          "relevant_passage_count": 1,
+          "returned_ids": [
+            40,
+            4,
+            37,
+            38,
+            43,
+            64,
+            3,
+            41,
+            42,
+            11
+          ],
+          "target_ranks": [
+            2
+          ],
+          "target_recall": 1.0,
+          "precision_at_k": 0.1,
+          "recall_at_k": 1.0,
+          "mrr_targets": 0.5,
+          "seconds": 0.1528
+        },
+        {
+          "split": "held_out",
+          "question": "Does LoRA add inference latency according to its conclusion?",
+          "target_count": 1,
+          "relevant_passage_count": 1,
+          "returned_ids": [
+            187,
+            233,
+            165,
+            253,
+            176,
+            184,
+            169,
+            170,
+            183,
+            259
+          ],
+          "target_ranks": [
+            2
+          ],
+          "target_recall": 1.0,
+          "precision_at_k": 0.1,
+          "recall_at_k": 1.0,
+          "mrr_targets": 0.5,
+          "seconds": 0.1383
+        }
+      ]
+    }
+  },
+  "embedding_index": {
+    "model": "all-minilm:latest",
+    "new_vectors": 316,
+    "seconds": 36.093
+  }
+}

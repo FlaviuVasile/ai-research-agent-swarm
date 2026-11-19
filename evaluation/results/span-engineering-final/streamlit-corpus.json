@@ -1,0 +1,20 @@
+{
+  "steps": [
+    "health endpoint returned HTTP 200",
+    "uploaded and indexed 1412.6980v9.pdf",
+    "retrieved and displayed evidence with PDF page",
+    "displayed and downloaded QA JSON"
+  ],
+  "browser_errors": [],
+  "command": [
+    "C:\\Users\\flavi\\OneDrive\\Documente\\neuro\\.venv-swarm\\Scripts\\python.exe",
+    "-m",
+    "streamlit",
+    "run",
+    "app.py",
+    "--server.headless=true",
+    "--server.address=127.0.0.1",
+    "--server.port=64754",
+    "--browser.gatherUsageStats=false"
+  ]
+}

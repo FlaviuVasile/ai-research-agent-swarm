@@ -14,7 +14,7 @@ ROOT = Path.cwd()
 sys.path.insert(0, str(ROOT / ".runtime/browser-deps"))
 from playwright.sync_api import sync_playwright
 
-OUT = ROOT / "evaluation/results/final-acceptance"
+OUT = ROOT / os.environ.get("RAG_ACCEPTANCE_OUTPUT", "evaluation/results/final-acceptance")
 OUT.mkdir(parents=True, exist_ok=True)
 report = {"steps": [], "browser_errors": []}
 work = ROOT / ".runtime" / ("acceptance-browser-" + uuid4().hex)

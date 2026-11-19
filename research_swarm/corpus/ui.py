@@ -1,5 +1,6 @@
 """Optional corpus workspace, leaving the original single-paper interface intact."""
 import asyncio
+import hashlib
 import json
 import sqlite3
 import streamlit as st
@@ -29,7 +30,8 @@ def render_corpus():
             doi = st.text_input("DOI (optional; never inferred)",key="corpus_doi")
             uploaded = st.file_uploader("Import a local PDF to deCitit/",type=["pdf"],key="corpus_pdf")
             if st.button("Register PDF",disabled=uploaded is None or not title.strip(),key="corpus_register"):
-                publication = pipeline.store.add_publication(title,doi)
+                publication = pipeline.store.add_publication(
+                    title, doi, document_sha=hashlib.sha256(uploaded.getbuffer()).hexdigest())
                 uploaded.seek(0)
                 identifier = pipeline.collect(publication,uploaded)
                 st.success(f"Registered document {identifier} for publication P{publication}.")
@@ -58,21 +60,56 @@ def render_corpus():
             methods = {"Keyword": "keyword", "Local semantic": "semantic", "Hybrid": "hybrid"}
             mode = st.selectbox("Retrieval method",list(methods),key="corpus_mode")
             titles = {row["id"]: row["title"] for row in documents}
-            document_id = st.selectbox("Paper scope", [None, *titles], key="corpus_scope",
-                                       format_func=lambda item: f"{titles[item]} ({item[:8]})" if item else "Entire corpus")
+            document_ids = st.multiselect("Paper scope", list(titles), key="corpus_paper_scope",
+                                          max_selections=8, placeholder="Entire corpus",
+                                          format_func=lambda item: f"{titles[item]} ({item[:8]})")
             if st.button("Retrieve evidence",disabled=not query.strip(),key="corpus_search"):
                 st.session_state["corpus_results"] = asyncio.run(service.search_evidence(
-                    query, mode=methods[mode], document_id=document_id))
+                    query, mode=methods[mode], document_ids=document_ids))
             if st.button("Answer scientific question", disabled=not query.strip(), key="corpus_ask"):
                 st.session_state.pop("corpus_answer", None)
                 try:
                     with st.spinner("Checking source evidence"):
                         st.session_state["corpus_answer"] = asyncio.run(service.ask_corpus(
-                            query, mode=methods[mode], document_id=document_id))
+                            query, mode=methods[mode], document_ids=document_ids))
                 except TimeoutError:
                     st.error("The question exceeded the configured time limit.")
             if answer := st.session_state.get("corpus_answer"):
-                st.json(answer)
+                if answer["status"] == "insufficient_evidence":
+                    st.info("No relevant source excerpt was found for this question.")
+                elif answer["status"] == "evidence_only":
+                    st.warning("Relevant excerpts were found, but no generated scientific claim passed the support check.")
+                elif answer["status"] == "partial_evidence":
+                    st.warning("The available evidence answers only part of the question.")
+                elif answer["status"] == "evidence_available":
+                    st.caption("Extractive source evidence; semantic support has not been independently assessed.")
+                elif answer["status"] == "model_checked_answer":
+                    st.caption("Generated claims passed a bounded local-model support check; this is not human verification.")
+                synthesized = [claim for claim in answer["claims"] if claim["kind"] != "source_excerpt"]
+                if synthesized:
+                    for claim in synthesized:
+                        references = "; ".join(
+                            f"{citation['title']}, PDF p. {citation['page']}"
+                            for citation in claim["citations"]
+                        )
+                        st.markdown(f"{claim['claim']} *(Evidence: {references})*")
+                elif answer.get("answer"):
+                    st.markdown(answer["answer"])
+                for part in answer.get("unanswered_parts", []):
+                    st.text(f"Unanswered: {part}")
+                st.caption(answer["coverage"])
+                if answer.get("evidence"):
+                    with st.expander("Original PDF evidence", expanded=False):
+                        for item in answer["evidence"]:
+                            citation = item["citation"]
+                            st.text(f"{citation['title']} · PDF page {citation['page']} · Chunk {citation['chunk_id']}")
+                            st.code(citation["quote"], language=None, wrap_lines=True)
+                            st.caption(
+                                f"SHA-256: {citation['sha256']} · Character offsets "
+                                f"{citation['start_char']}–{citation['end_char']}"
+                            )
+                with st.expander("Retrieval and validation details"):
+                    st.json(answer)
                 st.download_button("Download answer JSON", json.dumps(answer, ensure_ascii=False, indent=2),
                                    "corpus-answer.json", "application/json")
             for cached in st.session_state.get("corpus_results",[]):

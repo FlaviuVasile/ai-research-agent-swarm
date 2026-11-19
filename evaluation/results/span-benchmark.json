@@ -1,0 +1,1646 @@
+{
+  "retrieval": {
+    "keyword/clean=False/clauses=False": [
+      {
+        "split": "development",
+        "question": "What BLEU score did Transformer big achieve on WMT 2014 English-to-German?",
+        "target_ranks": [
+          1
+        ],
+        "returned_ids": [
+          40,
+          3,
+          64,
+          32,
+          4,
+          37,
+          43,
+          38,
+          42,
+          61
+        ],
+        "top10_target_recall": 1.0,
+        "seconds": 0.0528
+      },
+      {
+        "split": "development",
+        "question": "What English-to-German BLEU did Transformer achieve and what GPU memory reduction did LoRA report?",
+        "target_ranks": [
+          1,
+          10
+        ],
+        "returned_ids": [
+          40,
+          37,
+          3,
+          43,
+          64,
+          77,
+          76,
+          216,
+          42,
+          164
+        ],
+        "top10_target_recall": 1.0,
+        "seconds": 0.0496
+      },
+      {
+        "split": "development",
+        "question": "What was the human participant dropout rate in the randomized clinical trial?",
+        "target_ranks": [],
+        "returned_ids": [
+          38,
+          271,
+          77,
+          76,
+          140,
+          119,
+          216,
+          82,
+          95,
+          110
+        ],
+        "top10_target_recall": null,
+        "seconds": 0.0514
+      },
+      {
+        "split": "held_out",
+        "question": "What is the AdaMax variant of Adam based on?",
+        "target_ranks": [
+          1
+        ],
+        "returned_ids": [
+          80,
+          130,
+          129,
+          135,
+          79,
+          216,
+          77,
+          76,
+          103,
+          132
+        ],
+        "top10_target_recall": 1.0,
+        "seconds": 0.0482
+      },
+      {
+        "split": "held_out",
+        "question": "What French BLEU score does the Transformer abstract report for a single model?",
+        "target_ranks": [
+          2
+        ],
+        "returned_ids": [
+          40,
+          4,
+          3,
+          38,
+          37,
+          41,
+          216,
+          60,
+          164,
+          64
+        ],
+        "top10_target_recall": 1.0,
+        "seconds": 0.0477
+      },
+      {
+        "split": "held_out",
+        "question": "Does LoRA add inference latency according to its conclusion?",
+        "target_ranks": [
+          3
+        ],
+        "returned_ids": [
+          187,
+          176,
+          233,
+          253,
+          184,
+          165,
+          259,
+          178,
+          212,
+          183
+        ],
+        "top10_target_recall": 1.0,
+        "seconds": 0.0473
+      }
+    ],
+    "keyword/clean=True/clauses=False": [
+      {
+        "split": "development",
+        "question": "What BLEU score did Transformer big achieve on WMT 2014 English-to-German?",
+        "target_ranks": [
+          1
+        ],
+        "returned_ids": [
+          40,
+          3,
+          32,
+          4,
+          64,
+          37,
+          38,
+          43,
+          42,
+          62
+        ],
+        "top10_target_recall": 1.0,
+        "seconds": 0.0418
+      },
+      {
+        "split": "development",
+        "question": "What English-to-German BLEU did Transformer achieve and what GPU memory reduction did LoRA report?",
+        "target_ranks": [
+          1,
+          6
+        ],
+        "returned_ids": [
+          40,
+          37,
+          3,
+          43,
+          42,
+          164,
+          32,
+          64,
+          61,
+          4
+        ],
+        "top10_target_recall": 1.0,
+        "seconds": 0.0446
+      },
+      {
+        "split": "development",
+        "question": "What was the human participant dropout rate in the randomized clinical trial?",
+        "target_ranks": [],
+        "returned_ids": [
+          38,
+          271,
+          140,
+          119,
+          110,
+          264,
+          275,
+          113,
+          270,
+          249
+        ],
+        "top10_target_recall": null,
+        "seconds": 0.0366
+      },
+      {
+        "split": "held_out",
+        "question": "What is the AdaMax variant of Adam based on?",
+        "target_ranks": [
+          1
+        ],
+        "returned_ids": [
+          80,
+          130,
+          129,
+          135,
+          132,
+          79,
+          103,
+          200,
+          254,
+          64
+        ],
+        "top10_target_recall": 1.0,
+        "seconds": 0.0379
+      },
+      {
+        "split": "held_out",
+        "question": "What French BLEU score does the Transformer abstract report for a single model?",
+        "target_ranks": [
+          2
+        ],
+        "returned_ids": [
+          40,
+          4,
+          3,
+          38,
+          37,
+          41,
+          60,
+          164,
+          64,
+          43
+        ],
+        "top10_target_recall": 1.0,
+        "seconds": 0.0414
+      },
+      {
+        "split": "held_out",
+        "question": "Does LoRA add inference latency according to its conclusion?",
+        "target_ranks": [
+          2
+        ],
+        "returned_ids": [
+          176,
+          233,
+          253,
+          187,
+          184,
+          165,
+          259,
+          178,
+          183,
+          170
+        ],
+        "top10_target_recall": 1.0,
+        "seconds": 0.0392
+      }
+    ],
+    "keyword/clean=True/clauses=True": [
+      {
+        "split": "development",
+        "question": "What BLEU score did Transformer big achieve on WMT 2014 English-to-German?",
+        "target_ranks": [
+          1
+        ],
+        "returned_ids": [
+          40,
+          3,
+          32,
+          4,
+          64,
+          37,
+          38,
+          43,
+          42,
+          62
+        ],
+        "top10_target_recall": 1.0,
+        "seconds": 0.0367
+      },
+      {
+        "split": "development",
+        "question": "What English-to-German BLEU did Transformer achieve and what GPU memory reduction did LoRA report?",
+        "target_ranks": [
+          1,
+          2
+        ],
+        "returned_ids": [
+          40,
+          165,
+          37,
+          164,
+          3,
+          103,
+          43,
+          186,
+          42,
+          215
+        ],
+        "top10_target_recall": 1.0,
+        "seconds": 0.0704
+      },
+      {
+        "split": "development",
+        "question": "What was the human participant dropout rate in the randomized clinical trial?",
+        "target_ranks": [],
+        "returned_ids": [
+          38,
+          271,
+          140,
+          119,
+          110,
+          264,
+          275,
+          113,
+          270,
+          249
+        ],
+        "top10_target_recall": null,
+        "seconds": 0.0367
+      },
+      {
+        "split": "held_out",
+        "question": "What is the AdaMax variant of Adam based on?",
+        "target_ranks": [
+          1
+        ],
+        "returned_ids": [
+          80,
+          130,
+          129,
+          135,
+          132,
+          79,
+          103,
+          200,
+          254,
+          64
+        ],
+        "top10_target_recall": 1.0,
+        "seconds": 0.0435
+      },
+      {
+        "split": "held_out",
+        "question": "What French BLEU score does the Transformer abstract report for a single model?",
+        "target_ranks": [
+          2
+        ],
+        "returned_ids": [
+          40,
+          4,
+          3,
+          38,
+          37,
+          41,
+          60,
+          164,
+          64,
+          43
+        ],
+        "top10_target_recall": 1.0,
+        "seconds": 0.0416
+      },
+      {
+        "split": "held_out",
+        "question": "Does LoRA add inference latency according to its conclusion?",
+        "target_ranks": [
+          2
+        ],
+        "returned_ids": [
+          176,
+          233,
+          253,
+          187,
+          184,
+          165,
+          259,
+          178,
+          183,
+          170
+        ],
+        "top10_target_recall": 1.0,
+        "seconds": 0.0453
+      }
+    ],
+    "semantic/clean=False/clauses=False": [
+      {
+        "split": "development",
+        "question": "What BLEU score did Transformer big achieve on WMT 2014 English-to-German?",
+        "target_ranks": [
+          1
+        ],
+        "returned_ids": [
+          40,
+          4,
+          37,
+          42,
+          61,
+          32,
+          210,
+          3,
+          63,
+          38
+        ],
+        "top10_target_recall": 1.0,
+        "seconds": 2.4052
+      },
+      {
+        "split": "development",
+        "question": "What English-to-German BLEU did Transformer achieve and what GPU memory reduction did LoRA report?",
+        "target_ranks": [
+          2,
+          5
+        ],
+        "returned_ids": [
+          4,
+          40,
+          233,
+          210,
+          165,
+          275,
+          37,
+          11,
+          274,
+          276
+        ],
+        "top10_target_recall": 1.0,
+        "seconds": 0.1398
+      },
+      {
+        "split": "development",
+        "question": "What was the human participant dropout rate in the randomized clinical trial?",
+        "target_ranks": [],
+        "returned_ids": [
+          39,
+          110,
+          119,
+          41,
+          264,
+          189,
+          38,
+          40,
+          127,
+          60
+        ],
+        "top10_target_recall": null,
+        "seconds": 0.1419
+      },
+      {
+        "split": "held_out",
+        "question": "What is the AdaMax variant of Adam based on?",
+        "target_ranks": [
+          1
+        ],
+        "returned_ids": [
+          80,
+          135,
+          113,
+          79,
+          86,
+          123,
+          104,
+          171,
+          108,
+          119
+        ],
+        "top10_target_recall": 1.0,
+        "seconds": 0.1407
+      },
+      {
+        "split": "held_out",
+        "question": "What French BLEU score does the Transformer abstract report for a single model?",
+        "target_ranks": [
+          3
+        ],
+        "returned_ids": [
+          40,
+          37,
+          4,
+          42,
+          38,
+          43,
+          64,
+          11,
+          210,
+          62
+        ],
+        "top10_target_recall": 1.0,
+        "seconds": 0.1181
+      },
+      {
+        "split": "held_out",
+        "question": "Does LoRA add inference latency according to its conclusion?",
+        "target_ranks": [
+          4
+        ],
+        "returned_ids": [
+          187,
+          275,
+          165,
+          233,
+          169,
+          253,
+          182,
+          170,
+          176,
+          184
+        ],
+        "top10_target_recall": 1.0,
+        "seconds": 0.1521
+      }
+    ],
+    "hybrid/clean=False/clauses=False": [
+      {
+        "split": "development",
+        "question": "What BLEU score did Transformer big achieve on WMT 2014 English-to-German?",
+        "target_ranks": [
+          1
+        ],
+        "returned_ids": [
+          40,
+          4,
+          37,
+          3,
+          32,
+          42,
+          64,
+          61,
+          38,
+          43
+        ],
+        "top10_target_recall": 1.0,
+        "seconds": 0.2002
+      },
+      {
+        "split": "development",
+        "question": "What English-to-German BLEU did Transformer achieve and what GPU memory reduction did LoRA report?",
+        "target_ranks": [
+          1,
+          4
+        ],
+        "returned_ids": [
+          40,
+          37,
+          4,
+          165,
+          64,
+          164,
+          43,
+          42,
+          186,
+          61
+        ],
+        "top10_target_recall": 1.0,
+        "seconds": 0.1988
+      },
+      {
+        "split": "development",
+        "question": "What was the human participant dropout rate in the randomized clinical trial?",
+        "target_ranks": [],
+        "returned_ids": [
+          38,
+          119,
+          110,
+          271,
+          264,
+          127,
+          41,
+          40,
+          140,
+          34
+        ],
+        "top10_target_recall": null,
+        "seconds": 0.2253
+      },
+      {
+        "split": "held_out",
+        "question": "What is the AdaMax variant of Adam based on?",
+        "target_ranks": [
+          1
+        ],
+        "returned_ids": [
+          80,
+          135,
+          79,
+          103,
+          113,
+          129,
+          132,
+          108,
+          104,
+          119
+        ],
+        "top10_target_recall": 1.0,
+        "seconds": 0.186
+      },
+      {
+        "split": "held_out",
+        "question": "What French BLEU score does the Transformer abstract report for a single model?",
+        "target_ranks": [
+          2
+        ],
+        "returned_ids": [
+          40,
+          4,
+          37,
+          38,
+          43,
+          64,
+          3,
+          41,
+          42,
+          60
+        ],
+        "top10_target_recall": 1.0,
+        "seconds": 0.1719
+      },
+      {
+        "split": "held_out",
+        "question": "Does LoRA add inference latency according to its conclusion?",
+        "target_ranks": [
+          2
+        ],
+        "returned_ids": [
+          187,
+          233,
+          165,
+          253,
+          176,
+          184,
+          170,
+          169,
+          259,
+          275
+        ],
+        "top10_target_recall": 1.0,
+        "seconds": 0.1705
+      }
+    ]
+  },
+  "generation": {
+    "short": [
+      {
+        "split": "development",
+        "question": "What BLEU score did Transformer big achieve on WMT 2014 English-to-German?",
+        "targets": [
+          [
+            "Attention Is All You Need",
+            [
+              1,
+              8
+            ],
+            [
+              "28.4",
+              "bleu"
+            ]
+          ]
+        ],
+        "matched_targets": [
+          true
+        ],
+        "successful_abstention": false,
+        "answer": {
+          "status": "supported_claims",
+          "claims": [
+            {
+              "claim": "Our model achieves 28.4 BLEU on the WMT 2014 English- to-German translation task, improving over the existing best results, including ensembles, by over 2 BLEU.",
+              "citation": {
+                "document_id": "550ffe72f2734b33af1c902df947c713",
+                "publication_id": 1,
+                "title": "Attention Is All You Need",
+                "page": 1,
+                "sha256": "bdfaa68d8984f0dc02beaca527b76f207d99b666d31d1da728ee0728182df697",
+                "chunk_id": 3,
+                "quote": "Our model achieves 28.4 BLEU on the WMT 2014 English-\n                           to-German translation task, improving over the existing best results, including\n                               ensembles, by over 2 BLEU.",
+                "start_char": 1884,
+                "end_char": 2102
+              },
+              "kind": "source_excerpt",
+              "question_part": 1,
+              "validation": {
+                "provenance": "exact_page_span",
+                "relevance": "model_selected"
+              }
+            }
+          ],
+          "trace": [
+            {
+              "query": "2014 big bleu english german score transformer wmt",
+              "retrieved": [
+                40,
+                3,
+                32,
+                4,
+                64
+              ],
+              "provided": [
+                {
+                  "span": 1,
+                  "chunk_id": 40
+                },
+                {
+                  "span": 2,
+                  "chunk_id": 40
+                },
+                {
+                  "span": 3,
+                  "chunk_id": 4
+                },
+                {
+                  "span": 4,
+                  "chunk_id": 3
+                }
+              ]
+            }
+          ],
+          "unanswered_parts": [],
+          "prompt_version": "76fdd717ca87dc43344fbe8e5e54ac00953de068d9f2855436ff535c182b43fe",
+          "coverage": "Exact source excerpts selected for relevance by one model call. Independently review scientific interpretation.",
+          "seconds": 0.659
+        }
+      },
+      {
+        "split": "development",
+        "question": "What English-to-German BLEU did Transformer achieve and what GPU memory reduction did LoRA report?",
+        "targets": [
+          [
+            "Attention Is All You Need",
+            [
+              1,
+              8
+            ],
+            [
+              "28.4",
+              "bleu"
+            ]
+          ],
+          [
+            "LoRA",
+            [
+              1
+            ],
+            [
+              "gpu memory requirement",
+              "3 times"
+            ]
+          ]
+        ],
+        "matched_targets": [
+          false,
+          true
+        ],
+        "successful_abstention": false,
+        "answer": {
+          "status": "supported_claims",
+          "claims": [
+            {
+              "claim": "Table 2: The Transformer achieves better BLEU scores than previous state-of-the-art models on the English-to-German and English-to-French newstest2014 tests at a fraction of the training cost.",
+              "citation": {
+                "document_id": "550ffe72f2734b33af1c902df947c713",
+                "publication_id": 1,
+                "title": "Attention Is All You Need",
+                "page": 8,
+                "sha256": "bdfaa68d8984f0dc02beaca527b76f207d99b666d31d1da728ee0728182df697",
+                "chunk_id": 37,
+                "quote": "Table 2: The Transformer achieves better BLEU scores than previous state-of-the-art models on the\nEnglish-to-German and English-to-French newstest2014 tests at a fraction of the training cost.",
+                "start_char": 0,
+                "end_char": 192
+              },
+              "kind": "source_excerpt",
+              "question_part": 1,
+              "validation": {
+                "provenance": "exact_page_span",
+                "relevance": "model_selected"
+              }
+            },
+            {
+              "claim": "Compared to GPT-3 175B ﬁne-tuned with Adam, LoRA can reduce the number of trainable parameters by 10,000 times and the[cs.CL] GPU memory requirement by 3 times.",
+              "citation": {
+                "document_id": "ce4e28379dd44314bd1286d17fd0681f",
+                "publication_id": 4,
+                "title": "LoRA: Low-Rank Adaptation of Large Language Models",
+                "page": 1,
+                "sha256": "e9a0d3128767db616085dc0f4e6e455e672e89af823e8ed1282793682787395a",
+                "chunk_id": 164,
+                "quote": "Compared to GPT-3 175B ﬁne-tuned with Adam,\n                     LoRA can reduce the number of trainable parameters by 10,000 times and the[cs.CL]                GPU memory requirement by 3 times.",
+                "start_char": 1456,
+                "end_char": 1652
+              },
+              "kind": "source_excerpt",
+              "question_part": 2,
+              "validation": {
+                "provenance": "exact_page_span",
+                "relevance": "model_selected"
+              }
+            }
+          ],
+          "trace": [
+            {
+              "query": "bleu english german transformer",
+              "retrieved": [
+                40,
+                37,
+                3,
+                43,
+                42
+              ],
+              "provided": [
+                {
+                  "span": 1,
+                  "chunk_id": 40
+                },
+                {
+                  "span": 3,
+                  "chunk_id": 37
+                }
+              ]
+            },
+            {
+              "query": "gpu lora memory reduction",
+              "retrieved": [
+                165,
+                164,
+                103,
+                186,
+                215
+              ],
+              "provided": [
+                {
+                  "span": 2,
+                  "chunk_id": 164
+                }
+              ]
+            }
+          ],
+          "unanswered_parts": [],
+          "prompt_version": "76fdd717ca87dc43344fbe8e5e54ac00953de068d9f2855436ff535c182b43fe",
+          "coverage": "Exact source excerpts selected for relevance by one model call. Independently review scientific interpretation.",
+          "seconds": 0.63
+        }
+      },
+      {
+        "split": "development",
+        "question": "What was the human participant dropout rate in the randomized clinical trial?",
+        "targets": [],
+        "matched_targets": [],
+        "successful_abstention": true,
+        "answer": {
+          "status": "insufficient_evidence",
+          "claims": [],
+          "trace": [
+            {
+              "query": "clinical dropout human participant randomized rate trial",
+              "retrieved": [
+                38,
+                271,
+                140,
+                119,
+                110
+              ],
+              "provided": []
+            }
+          ],
+          "unanswered_parts": [
+            "What was the human participant dropout rate in the randomized clinical trial?"
+          ],
+          "prompt_version": "76fdd717ca87dc43344fbe8e5e54ac00953de068d9f2855436ff535c182b43fe",
+          "coverage": "Exact source excerpts selected for relevance by one model call. Independently review scientific interpretation.",
+          "seconds": 0.04
+        }
+      },
+      {
+        "split": "held_out",
+        "question": "What is the AdaMax variant of Adam based on?",
+        "targets": [
+          [
+            "Adam:",
+            [
+              1,
+              9
+            ],
+            [
+              "adamax",
+              "infinity norm"
+            ]
+          ]
+        ],
+        "matched_targets": [
+          true
+        ],
+        "successful_abstention": false,
+        "answer": {
+          "status": "supported_claims",
+          "claims": [
+            {
+              "claim": "Algorithm 2: AdaMax, a variant of Adam based on the inﬁnity norm.",
+              "citation": {
+                "document_id": "9ce52cbab79e44ba89d58c903b006fd2",
+                "publication_id": 3,
+                "title": "Adam: A Method for Stochastic Optimization",
+                "page": 9,
+                "sha256": "eab9c73ae2ceda884b94830bda99312254bac4806f6c9f045cbab90721ecda31",
+                "chunk_id": 130,
+                "quote": "Algorithm 2: AdaMax, a variant of Adam based on the inﬁnity norm.",
+                "start_char": 49,
+                "end_char": 114
+              },
+              "kind": "source_excerpt",
+              "question_part": 1,
+              "validation": {
+                "provenance": "exact_page_span",
+                "relevance": "model_selected"
+              }
+            }
+          ],
+          "trace": [
+            {
+              "query": "adam adamax based variant",
+              "retrieved": [
+                80,
+                130,
+                129,
+                135,
+                132
+              ],
+              "provided": [
+                {
+                  "span": 1,
+                  "chunk_id": 130
+                }
+              ]
+            }
+          ],
+          "unanswered_parts": [],
+          "prompt_version": "76fdd717ca87dc43344fbe8e5e54ac00953de068d9f2855436ff535c182b43fe",
+          "coverage": "Exact source excerpts selected for relevance by one model call. Independently review scientific interpretation.",
+          "seconds": 0.452
+        }
+      },
+      {
+        "split": "held_out",
+        "question": "What French BLEU score does the Transformer abstract report for a single model?",
+        "targets": [
+          [
+            "Attention Is All You Need",
+            [
+              1
+            ],
+            [
+              "41.8",
+              "bleu"
+            ]
+          ]
+        ],
+        "matched_targets": [
+          true
+        ],
+        "successful_abstention": false,
+        "answer": {
+          "status": "supported_claims",
+          "claims": [
+            {
+              "claim": "On the WMT 2014 English-to-French translation task, our model establishes a new single-model state-of-the-art BLEU score of 41.8 after training for 3.5 days on eight GPUs, a small fraction of the training costs of thearXiv:1706.03762v7 best models from the literature.",
+              "citation": {
+                "document_id": "550ffe72f2734b33af1c902df947c713",
+                "publication_id": 1,
+                "title": "Attention Is All You Need",
+                "page": 1,
+                "sha256": "bdfaa68d8984f0dc02beaca527b76f207d99b666d31d1da728ee0728182df697",
+                "chunk_id": 4,
+                "quote": "On the WMT 2014 English-to-French translation task,\n                               our model establishes a new single-model state-of-the-art BLEU score of 41.8 after\n                                  training for 3.5 days on eight GPUs, a small fraction of the training costs of thearXiv:1706.03762v7                           best models from the literature.",
+                "start_char": 2103,
+                "end_char": 2462
+              },
+              "kind": "source_excerpt",
+              "question_part": 1,
+              "validation": {
+                "provenance": "exact_page_span",
+                "relevance": "model_selected"
+              }
+            }
+          ],
+          "trace": [
+            {
+              "query": "abstract bleu french model score single transformer",
+              "retrieved": [
+                40,
+                4,
+                3,
+                38,
+                37
+              ],
+              "provided": [
+                {
+                  "span": 1,
+                  "chunk_id": 40
+                },
+                {
+                  "span": 2,
+                  "chunk_id": 4
+                },
+                {
+                  "span": 3,
+                  "chunk_id": 40
+                },
+                {
+                  "span": 4,
+                  "chunk_id": 37
+                }
+              ]
+            }
+          ],
+          "unanswered_parts": [],
+          "prompt_version": "76fdd717ca87dc43344fbe8e5e54ac00953de068d9f2855436ff535c182b43fe",
+          "coverage": "Exact source excerpts selected for relevance by one model call. Independently review scientific interpretation.",
+          "seconds": 0.464
+        }
+      },
+      {
+        "split": "held_out",
+        "question": "Does LoRA add inference latency according to its conclusion?",
+        "targets": [
+          [
+            "LoRA",
+            [
+              12
+            ],
+            [
+              "neither introduces inference latency"
+            ]
+          ]
+        ],
+        "matched_targets": [
+          false
+        ],
+        "successful_abstention": false,
+        "answer": {
+          "status": "supported_claims",
+          "claims": [
+            {
+              "claim": "We conﬁrm their observation with a similar latency study on GPT-2 medium and point out that there are scenarios, notably online inference where the batch size is small, where the added latency can be signiﬁcant.",
+              "citation": {
+                "document_id": "ce4e28379dd44314bd1286d17fd0681f",
+                "publication_id": 4,
+                "title": "LoRA: Low-Rank Adaptation of Large Language Models",
+                "page": 17,
+                "sha256": "e9a0d3128767db616085dc0f4e6e455e672e89af823e8ed1282793682787395a",
+                "chunk_id": 253,
+                "quote": "We conﬁrm their observation with a similar latency study on GPT-2 medium\nand point out that there are scenarios, notably online inference where the batch size is small, where\nthe added latency can be signiﬁcant.",
+                "start_char": 861,
+                "end_char": 1072
+              },
+              "kind": "source_excerpt",
+              "question_part": 1,
+              "validation": {
+                "provenance": "exact_page_span",
+                "relevance": "model_selected"
+              }
+            }
+          ],
+          "trace": [
+            {
+              "query": "according add conclusion inference latency lora",
+              "retrieved": [
+                176,
+                233,
+                253,
+                187,
+                184
+              ],
+              "provided": [
+                {
+                  "span": 1,
+                  "chunk_id": 233
+                },
+                {
+                  "span": 2,
+                  "chunk_id": 176
+                },
+                {
+                  "span": 3,
+                  "chunk_id": 253
+                },
+                {
+                  "span": 4,
+                  "chunk_id": 187
+                },
+                {
+                  "span": 5,
+                  "chunk_id": 184
+                }
+              ]
+            }
+          ],
+          "unanswered_parts": [],
+          "prompt_version": "76fdd717ca87dc43344fbe8e5e54ac00953de068d9f2855436ff535c182b43fe",
+          "coverage": "Exact source excerpts selected for relevance by one model call. Independently review scientific interpretation.",
+          "seconds": 0.522
+        }
+      }
+    ],
+    "evidence_first": [
+      {
+        "split": "development",
+        "question": "What BLEU score did Transformer big achieve on WMT 2014 English-to-German?",
+        "targets": [
+          [
+            "Attention Is All You Need",
+            [
+              1,
+              8
+            ],
+            [
+              "28.4",
+              "bleu"
+            ]
+          ]
+        ],
+        "matched_targets": [
+          true
+        ],
+        "successful_abstention": false,
+        "answer": {
+          "status": "supported_claims",
+          "claims": [
+            {
+              "claim": "Our model achieves 28.4 BLEU on the WMT 2014 English- to-German translation task, improving over the existing best results, including ensembles, by over 2 BLEU.",
+              "citation": {
+                "document_id": "550ffe72f2734b33af1c902df947c713",
+                "publication_id": 1,
+                "title": "Attention Is All You Need",
+                "page": 1,
+                "sha256": "bdfaa68d8984f0dc02beaca527b76f207d99b666d31d1da728ee0728182df697",
+                "chunk_id": 3,
+                "quote": "Our model achieves 28.4 BLEU on the WMT 2014 English-\n                           to-German translation task, improving over the existing best results, including\n                               ensembles, by over 2 BLEU.",
+                "start_char": 1884,
+                "end_char": 2102
+              },
+              "kind": "source_excerpt",
+              "question_part": 1,
+              "validation": {
+                "provenance": "exact_page_span",
+                "relevance": "model_selected"
+              }
+            }
+          ],
+          "trace": [
+            {
+              "query": "2014 big bleu english german score transformer wmt",
+              "retrieved": [
+                40,
+                3,
+                32,
+                4,
+                64
+              ],
+              "provided": [
+                {
+                  "span": 1,
+                  "chunk_id": 40
+                },
+                {
+                  "span": 2,
+                  "chunk_id": 40
+                },
+                {
+                  "span": 3,
+                  "chunk_id": 4
+                },
+                {
+                  "span": 4,
+                  "chunk_id": 3
+                }
+              ]
+            }
+          ],
+          "unanswered_parts": [],
+          "prompt_version": "0dec9cda6aab5585e783440d3b76b563a7e81c120697eaf1604a3f9d7962b323",
+          "coverage": "Exact source excerpts selected for relevance by one model call. Independently review scientific interpretation.",
+          "seconds": 0.492
+        }
+      },
+      {
+        "split": "development",
+        "question": "What English-to-German BLEU did Transformer achieve and what GPU memory reduction did LoRA report?",
+        "targets": [
+          [
+            "Attention Is All You Need",
+            [
+              1,
+              8
+            ],
+            [
+              "28.4",
+              "bleu"
+            ]
+          ],
+          [
+            "LoRA",
+            [
+              1
+            ],
+            [
+              "gpu memory requirement",
+              "3 times"
+            ]
+          ]
+        ],
+        "matched_targets": [
+          false,
+          true
+        ],
+        "successful_abstention": false,
+        "answer": {
+          "status": "supported_claims",
+          "claims": [
+            {
+              "claim": "Table 2: The Transformer achieves better BLEU scores than previous state-of-the-art models on the English-to-German and English-to-French newstest2014 tests at a fraction of the training cost.",
+              "citation": {
+                "document_id": "550ffe72f2734b33af1c902df947c713",
+                "publication_id": 1,
+                "title": "Attention Is All You Need",
+                "page": 8,
+                "sha256": "bdfaa68d8984f0dc02beaca527b76f207d99b666d31d1da728ee0728182df697",
+                "chunk_id": 37,
+                "quote": "Table 2: The Transformer achieves better BLEU scores than previous state-of-the-art models on the\nEnglish-to-German and English-to-French newstest2014 tests at a fraction of the training cost.",
+                "start_char": 0,
+                "end_char": 192
+              },
+              "kind": "source_excerpt",
+              "question_part": 1,
+              "validation": {
+                "provenance": "exact_page_span",
+                "relevance": "model_selected"
+              }
+            },
+            {
+              "claim": "Compared to GPT-3 175B ﬁne-tuned with Adam, LoRA can reduce the number of trainable parameters by 10,000 times and the[cs.CL] GPU memory requirement by 3 times.",
+              "citation": {
+                "document_id": "ce4e28379dd44314bd1286d17fd0681f",
+                "publication_id": 4,
+                "title": "LoRA: Low-Rank Adaptation of Large Language Models",
+                "page": 1,
+                "sha256": "e9a0d3128767db616085dc0f4e6e455e672e89af823e8ed1282793682787395a",
+                "chunk_id": 164,
+                "quote": "Compared to GPT-3 175B ﬁne-tuned with Adam,\n                     LoRA can reduce the number of trainable parameters by 10,000 times and the[cs.CL]                GPU memory requirement by 3 times.",
+                "start_char": 1456,
+                "end_char": 1652
+              },
+              "kind": "source_excerpt",
+              "question_part": 2,
+              "validation": {
+                "provenance": "exact_page_span",
+                "relevance": "model_selected"
+              }
+            }
+          ],
+          "trace": [
+            {
+              "query": "bleu english german transformer",
+              "retrieved": [
+                40,
+                37,
+                3,
+                43,
+                42
+              ],
+              "provided": [
+                {
+                  "span": 1,
+                  "chunk_id": 40
+                },
+                {
+                  "span": 3,
+                  "chunk_id": 37
+                }
+              ]
+            },
+            {
+              "query": "gpu lora memory reduction",
+              "retrieved": [
+                165,
+                164,
+                103,
+                186,
+                215
+              ],
+              "provided": [
+                {
+                  "span": 2,
+                  "chunk_id": 164
+                }
+              ]
+            }
+          ],
+          "unanswered_parts": [],
+          "prompt_version": "0dec9cda6aab5585e783440d3b76b563a7e81c120697eaf1604a3f9d7962b323",
+          "coverage": "Exact source excerpts selected for relevance by one model call. Independently review scientific interpretation.",
+          "seconds": 0.567
+        }
+      },
+      {
+        "split": "development",
+        "question": "What was the human participant dropout rate in the randomized clinical trial?",
+        "targets": [],
+        "matched_targets": [],
+        "successful_abstention": true,
+        "answer": {
+          "status": "insufficient_evidence",
+          "claims": [],
+          "trace": [
+            {
+              "query": "clinical dropout human participant randomized rate trial",
+              "retrieved": [
+                38,
+                271,
+                140,
+                119,
+                110
+              ],
+              "provided": []
+            }
+          ],
+          "unanswered_parts": [
+            "What was the human participant dropout rate in the randomized clinical trial?"
+          ],
+          "prompt_version": "0dec9cda6aab5585e783440d3b76b563a7e81c120697eaf1604a3f9d7962b323",
+          "coverage": "Exact source excerpts selected for relevance by one model call. Independently review scientific interpretation.",
+          "seconds": 0.043
+        }
+      },
+      {
+        "split": "held_out",
+        "question": "What is the AdaMax variant of Adam based on?",
+        "targets": [
+          [
+            "Adam:",
+            [
+              1,
+              9
+            ],
+            [
+              "adamax",
+              "infinity norm"
+            ]
+          ]
+        ],
+        "matched_targets": [
+          true
+        ],
+        "successful_abstention": false,
+        "answer": {
+          "status": "supported_claims",
+          "claims": [
+            {
+              "claim": "Algorithm 2: AdaMax, a variant of Adam based on the inﬁnity norm.",
+              "citation": {
+                "document_id": "9ce52cbab79e44ba89d58c903b006fd2",
+                "publication_id": 3,
+                "title": "Adam: A Method for Stochastic Optimization",
+                "page": 9,
+                "sha256": "eab9c73ae2ceda884b94830bda99312254bac4806f6c9f045cbab90721ecda31",
+                "chunk_id": 130,
+                "quote": "Algorithm 2: AdaMax, a variant of Adam based on the inﬁnity norm.",
+                "start_char": 49,
+                "end_char": 114
+              },
+              "kind": "source_excerpt",
+              "question_part": 1,
+              "validation": {
+                "provenance": "exact_page_span",
+                "relevance": "model_selected"
+              }
+            }
+          ],
+          "trace": [
+            {
+              "query": "adam adamax based variant",
+              "retrieved": [
+                80,
+                130,
+                129,
+                135,
+                132
+              ],
+              "provided": [
+                {
+                  "span": 1,
+                  "chunk_id": 130
+                }
+              ]
+            }
+          ],
+          "unanswered_parts": [],
+          "prompt_version": "0dec9cda6aab5585e783440d3b76b563a7e81c120697eaf1604a3f9d7962b323",
+          "coverage": "Exact source excerpts selected for relevance by one model call. Independently review scientific interpretation.",
+          "seconds": 0.518
+        }
+      },
+      {
+        "split": "held_out",
+        "question": "What French BLEU score does the Transformer abstract report for a single model?",
+        "targets": [
+          [
+            "Attention Is All You Need",
+            [
+              1
+            ],
+            [
+              "41.8",
+              "bleu"
+            ]
+          ]
+        ],
+        "matched_targets": [
+          true
+        ],
+        "successful_abstention": false,
+        "answer": {
+          "status": "supported_claims",
+          "claims": [
+            {
+              "claim": "On the WMT 2014 English-to-French translation task, our model establishes a new single-model state-of-the-art BLEU score of 41.8 after training for 3.5 days on eight GPUs, a small fraction of the training costs of thearXiv:1706.03762v7 best models from the literature.",
+              "citation": {
+                "document_id": "550ffe72f2734b33af1c902df947c713",
+                "publication_id": 1,
+                "title": "Attention Is All You Need",
+                "page": 1,
+                "sha256": "bdfaa68d8984f0dc02beaca527b76f207d99b666d31d1da728ee0728182df697",
+                "chunk_id": 4,
+                "quote": "On the WMT 2014 English-to-French translation task,\n                               our model establishes a new single-model state-of-the-art BLEU score of 41.8 after\n                                  training for 3.5 days on eight GPUs, a small fraction of the training costs of thearXiv:1706.03762v7                           best models from the literature.",
+                "start_char": 2103,
+                "end_char": 2462
+              },
+              "kind": "source_excerpt",
+              "question_part": 1,
+              "validation": {
+                "provenance": "exact_page_span",
+                "relevance": "model_selected"
+              }
+            }
+          ],
+          "trace": [
+            {
+              "query": "abstract bleu french model score single transformer",
+              "retrieved": [
+                40,
+                4,
+                3,
+                38,
+                37
+              ],
+              "provided": [
+                {
+                  "span": 1,
+                  "chunk_id": 40
+                },
+                {
+                  "span": 2,
+                  "chunk_id": 4
+                },
+                {
+                  "span": 3,
+                  "chunk_id": 40
+                },
+                {
+                  "span": 4,
+                  "chunk_id": 37
+                }
+              ]
+            }
+          ],
+          "unanswered_parts": [],
+          "prompt_version": "0dec9cda6aab5585e783440d3b76b563a7e81c120697eaf1604a3f9d7962b323",
+          "coverage": "Exact source excerpts selected for relevance by one model call. Independently review scientific interpretation.",
+          "seconds": 0.52
+        }
+      },
+      {
+        "split": "held_out",
+        "question": "Does LoRA add inference latency according to its conclusion?",
+        "targets": [
+          [
+            "LoRA",
+            [
+              12
+            ],
+            [
+              "neither introduces inference latency"
+            ]
+          ]
+        ],
+        "matched_targets": [
+          false
+        ],
+        "successful_abstention": false,
+        "answer": {
+          "status": "supported_claims",
+          "claims": [
+            {
+              "claim": "We conﬁrm their observation with a similar latency study on GPT-2 medium and point out that there are scenarios, notably online inference where the batch size is small, where the added latency can be signiﬁcant.",
+              "citation": {
+                "document_id": "ce4e28379dd44314bd1286d17fd0681f",
+                "publication_id": 4,
+                "title": "LoRA: Low-Rank Adaptation of Large Language Models",
+                "page": 17,
+                "sha256": "e9a0d3128767db616085dc0f4e6e455e672e89af823e8ed1282793682787395a",
+                "chunk_id": 253,
+                "quote": "We conﬁrm their observation with a similar latency study on GPT-2 medium\nand point out that there are scenarios, notably online inference where the batch size is small, where\nthe added latency can be signiﬁcant.",
+                "start_char": 861,
+                "end_char": 1072
+              },
+              "kind": "source_excerpt",
+              "question_part": 1,
+              "validation": {
+                "provenance": "exact_page_span",
+                "relevance": "model_selected"
+              }
+            }
+          ],
+          "trace": [
+            {
+              "query": "according add conclusion inference latency lora",
+              "retrieved": [
+                176,
+                233,
+                253,
+                187,
+                184
+              ],
+              "provided": [
+                {
+                  "span": 1,
+                  "chunk_id": 233
+                },
+                {
+                  "span": 2,
+                  "chunk_id": 176
+                },
+                {
+                  "span": 3,
+                  "chunk_id": 253
+                },
+                {
+                  "span": 4,
+                  "chunk_id": 187
+                },
+                {
+                  "span": 5,
+                  "chunk_id": 184
+                }
+              ]
+            }
+          ],
+          "unanswered_parts": [],
+          "prompt_version": "0dec9cda6aab5585e783440d3b76b563a7e81c120697eaf1604a3f9d7962b323",
+          "coverage": "Exact source excerpts selected for relevance by one model call. Independently review scientific interpretation.",
+          "seconds": 0.622
+        }
+      }
+    ],
+    "no_decomposition": [
+      {
+        "split": "development",
+        "question": "What English-to-German BLEU did Transformer achieve and what GPU memory reduction did LoRA report?",
+        "targets": [
+          [
+            "Attention Is All You Need",
+            [
+              1,
+              8
+            ],
+            [
+              "28.4",
+              "bleu"
+            ]
+          ],
+          [
+            "LoRA",
+            [
+              1
+            ],
+            [
+              "gpu memory requirement",
+              "3 times"
+            ]
+          ]
+        ],
+        "matched_targets": [
+          true,
+          false
+        ],
+        "successful_abstention": false,
+        "answer": {
+          "status": "supported_claims",
+          "claims": [
+            {
+              "claim": "On the WMT 2014 English-to-German translation task, the big transformer model (Transformer (big) in Table 2) outperforms the best previously reported models (including ensembles) by more than 2.0 BLEU, establishing a new state-of-the-art BLEU score of 28.4.",
+              "citation": {
+                "document_id": "550ffe72f2734b33af1c902df947c713",
+                "publication_id": 1,
+                "title": "Attention Is All You Need",
+                "page": 8,
+                "sha256": "bdfaa68d8984f0dc02beaca527b76f207d99b666d31d1da728ee0728182df697",
+                "chunk_id": 40,
+                "quote": "On the WMT 2014 English-to-German translation task, the big transformer model (Transformer (big)\nin Table 2) outperforms the best previously reported models (including ensembles) by more than 2.0\nBLEU, establishing a new state-of-the-art BLEU score of 28.4.",
+                "start_char": 1662,
+                "end_char": 1919
+              },
+              "kind": "source_excerpt",
+              "question_part": 1,
+              "validation": {
+                "provenance": "exact_page_span",
+                "relevance": "model_selected"
+              }
+            }
+          ],
+          "trace": [
+            {
+              "query": "bleu english german gpu lora memory reduction transformer",
+              "retrieved": [
+                40,
+                37,
+                3,
+                43,
+                42
+              ],
+              "provided": [
+                {
+                  "span": 1,
+                  "chunk_id": 40
+                },
+                {
+                  "span": 2,
+                  "chunk_id": 37
+                }
+              ]
+            }
+          ],
+          "unanswered_parts": [],
+          "prompt_version": "0dec9cda6aab5585e783440d3b76b563a7e81c120697eaf1604a3f9d7962b323",
+          "coverage": "Exact source excerpts selected for relevance by one model call. Independently review scientific interpretation.",
+          "seconds": 0.616
+        }
+      }
+    ]
+  }
+}

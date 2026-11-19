@@ -1,0 +1,480 @@
+{
+  "model": "ollama:http://127.0.0.1:11434:llama3.2:latest:a80c4f17acd55265feec403c7aef86be0c25983ab279d83f3bcd3abbcb5b8b72",
+  "prompt_fingerprint": "1de6cef2662ae61206b8da2310765e4900f1cc0c4a25e9fa42050284fddca90f",
+  "configuration": {
+    "context_tokens": 8192,
+    "summary_context_tokens": 8192,
+    "summary_output_tokens": 256,
+    "max_output_tokens": 1200,
+    "ollama_gpu_layers": 99,
+    "chunk_tokens": 2000
+  },
+  "cache_enabled": false,
+  "journal_enabled": false,
+  "temperature": 0,
+  "scope": "Three real paper abstracts, one paired pass; not full-paper or held-out validation",
+  "rows": [
+    {
+      "paper": "1706.03762v7",
+      "variant": "baseline",
+      "operation": "summary",
+      "evidence_sha256": "9bf4a692ebe6c7e57d358f14d808aa38618801eece60c0f3bc386408484867a8",
+      "output": "> FULL_RESEARCH_MODE: 1 source chunks processed; final synthesis uses selected bounded note excerpts.\n\n**Summary**\n\nThe Transformer model proposes a new simple network architecture based solely on attention mechanisms, replacing recurrent and convolutional neural networks. Experiments show that the Transformer achieves superior quality in machine translation tasks, with significant improvements in parallelizability and training time. The model achieves state-of-the-art results in two tasks, including English-to-French translation, and generalizes well to other tasks.",
+      "valid": true,
+      "seconds": 1.6353730000009818,
+      "usage": [
+        {
+          "prompt_eval_count": 359,
+          "eval_count": 79,
+          "load_duration": 16925400,
+          "prompt_eval_duration": 272586000,
+          "eval_duration": 1181146000,
+          "total_duration": 1534549800
+        }
+      ]
+    },
+    {
+      "paper": "1706.03762v7",
+      "variant": "baseline",
+      "operation": "questions",
+      "evidence_sha256": "9bf4a692ebe6c7e57d358f14d808aa38618801eece60c0f3bc386408484867a8",
+      "output": {
+        "questions": [
+          {
+            "question": "Can simple neural network architectures based on attention mechanisms outperform complex models in machine translation tasks?",
+            "why_it_matters": "Improving machine translation efficiency and quality could have significant impacts on fields such as language translation, text summarization, and language learning.",
+            "evidence": "Experiments on two machine translation tasks show these models to be superior in quality while being more parallelizable and requiring significantly less time to train.",
+            "kind": "Explicit limitation",
+            "search_query": "Transformer neural networks for machine translation"
+          }
+        ]
+      },
+      "valid": true,
+      "seconds": 3.917669399997976,
+      "usage": [
+        {
+          "prompt_eval_count": 657,
+          "eval_count": 233,
+          "load_duration": 21468500,
+          "prompt_eval_duration": 226475000,
+          "eval_duration": 3569168000,
+          "total_duration": 3896227500
+        }
+      ]
+    },
+    {
+      "paper": "1706.03762v7",
+      "variant": "baseline",
+      "operation": "literature",
+      "evidence_sha256": "9bf4a692ebe6c7e57d358f14d808aa38618801eece60c0f3bc386408484867a8",
+      "output": {
+        "explanation": "The proposed method, Attention Is All You Need, improves computational efficiency by utilizing self-attention mechanisms that allow for parallel processing of inputs, reducing the need for recurrent neural networks (RNNs) and their associated computational overhead. This enables the model to process sequences in parallel, making it more efficient than traditional sequence-to-sequence models."
+      },
+      "valid": true,
+      "seconds": 1.4838655999992625,
+      "usage": [
+        {
+          "prompt_eval_count": 209,
+          "eval_count": 74,
+          "load_duration": 15796200,
+          "prompt_eval_duration": 64312000,
+          "eval_duration": 1307455000,
+          "total_duration": 1471059300
+        }
+      ]
+    },
+    {
+      "paper": "1706.03762v7",
+      "variant": "fields",
+      "operation": "summary",
+      "evidence_sha256": "9bf4a692ebe6c7e57d358f14d808aa38618801eece60c0f3bc386408484867a8",
+      "output": "> FULL_RESEARCH_MODE: 1 source chunks processed; final synthesis uses selected bounded note excerpts.\n\n**Objective**: Develop a new simple network architecture, the Transformer, based solely on attention mechanisms for machine translation tasks.\n\n**Method**: The Transformer model uses attention mechanisms, dispensing with recurrence and convolutions entirely.\n\n**Findings**: The Transformer model achieves superior quality in machine translation tasks, with 28.4 BLEU on WMT 2014 Englishto-German and 41.8 BLEU on WMT 2014 English-to-French, outperforming existing models.\n\n**Limitations**: Not reported.",
+      "valid": true,
+      "seconds": 1.925943800000823,
+      "usage": [
+        {
+          "prompt_eval_count": 395,
+          "eval_count": 108,
+          "load_duration": 20850000,
+          "prompt_eval_duration": 128729999,
+          "eval_duration": 1592179000,
+          "total_duration": 1787012800
+        }
+      ]
+    },
+    {
+      "paper": "1706.03762v7",
+      "variant": "fields",
+      "operation": "questions",
+      "evidence_sha256": "9bf4a692ebe6c7e57d358f14d808aa38618801eece60c0f3bc386408484867a8",
+      "output": {
+        "questions": [
+          {
+            "question": "How does the Transformer model perform under a limited GPU resource constraint, while maintaining its attention mechanism?",
+            "why_it_matters": "Understanding the model's scalability under resource constraints is crucial for its practical adoption.",
+            "evidence": "The paper does not explicitly state the effect of limited GPU resources on the Transformer model. However, it does mention that the model requires significantly less time to train compared to existing models.",
+            "kind": "Explicit limitation",
+            "search_query": "Transformer model performance under limited GPU resources"
+          }
+        ]
+      },
+      "valid": true,
+      "seconds": 3.9657088999992993,
+      "usage": [
+        {
+          "prompt_eval_count": 732,
+          "eval_count": 235,
+          "load_duration": 12297100,
+          "prompt_eval_duration": 301675000,
+          "eval_duration": 3583289000,
+          "total_duration": 3953503300
+        }
+      ]
+    },
+    {
+      "paper": "1706.03762v7",
+      "variant": "fields",
+      "operation": "literature",
+      "evidence_sha256": "9bf4a692ebe6c7e57d358f14d808aa38618801eece60c0f3bc386408484867a8",
+      "output": {
+        "explanation": "The proposed method, Attention Is All You Need, improves computational efficiency by utilizing self-attention mechanisms, which allow for parallel processing of inputs and reduce the need for recurrent neural networks. This enables faster computation and improved scalability for natural language processing tasks. Additionally, the method's use of multi-head attention and position-wise attention further enhances computational efficiency by allowing for more efficient processing of input sequences. However, the exact computational improvements and efficiency gains of the proposed method are not explicitly stated in the title, and further analysis of the paper is required to determine the full extent of its efficiency benefits. Missing information: computational complexity analysis, quantitative results, and detailed explanations of the method's efficiency gains. Topical match: Computational efficiency, Attention Is All You Need. Relevance: The title only provides a general overview of the method's potential benefits, but does not provide sufficient information to establish the full extent of its computational efficiency improvements. Further analysis is required to determine the relevance of the proposed method to the question of improving computational efficiency."
+      },
+      "valid": true,
+      "seconds": 10.559933000000456,
+      "usage": [
+        {
+          "prompt_eval_count": 223,
+          "eval_count": 210,
+          "load_duration": 13232400,
+          "prompt_eval_duration": 64961000,
+          "eval_duration": 10414386000,
+          "total_duration": 10550492000
+        }
+      ]
+    },
+    {
+      "paper": "1706.03762v7",
+      "variant": "evidence",
+      "operation": "summary",
+      "evidence_sha256": "9bf4a692ebe6c7e57d358f14d808aa38618801eece60c0f3bc386408484867a8",
+      "output": "> FULL_RESEARCH_MODE: 1 source chunks processed; final synthesis uses selected bounded note excerpts.\n\nObjective: \nThe objective of this paper is to propose a new sequence transduction model, the Transformer, based solely on attention mechanisms.\n\nProposed method: \nThe Transformer architecture is a simple network that uses attention mechanisms to connect the encoder and decoder, dispensing with recurrence and convolutions entirely.\n\nEvaluation: \nThe model was tested on two machine translation tasks: WMT 2014 English-to-German and English-to-French. The model was trained on eight GPUs for 3.5 days.\n\nFindings: \n- The Transformer model achieved 28.4 BLEU on the WMT 2014 English-to-German translation task, improving over the existing best results by over 2 BLEU.\n- The model achieved 41.8 BLEU on the WMT 2014 English-to-French translation task, establishing a new single-model state-of-the-art BLEU score.\n- The model was successfully applied to English constituency parsing with both large and limited training data.\n\nLimitations: \nNot reported in supplied excerpts.",
+      "valid": true,
+      "seconds": 23.085512800000288,
+      "usage": [
+        {
+          "prompt_eval_count": 424,
+          "eval_count": 209,
+          "load_duration": 13894500,
+          "prompt_eval_duration": 456759000,
+          "eval_duration": 22490186000,
+          "total_duration": 22998388800
+        }
+      ]
+    },
+    {
+      "paper": "1706.03762v7",
+      "variant": "evidence",
+      "operation": "questions",
+      "evidence_sha256": "9bf4a692ebe6c7e57d358f14d808aa38618801eece60c0f3bc386408484867a8",
+      "output": {
+        "questions": [
+          {
+            "question": "What is the primary difference between the proposed Transformer model and existing dominant sequence transduction models?",
+            "why_it_matters": "Understanding the Transformer model's architecture is crucial for its potential applications in natural language processing.",
+            "evidence": "The Transformer is based solely on attention mechanisms, dispensing with recurrence and convolutions entirely.",
+            "kind": "Inferred research opportunity",
+            "search_query": "Transformer model architecture"
+          }
+        ]
+      },
+      "valid": true,
+      "seconds": 11.073962799997389,
+      "usage": [
+        {
+          "prompt_eval_count": 702,
+          "eval_count": 93,
+          "load_duration": 12491600,
+          "prompt_eval_duration": 823289000,
+          "eval_duration": 10171975000,
+          "total_duration": 11062646000
+        }
+      ]
+    },
+    {
+      "paper": "1706.03762v7",
+      "variant": "evidence",
+      "operation": "literature",
+      "evidence_sha256": "9bf4a692ebe6c7e57d358f14d808aa38618801eece60c0f3bc386408484867a8",
+      "output": {
+        "explanation": "The proposed method, based on the title 'Attention Is All You Need', is likely referring to the Transformer model. This model uses self-attention mechanisms to process sequential data, which can improve computational efficiency by reducing the need for recurrent neural networks (RNNs) and their associated memory and computation requirements. The self-attention mechanism allows the model to focus on specific parts of the input sequence when generating outputs, rather than processing the entire sequence sequentially. This can lead to significant improvements in computational efficiency, especially for long-range dependencies in sequential data."
+      },
+      "valid": true,
+      "seconds": 12.982348400000774,
+      "usage": [
+        {
+          "prompt_eval_count": 233,
+          "eval_count": 116,
+          "load_duration": 18485300,
+          "prompt_eval_duration": 324991000,
+          "eval_duration": 12557626000,
+          "total_duration": 12969569300
+        }
+      ]
+    },
+    {
+      "paper": "1412.6980v9",
+      "variant": "fields",
+      "operation": "summary",
+      "evidence_sha256": "5e299bdcf8e0962996185a3e2cc78b3d9c02802e5f3f11c27b805f9d4943b2f3",
+      "output": "> FULL_RESEARCH_MODE: 1 source chunks processed; final synthesis uses selected bounded note excerpts.\n\n**Summary**\n\nAdam is an algorithm for first-order gradient-based optimization of stochastic objective functions. It is computationally efficient, invariant to diagonal rescaling, and suitable for large-scale problems with non-stationary objectives and noisy gradients. The algorithm has intuitive hyper-parameter interpretations and empirical results demonstrate its effectiveness in practice.\n\n**Fields**\n\n* **Objective**: First-order gradient-based optimization of stochastic objective functions\n* **Method**: Adaptive estimates of lower-order moments\n* **Findings**: Empirical results demonstrate effectiveness in practice\n* **Limitations**: Not reported",
+      "valid": true,
+      "seconds": 13.8628658000016,
+      "usage": [
+        {
+          "prompt_eval_count": 362,
+          "eval_count": 111,
+          "load_duration": 18510600,
+          "prompt_eval_duration": 362534000,
+          "eval_duration": 11914295000,
+          "total_duration": 13729642900
+        }
+      ]
+    },
+    {
+      "paper": "1412.6980v9",
+      "variant": "fields",
+      "operation": "questions",
+      "evidence_sha256": "5e299bdcf8e0962996185a3e2cc78b3d9c02802e5f3f11c27b805f9d4943b2f3",
+      "output": {
+        "questions": [
+          {
+            "question": "How does the method change under a sparse gradient condition?",
+            "why_it_matters": "Understanding the behavior of Adam under sparse gradients could inform the development of more robust variants.",
+            "evidence": "The method is well suited for problems with very noisy and/or sparse gradients.",
+            "kind": "Explicit limitation",
+            "search_query": "Adam sparse gradients"
+          }
+        ]
+      },
+      "valid": true,
+      "seconds": 31.867505500002153,
+      "usage": [
+        {
+          "prompt_eval_count": 699,
+          "eval_count": 283,
+          "load_duration": 21137100,
+          "prompt_eval_duration": 460299000,
+          "eval_duration": 31263009000,
+          "total_duration": 31852329800
+        }
+      ]
+    },
+    {
+      "paper": "1412.6980v9",
+      "variant": "fields",
+      "operation": "literature",
+      "evidence_sha256": "5e299bdcf8e0962996185a3e2cc78b3d9c02802e5f3f11c27b805f9d4943b2f3",
+      "output": {
+        "explanation": "The proposed method, Adam, uses an adaptive learning rate that adjusts to the magnitude of the gradient, which can help improve computational efficiency by avoiding the need for manual tuning of learning rates. This adaptive approach allows the algorithm to focus more resources on the most important parameters, reducing the number of iterations required to converge. Additionally, Adam's use of second moment estimates can help to stabilize the optimization process, leading to faster convergence and reduced computational cost. However, the paper does not provide explicit details on how the proposed method improves computational efficiency, and further analysis would be required to fully understand its benefits in this regard."
+      },
+      "valid": true,
+      "seconds": 14.21531160000086,
+      "usage": [
+        {
+          "prompt_eval_count": 226,
+          "eval_count": 128,
+          "load_duration": 15472200,
+          "prompt_eval_duration": 128247000,
+          "eval_duration": 13943107000,
+          "total_duration": 14205589100
+        }
+      ]
+    },
+    {
+      "paper": "1412.6980v9",
+      "variant": "evidence",
+      "operation": "summary",
+      "evidence_sha256": "5e299bdcf8e0962996185a3e2cc78b3d9c02802e5f3f11c27b805f9d4943b2f3",
+      "output": "> FULL_RESEARCH_MODE: 1 source chunks processed; final synthesis uses selected bounded note excerpts.\n\nObjective: First-order gradient-based optimization of stochastic objective functions using adaptive estimates of lower-order moments.\n\nProposed method: Adam algorithm, a stochastic optimization method based on adaptive estimates of lower-order moments.\n\nEvaluation: Tested on various datasets and benchmark models, including the online convex optimization framework. \n\nFindings: \n- Adam is computationally efficient and has little memory requirements.\n- The method is invariant to diagonal rescaling of the gradients.\n- It is well-suited for large data and/or parameter problems, non-stationary objectives, and problems with noisy and/or sparse gradients.\n- Hyper-parameters have intuitive interpretations and typically require little tuning.\n\nLimitations: Not reported in supplied excerpts.",
+      "valid": true,
+      "seconds": 28.100019699999393,
+      "usage": [
+        {
+          "prompt_eval_count": 391,
+          "eval_count": 138,
+          "load_duration": 17836200,
+          "prompt_eval_duration": 378508000,
+          "eval_duration": 27519440000,
+          "total_duration": 27995439000
+        }
+      ]
+    },
+    {
+      "paper": "1412.6980v9",
+      "variant": "evidence",
+      "operation": "questions",
+      "evidence_sha256": "5e299bdcf8e0962996185a3e2cc78b3d9c02802e5f3f11c27b805f9d4943b2f3",
+      "output": {
+        "questions": [
+          {
+            "question": "What are the key features of the Adam algorithm?",
+            "why_it_matters": "Understanding the key features of Adam is important for selecting the most suitable optimization method for a specific problem.",
+            "evidence": "We introduce Adam, an algorithm for first-order gradient-based optimization of stochastic objective functions, based on adaptive estimates of lower-order moments.",
+            "kind": "Inferred research opportunity",
+            "search_query": "Adam algorithm features"
+          }
+        ]
+      },
+      "valid": true,
+      "seconds": 25.175509099997726,
+      "usage": [
+        {
+          "prompt_eval_count": 669,
+          "eval_count": 97,
+          "load_duration": 19063500,
+          "prompt_eval_duration": 1028189000,
+          "eval_duration": 23926128000,
+          "total_duration": 25161054900
+        }
+      ]
+    },
+    {
+      "paper": "1412.6980v9",
+      "variant": "evidence",
+      "operation": "literature",
+      "evidence_sha256": "5e299bdcf8e0962996185a3e2cc78b3d9c02802e5f3f11c27b805f9d4943b2f3",
+      "output": {
+        "explanation": "The Adam method improves computational efficiency by adapting the learning rate for each parameter based on the magnitude of the gradient, which helps to avoid slow convergence and improves the stability of the optimization process. This adaptive learning rate scheme allows the method to focus more computation on the most important parameters, leading to faster convergence and improved efficiency."
+      },
+      "valid": true,
+      "seconds": 17.34417979999853,
+      "usage": [
+        {
+          "prompt_eval_count": 236,
+          "eval_count": 70,
+          "load_duration": 12033600,
+          "prompt_eval_duration": 290672000,
+          "eval_duration": 16904023000,
+          "total_duration": 17335333800
+        }
+      ]
+    },
+    {
+      "paper": "1412.6980v9",
+      "variant": "baseline",
+      "operation": "summary",
+      "evidence_sha256": "5e299bdcf8e0962996185a3e2cc78b3d9c02802e5f3f11c27b805f9d4943b2f3",
+      "output": "> FULL_RESEARCH_MODE: 1 source chunks processed; final synthesis uses selected bounded note excerpts.\n\n**Adam Algorithm Overview**\n\nAdam is a first-order gradient-based optimization algorithm for stochastic objective functions. It is computationally efficient, memory-light, and invariant to diagonal rescaling of gradients. Suitable for large-scale data and/or parameters, non-stationary objectives, and noisy/sparse gradients. Hyper-parameters have intuitive interpretations, requiring minimal tuning. Empirical results demonstrate its effectiveness in practice, comparable to other stochastic optimization methods.",
+      "valid": true,
+      "seconds": 21.984569699998247,
+      "usage": [
+        {
+          "prompt_eval_count": 326,
+          "eval_count": 86,
+          "load_duration": 14608800,
+          "prompt_eval_duration": 1003972000,
+          "eval_duration": 20765909000,
+          "total_duration": 21870661400
+        }
+      ]
+    },
+    {
+      "paper": "1412.6980v9",
+      "variant": "baseline",
+      "operation": "questions",
+      "evidence_sha256": "5e299bdcf8e0962996185a3e2cc78b3d9c02802e5f3f11c27b805f9d4943b2f3",
+      "output": {
+        "questions": [
+          {
+            "question": "What are the key features of the Adam algorithm?",
+            "why_it_matters": "Understanding the key features of Adam is crucial for its effective implementation and comparison with other optimization methods.",
+            "evidence": "The method is straightforward to implement, is computationally efficient, has little memory requirements, is invariant to diagonal rescaling of the gradients, and is well suited for problems that are large in terms of data and/or parameters.",
+            "kind": "Explicit limitation or inferred research opportunity",
+            "search_query": "Adam algorithm features"
+          }
+        ]
+      },
+      "valid": true,
+      "seconds": 112.30728580000141,
+      "usage": [
+        {
+          "prompt_eval_count": 624,
+          "eval_count": 445,
+          "load_duration": 12531400,
+          "prompt_eval_duration": 1074174000,
+          "eval_duration": 111072472000,
+          "total_duration": 112297064800
+        }
+      ]
+    },
+    {
+      "paper": "1412.6980v9",
+      "variant": "baseline",
+      "operation": "literature",
+      "evidence_sha256": "5e299bdcf8e0962996185a3e2cc78b3d9c02802e5f3f11c27b805f9d4943b2f3",
+      "output": {
+        "explanation": "The Adam method improves computational efficiency by adapting the learning rate for each parameter based on the magnitude of the gradient, which helps to avoid slow convergence and improves the stability of the optimization process. This adaptive learning rate scheme allows the method to focus more computation on the most important parameters, leading to faster convergence and improved overall efficiency."
+      },
+      "valid": true,
+      "seconds": 21.048896100001002,
+      "usage": [
+        {
+          "prompt_eval_count": 212,
+          "eval_count": 71,
+          "load_duration": 14194400,
+          "prompt_eval_duration": 289829000,
+          "eval_duration": 17014723999,
+          "total_duration": 21037391400
+        }
+      ]
+    },
+    {
+      "paper": "2106.09685v2",
+      "variant": "evidence",
+      "operation": "summary",
+      "evidence_sha256": "2958af278829902a671ef8e4b544569c76ee0f572a5befa886a3ab155df3c252",
+      "output": "> FULL_RESEARCH_MODE: 1 source chunks processed; final synthesis uses selected bounded note excerpts.\n\nObjective: \nLow-Rank Adaptation (LoRA) for efficient large-scale pretraining and adaptation in natural language processing.\n\nProposed method: \nLoRA freezes pretrained model weights and injects trainable rank decomposition matrices into each layer of the Transformer architecture, reducing the number of trainable parameters.\n\nEvaluation: \n- Tested on GPT-3 175B, Adam, RoBERTa, DeBERTa, GPT-2, and other models.\n- Tested on GPU memory requirement.\n- Tested on training throughput.\n- Tested on inference latency.\n\nFindings: \n- LoRA reduces trainable parameters by 10,000 times and GPU memory requirement by 3 times.\n- LoRA performs on-par or better than fine-tuning in model quality.\n- LoRA has higher training throughput and no additional inference latency.\n\nLimitations: \nNot reported in supplied excerpts.",
+      "valid": true,
+      "seconds": 46.51059929999974,
+      "usage": [
+        {
+          "prompt_eval_count": 495,
+          "eval_count": 175,
+          "load_duration": 17179300,
+          "prompt_eval_duration": 1226313000,
+          "eval_duration": 43029155000,
+          "total_duration": 46380539000
+        }
+      ]
+    },
+    {
+      "paper": "2106.09685v2",
+      "variant": "evidence",
+      "operation": "questions",
+      "evidence_sha256": "2958af278829902a671ef8e4b544569c76ee0f572a5befa886a3ab155df3c252",
+      "output": {
+        "questions": [
+          {
+            "question": "What is the main advantage of using Low-Rank Adaptation (LoRA) in natural language processing?",
+            "why_it_matters": "Reducing the number of trainable parameters and GPU memory requirement for downstream tasks.",
+            "evidence": "LoRA can reduce the number of trainable parameters by 10,000 times and the GPU memory requirement by 3 times.",
+            "kind": "Explicit limitation",
+            "search_query": "Low-Rank Adaptation advantages"
+          }
+        ]
+      },
+      "valid": true,
+      "seconds": 27.94869259999905,
+      "usage": [
+        {
+          "prompt_eval_count": 773,
+          "eval_count": 101,
+          "load_duration": 15511000,
+          "prompt_eval_duration": 1265081000,
+          "eval_duration": 25132141000,
+          "total_duration": 27934513000
+        }
+      ]
+    }
+  ]
+}

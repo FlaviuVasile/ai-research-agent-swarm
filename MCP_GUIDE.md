@@ -1,8 +1,9 @@
 # Local scientific-paper MCP server
 
 The server uses the official Python MCP SDK and the existing PDF, Summary,
-Questions, Literature and Orchestrator implementations. It does not import
-Streamlit. All six tools have typed input/output schemas and structured results.
+Questions, Literature, Orchestrator and corpus implementations. It does not
+import Streamlit. All eleven tools have typed input/output schemas and
+structured results.
 
 ## Install and run
 
@@ -31,6 +32,11 @@ results `synthetic: true`; that mode is not research analysis.
 | `search_literature` | `questions` matching the existing Questions schema | OpenAlex metadata and structured title-only assessments |
 | `analyze_paper` | `pdf_path`, optional `mode` | Complete existing Orchestrator, saved reports and validated scientific-paper data |
 | `get_analysis_result` | returned `run_id` | Reload saved validated data without model calls |
+| `ingest_paper` | `pdf_path`, `title`, optional `doi` | Register a root-relative PDF and process one bounded batch; repeat to resume |
+| `list_indexed_papers` | optional `limit`, `offset` | List indexed papers and processing status |
+| `search_evidence` | `query`, optional scope, `mode`, `top_k` | Retrieve passages using keyword, local semantic or hybrid search |
+| `inspect_evidence` | `chunk_id` | Read a stored passage with page, offsets, checksum and publication metadata |
+| `ask_scientific_question` | `question`, optional scope, `mode`, `top_k` | Use the shared corpus QA path for exact excerpts or bounded model-checked synthesis |
 
 `pdf_path` is relative to `--pdf-root`. Absolute paths, traversal outside the
 root, non-PDF files and oversized files are rejected. The root is controlled by
@@ -40,6 +46,19 @@ the operator, not the client. Run IDs are validated before reading saved data.
 question tools use the existing direct-text selection behavior; full analysis
 uses the Orchestrator's corpus-based FAST selection. These evidence selectors
 are different and are disclosed rather than presented as equivalent.
+
+The five corpus tools share the local SQLite store with Streamlit. `ask_scientific_question`
+defaults to keyword retrieval, decomposes multipart questions, and preserves
+exact page-span citations. Simple answers are extractive and their semantic
+support is not assessed. Complex or incomplete questions may use one bounded
+targeted retrieval round followed by structured synthesis and a separate local
+model support check; a single correction attempt is allowed. A
+`model_checked_answer` is a model judgment, not human verification or proof.
+Named-paper comparisons retrieve and select evidence per paper. If a
+synthesized comparison fails validation, the tool returns a clearly marked
+partial response with exact source excerpts instead of treating them as a
+validated conclusion.
+Semantic and hybrid modes require locally indexed embeddings.
 
 Full analysis saves ordinary reports plus `analysis.json` beneath
 `--output-root` (default `output/mcp/<run-id>/`). The JSON contains summary
@@ -109,8 +128,9 @@ Do not run live Streamlit analysis and MCP analysis simultaneously on a small
 GPU: there is no cross-process inference lock.
 
 The server is local stdio only, not a multi-user authenticated service. No OCR,
-hard native-memory sandbox, automatic full-text literature verification, or
-claim-grounding guarantee is added. Full page text can produce large responses;
+hard native-memory sandbox or automatic full-text literature verification is
+provided. Model-based claim checks can still be wrong; simple extractive
+responses do not receive semantic support assessment. Full page text can produce large responses;
 use small/medium readable papers within the existing configured limits.
 
 ## Verification and reproduction

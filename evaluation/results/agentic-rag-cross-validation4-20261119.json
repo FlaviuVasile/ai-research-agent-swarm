@@ -1,0 +1,318 @@
+{
+  "schema": "agentic-rag-live-mcp-smoke-v1",
+  "model": "llama3.2:latest",
+  "provider": "ollama",
+  "context_tokens": 8192,
+  "llm_timeout_seconds": 90,
+  "cache_enabled": false,
+  "corpus_root": "C:\\Users\\flavi\\OneDrive\\Documente\\neuro\\.runtime\\agentic-rag-cross-validation4-20261119",
+  "source_papers": [
+    {
+      "file": "1412.6980v9.pdf",
+      "title": "Adam: A Method for Stochastic Optimization"
+    },
+    {
+      "file": "1706.03762v7.pdf",
+      "title": "Attention Is All You Need"
+    },
+    {
+      "file": "2106.09685v2.pdf",
+      "title": "LoRA: Low-Rank Adaptation of Large Language Models"
+    }
+  ],
+  "tool_count": 11,
+  "question_cases": [
+    "cross_paper"
+  ],
+  "questions": {
+    "cross_paper": {
+      "question": "Compare the attention mechanism in Attention Is All You Need with the low-rank updates in the LoRA paper.",
+      "response": {
+        "status": "partial_evidence",
+        "answer": "The model did not validate a synthesized comparison. Exact source excerpts:\n\nAttention Is All You Need (PDF p. 2): In this work we propose the Transformer, a model architecture eschewing recurrence and instead\nrelying entirely on an attention mechanism to draw global dependencies between input and output.\n\nLoRA: Low-Rank Adaptation of Large Language Models (PDF p. 4): This means that when\napplying LoRA to all weight matrices and training all biases2, we roughly recover the expressive-\nness of full ﬁne-tuning by setting the LoRA rank r to the rank of the pre-trained weight matrices.",
+        "claims": [
+          {
+            "claim": "Attention Is All You Need (PDF p. 2): In this work we propose the Transformer, a model architecture eschewing recurrence and instead\nrelying entirely on an attention mechanism to draw global dependencies between input and output.",
+            "citation": {
+              "document_id": "4ac737968f0c41688bc74b9f85d74d04",
+              "publication_id": 2,
+              "title": "Attention Is All You Need",
+              "page": 2,
+              "sha256": "bdfaa68d8984f0dc02beaca527b76f207d99b666d31d1da728ee0728182df697",
+              "chunk_id": 92,
+              "quote": "In this work we propose the Transformer, a model architecture eschewing recurrence and instead\nrelying entirely on an attention mechanism to draw global dependencies between input and output.",
+              "start_char": 1542,
+              "end_char": 1733
+            },
+            "citations": [
+              {
+                "document_id": "4ac737968f0c41688bc74b9f85d74d04",
+                "publication_id": 2,
+                "title": "Attention Is All You Need",
+                "page": 2,
+                "sha256": "bdfaa68d8984f0dc02beaca527b76f207d99b666d31d1da728ee0728182df697",
+                "chunk_id": 92,
+                "quote": "In this work we propose the Transformer, a model architecture eschewing recurrence and instead\nrelying entirely on an attention mechanism to draw global dependencies between input and output.",
+                "start_char": 1542,
+                "end_char": 1733
+              }
+            ],
+            "kind": "source_excerpt",
+            "question_part": 1,
+            "question_parts": [
+              1
+            ],
+            "evidence_span_ids": [
+              1
+            ],
+            "validation": {
+              "provenance": "exact_page_span",
+              "relevance": "selector_model_assessed",
+              "semantic_support": "not_assessed"
+            }
+          },
+          {
+            "claim": "LoRA: Low-Rank Adaptation of Large Language Models (PDF p. 4): This means that when\napplying LoRA to all weight matrices and training all biases2, we roughly recover the expressive-\nness of full ﬁne-tuning by setting the LoRA rank r to the rank of the pre-trained weight matrices.",
+            "citation": {
+              "document_id": "8b555c2036a542aea1e105f50a9b49c1",
+              "publication_id": 3,
+              "title": "LoRA: Low-Rank Adaptation of Large Language Models",
+              "page": 4,
+              "sha256": "e9a0d3128767db616085dc0f4e6e455e672e89af823e8ed1282793682787395a",
+              "chunk_id": 182,
+              "quote": "This means that when\napplying LoRA to all weight matrices and training all biases2, we roughly recover the expressive-\nness of full ﬁne-tuning by setting the LoRA rank r to the rank of the pre-trained weight matrices.",
+              "start_char": 3051,
+              "end_char": 3268
+            },
+            "citations": [
+              {
+                "document_id": "8b555c2036a542aea1e105f50a9b49c1",
+                "publication_id": 3,
+                "title": "LoRA: Low-Rank Adaptation of Large Language Models",
+                "page": 4,
+                "sha256": "e9a0d3128767db616085dc0f4e6e455e672e89af823e8ed1282793682787395a",
+                "chunk_id": 182,
+                "quote": "This means that when\napplying LoRA to all weight matrices and training all biases2, we roughly recover the expressive-\nness of full ﬁne-tuning by setting the LoRA rank r to the rank of the pre-trained weight matrices.",
+                "start_char": 3051,
+                "end_char": 3268
+              }
+            ],
+            "kind": "source_excerpt",
+            "question_part": 1,
+            "question_parts": [
+              1
+            ],
+            "evidence_span_ids": [
+              2
+            ],
+            "validation": {
+              "provenance": "exact_page_span",
+              "relevance": "selector_model_assessed",
+              "semantic_support": "not_assessed"
+            }
+          }
+        ],
+        "evidence": [
+          {
+            "span_id": 1,
+            "question_part": 1,
+            "citation": {
+              "document_id": "4ac737968f0c41688bc74b9f85d74d04",
+              "publication_id": 2,
+              "title": "Attention Is All You Need",
+              "page": 2,
+              "sha256": "bdfaa68d8984f0dc02beaca527b76f207d99b666d31d1da728ee0728182df697",
+              "chunk_id": 92,
+              "quote": "In this work we propose the Transformer, a model architecture eschewing recurrence and instead\nrelying entirely on an attention mechanism to draw global dependencies between input and output.",
+              "start_char": 1542,
+              "end_char": 1733
+            },
+            "validation": {
+              "provenance": "exact_page_span",
+              "relevance": "selector_model_assessed"
+            }
+          },
+          {
+            "span_id": 2,
+            "question_part": 1,
+            "citation": {
+              "document_id": "8b555c2036a542aea1e105f50a9b49c1",
+              "publication_id": 3,
+              "title": "LoRA: Low-Rank Adaptation of Large Language Models",
+              "page": 4,
+              "sha256": "e9a0d3128767db616085dc0f4e6e455e672e89af823e8ed1282793682787395a",
+              "chunk_id": 182,
+              "quote": "This means that when\napplying LoRA to all weight matrices and training all biases2, we roughly recover the expressive-\nness of full ﬁne-tuning by setting the LoRA rank r to the rank of the pre-trained weight matrices.",
+              "start_char": 3051,
+              "end_char": 3268
+            },
+            "validation": {
+              "provenance": "exact_page_span",
+              "relevance": "selector_model_assessed"
+            }
+          }
+        ],
+        "trace": [
+          {
+            "query": "all attention compare lora low mechanism need rank update you",
+            "retrieved": [
+              92,
+              86,
+              88,
+              105,
+              94,
+              180,
+              215,
+              182,
+              214,
+              251
+            ],
+            "provided": [
+              92,
+              182,
+              88,
+              94,
+              215,
+              180
+            ],
+            "candidate_spans": [
+              {
+                "span": 1,
+                "chunk_id": 92
+              },
+              {
+                "span": 2,
+                "chunk_id": 182
+              },
+              {
+                "span": 3,
+                "chunk_id": 88
+              },
+              {
+                "span": 4,
+                "chunk_id": 182
+              },
+              {
+                "span": 5,
+                "chunk_id": 94
+              },
+              {
+                "span": 6,
+                "chunk_id": 215
+              },
+              {
+                "span": 7,
+                "chunk_id": 94
+              },
+              {
+                "span": 8,
+                "chunk_id": 180
+              },
+              {
+                "span": 9,
+                "chunk_id": 180
+              }
+            ],
+            "required_documents": [
+              "4ac737968f0c41688bc74b9f85d74d04",
+              "8b555c2036a542aea1e105f50a9b49c1"
+            ],
+            "document_queries": {
+              "4ac737968f0c41688bc74b9f85d74d04": "all attention mechanism need transformer update you",
+              "8b555c2036a542aea1e105f50a9b49c1": "all lora low mechanism need rank update you"
+            }
+          }
+        ],
+        "selected_span_ids": [
+          1,
+          2
+        ],
+        "rejected_span_ids": [
+          9
+        ],
+        "follow_up_decisions": [],
+        "unanswered_parts": [
+          "Compare the attention mechanism in Attention Is All You Need with the low-rank updates in the LoRA paper."
+        ],
+        "comparison_coverage": {
+          "required_documents": {
+            "1": {
+              "4ac737968f0c41688bc74b9f85d74d04": "Attention Is All You Need",
+              "8b555c2036a542aea1e105f50a9b49c1": "LoRA: Low-Rank Adaptation of Large Language Models"
+            }
+          },
+          "missing_documents": {
+            "1": {
+              "4ac737968f0c41688bc74b9f85d74d04": "Attention Is All You Need",
+              "8b555c2036a542aea1e105f50a9b49c1": "LoRA: Low-Rank Adaptation of Large Language Models"
+            }
+          },
+          "synthesis_validated": false
+        },
+        "model_calls": {
+          "span_selection": 1,
+          "synthesis": 2,
+          "claim_validation": 2,
+          "additional_retrieval": 0
+        },
+        "provider": "ollama",
+        "model": "llama3.2:latest",
+        "validation_trace": {
+          "draft_calls": 2,
+          "validation_calls": 2,
+          "attempts": [
+            {
+              "draft_claims": 2,
+              "provenance_rejected": 0,
+              "numeric_rejected": 0,
+              "polarity_rejected": 0,
+              "comparison_coverage_rejected": 0,
+              "semantic_rejected": 1,
+              "accepted": 1,
+              "rejected_claims": [
+                {
+                  "claim": "The attention mechanism in Attention Is All You Need relies entirely on an attention mechanism to draw global dependencies between input and output.",
+                  "span_ids": [
+                    1
+                  ],
+                  "reason": "semantic_support"
+                }
+              ]
+            },
+            {
+              "draft_claims": 1,
+              "provenance_rejected": 0,
+              "numeric_rejected": 0,
+              "polarity_rejected": 0,
+              "comparison_coverage_rejected": 0,
+              "semantic_rejected": 1,
+              "accepted": 0,
+              "rejected_claims": [
+                {
+                  "claim": "The attention mechanism in Attention Is All You Need uses an attention mechanism to draw global dependencies between input and output.",
+                  "span_ids": [
+                    1
+                  ],
+                  "reason": "semantic_support"
+                }
+              ]
+            }
+          ],
+          "extractive_comparison_fallback": "exact_source_excerpts_for_missing_sides"
+        },
+        "prompt_version": "7894511caaefd3432b0678bfff145e2f52863413c4270addc07aaebc0298c5e9",
+        "coverage": "Exact page provenance is checked. Extractive answers do not receive semantic support assessment; generated claims receive a separate local-model check, not human verification.",
+        "seconds": 56.819
+      },
+      "provenance": {
+        "citation_count": 2,
+        "exact_provenance": true
+      }
+    }
+  },
+  "indexed_documents": {
+    "Adam: A Method for Stochastic Optimization": "f27ac2477d504358aaf2eddc028c6093",
+    "Attention Is All You Need": "4ac737968f0c41688bc74b9f85d74d04",
+    "LoRA: Low-Rank Adaptation of Large Language Models": "8b555c2036a542aea1e105f50a9b49c1"
+  }
+}

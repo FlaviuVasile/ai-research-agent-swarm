@@ -1,9 +1,58 @@
 # RAG pipeline
 
-PyMuPDF extracts sorted text by page into a checkpointed SQLite corpus. The original file is identified by SHA-256. The index stores publication and document identities, page, section label when recognized, character offsets and exact passage text. Defaults are 1,200 characters with up to 120 characters of overlap. Chunking prefers paragraph and recognized heading boundaries. Section detection is page-local. Tables, equations, scans and reading order in complex layouts can degrade coverage. OCR is unavailable.
+Streamlit corpus QA and MCP `ask_scientific_question` share
+`ResearchService.ask_corpus` → `CorpusQA` → `EvidenceRetrieval`. The default
+strategy is `spans`; the older draft/revision workflow remains available only
+through the internal `strategy="legacy"` option. Corpus QA does not invoke the
+Summary, Questions or Literature specialist agents.
 
-Select keyword BM25, local semantic ranking or reciprocal rank fusion over both. An exact document filter applies before ranking. Keyword mode is the default based on the [local retrieval comparison](SCIENTIFIC_EVALUATION.md). Semantic indexing embeds bounded UTF-8 segments and pools their normalized vectors to work within the embedding model's native context limit. The full passage remains in SQLite. Re-index after upgrading from the previous vector profile.
+PyMuPDF extracts text by page into a checkpointed SQLite corpus. The original
+PDF is identified by SHA-256. Pages, section labels when recognized, passages,
+and exact character offsets are stored locally. Defaults are 1,200 characters
+per passage with up to 120 characters of overlap; chunking prefers paragraph
+and recognized heading boundaries. Section detection is page-local. Tables,
+equations, scans and complex reading order can degrade coverage; OCR is not
+implemented.
 
-QA sends evidence cards in a JSON user message and reserves space for instructions, schema and response. Excluded passages appear in the trace. The workflow allows two drafts under the operation deadline. A draft can request a follow-up query within the original document scope. If all proposed claims fail and the draft supplies no distinct query, the second draft can revise against the same excerpts. A deterministic check resolves the quote against the provided chunk and stored page. It tolerates whitespace differences and returns the original source substring. Numeric tokens written as digits must appear in the quote. A separate LLM call checks each surviving claim for entailment. This is a model judgment with possible false acceptance or rejection. A supported claim status describes the returned claims and does not establish completeness. Queries may abstain even when the corpus contains an answer.
+Keyword BM25 is the default. Scientific morphology is normalized before
+lexical search and multipart questions are retrieved clause-by-clause. Local
+semantic search and reciprocal-rank-fusion hybrid search remain optional and
+require previously indexed local embeddings. Document filters are applied
+before ranking. The exact ranking method should be revisited against the
+human-reviewed benchmark when available; the current six-question retrieval
+pilot is not ground truth.
 
-The maximum is four candidates per draft and ten LLM calls per request, subject to both document and provider deadlines. A semantic-search request requires embeddings for its scope. Pending ingestion can expose only the pages committed so far.
+For a simple question, one model call selects exact page excerpts. Their
+provenance is rechecked against stored page text and offsets. These fast-path
+responses use `evidence_available` or `partial_evidence`; they do **not** claim
+that a generated scientific interpretation was semantically verified.
+
+For multipart or complex questions, the selector can request at most one
+targeted follow-up retrieval per unanswered part, within the original
+document scope. A second selection call is made only if that retrieval returns
+new candidate spans. The selected, exact excerpts are sent to a structured
+synthesis prompt. Each generated claim must cite selected span IDs; invalid
+span IDs are rejected. Deterministic checks reject digit-form values absent
+from the cited spans and flag direct source-polarity conflicts before a separate
+local-model semantic support assessment. Unsupported or incomplete drafts
+receive at most one correction and another support check.
+For comparisons between named papers, retrieval is scoped per paper and
+selection requires a span from each side when available. If synthesis still
+fails its support check, the response exposes exact source excerpts as
+`partial_evidence`; it does not present them as a validated comparison.
+The comparison trace distinguishes papers with selected evidence,
+`missing_documents` (no selected evidence), and
+`unvalidated_documents` (evidence exists but no supported comparison claim was
+validated).
+The maximum is six model calls for this path (two selection, two synthesis,
+two validation), subject to the 90-second per-model-call and 600-second
+document-operation defaults. The validator is a model judgment, not human
+verification or proof. `model_checked_answer`, `partial_evidence`,
+`evidence_only`, and `insufficient_evidence` distinguish the outcomes.
+
+Each response includes retrieval traces, selected source spans, validation
+outcomes and per-stage model-call counts. Retrieval queries are recorded in
+SQLite, but the complete QA answer and correlated model/validation trace are
+not yet persisted as a single durable run record. Semantic and hybrid requests
+can fail if embeddings are unavailable; they do not silently fall back.
+Pending ingestion exposes only pages committed so far.

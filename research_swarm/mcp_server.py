@@ -75,9 +75,11 @@ def create_server(service: ResearchService) -> MCPServer:
 
     @tool
     async def search_evidence(query: str, document_id: str | None = None,
-                              mode: RetrievalMode = "keyword", top_k: int = 5) -> dict[str, list[dict[str, Any]]]:
+                              mode: RetrievalMode = "keyword", top_k: int = 5,
+                              document_ids: list[str] | None = None) -> dict[str, list[dict[str, Any]]]:
         """Retrieve ranked indexed PDF passages. Semantic and hybrid require indexed embeddings."""
-        rows = await service.search_evidence(query, document_id=document_id, mode=mode, limit=top_k)
+        rows = await service.search_evidence(query, document_id=document_id, document_ids=document_ids or (),
+                                             mode=mode, limit=top_k)
         return {"evidence": rows}
 
     @tool
@@ -87,9 +89,11 @@ def create_server(service: ResearchService) -> MCPServer:
 
     @tool
     async def ask_scientific_question(question: str, document_id: str | None = None,
-                                      mode: RetrievalMode = "keyword", top_k: int = 5) -> dict[str, Any]:
-        """Run bounded corpus QA and return supported claims, citations and a validation trace."""
-        return await service.ask_corpus(question, document_id=document_id, mode=mode, top_k=top_k)
+                                      mode: RetrievalMode = "keyword", top_k: int = 5,
+                                      document_ids: list[str] | None = None) -> dict[str, Any]:
+        """Return exact evidence or bounded model-checked synthesis over up to eight PDFs."""
+        return await service.ask_corpus(question, document_id=document_id, document_ids=document_ids or (),
+                                        mode=mode, top_k=top_k)
 
     return server
 

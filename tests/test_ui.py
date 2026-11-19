@@ -102,6 +102,20 @@ def test_corpus_registration_checkpoint_and_evidence_ui(tmp_path) -> None:
         assert not app.exception and not app.error
         assert any("QNX" in row.value for row in app.code)
         assert any("/p1/E" in row.value for row in app.text)
+        citation = {"title": "Synthetic corpus UI paper", "page": 1, "chunk_id": 1,
+                    "sha256": "fixture-sha", "start_char": 0, "end_char": 24,
+                    "quote": "QNX scheduling evidence."}
+        answer = {"status": "model_checked_answer", "answer": "The study describes QNX scheduling.",
+                  "claims": [{"claim": "The study describes QNX scheduling.",
+                              "kind": "reported_finding", "citations": [citation]}],
+                  "evidence": [{"citation": citation}], "unanswered_parts": [],
+                  "coverage": "Model support assessment only."}
+        with patch("research_swarm.service.ResearchService.ask_corpus",
+                   AsyncMock(return_value=answer)):
+            app.button(key="corpus_ask").click().run(timeout=30)
+        assert not app.exception and not app.error
+        assert any("The study describes QNX scheduling." in row.value for row in app.markdown)
+        assert any("QNX scheduling evidence." in row.value for row in app.code)
 
 
 def test_dashboard_remains_responsive_and_reruns_do_not_restart_slow_work(tmp_path):

@@ -225,6 +225,61 @@ def test_keyword_query_safety_limits_and_history(pipeline):
         assert db.execute("SELECT COUNT(*) FROM retrieval_history").fetchone()[0] == 2
 
 
+def test_keyword_search_expands_scientific_morphology(pipeline):
+    store = pipeline.store
+    publication = store.add_publication("Attention Is All You Need")
+    with store.connect() as db:
+        db.execute("INSERT INTO documents(id,publication_id,sha256,relative_path,page_count,updated) "
+                   "VALUES ('transformer',?,'transformer-sha','transformer.pdf',1,0)", (publication,))
+    owner = store.claim("transformer", "fixture")
+    source = "The Transformer dispenses with recurrence and convolutions entirely."
+    store.commit_page("transformer", owner, 1, source, [(0, len(source), "Abstract", source)])
+
+    hits = EvidenceRetrieval(store, pipeline.config).keyword("recurrent convolutional")
+
+    assert hits
+    assert hits[0]["text"] == source
+    assert not EvidenceRetrieval(store, pipeline.config).keyword(
+        "recurrent convolutional", normalize_query=False
+    )
+
+
+def test_query_expansion_preserves_original_term_order():
+    from research_swarm.corpus.query import query_search_terms
+
+    terms = query_search_terms("alpha beta recurrence")
+
+    assert terms[:3] == ["alpha", "beta", "recur"]
+    assert {"recurrent", "recurrently", "recurrence"} <= set(terms)
+
+
+def test_scientific_term_normalization_handles_common_plural_forms():
+    from research_swarm.corpus.query import query_search_terms, query_terms
+
+    terms = query_terms("attention mechanisms, low-rank updates and matrices")
+
+    assert {"attention", "mechanism", "low", "rank", "update", "matrix"} <= terms
+    assert {"mechanism", "mechanisms"} <= set(query_search_terms("mechanism"))
+
+
+def test_beta_parameter_queries_match_greek_source_notation(pipeline):
+    from research_swarm.corpus.query import query_search_terms
+
+    publication = pipeline.store.add_publication("Adam: A Method for Stochastic Optimization")
+    source = "Good default settings are \u03b21 = 0.9 and \u03b22 = 0.999."
+    with pipeline.store.connect() as db:
+        db.execute("INSERT INTO documents(id,publication_id,sha256,relative_path,page_count,updated) "
+                   "VALUES ('adam',?,'adam-sha','adam.pdf',1,0)", (publication,))
+    owner = pipeline.store.claim("adam", "fixture")
+    pipeline.store.commit_page("adam", owner, 1, source, [(0, len(source), "Methods", source)])
+
+    terms = query_search_terms("beta1 beta2")
+    hits = EvidenceRetrieval(pipeline.store, pipeline.config).keyword("beta1 beta2", document_id="adam")
+
+    assert "\u03b21" in terms and "\u03b22" in terms
+    assert hits and hits[0]["text"] == source
+
+
 class FakeEmbeddings:
     def __init__(self):
         self.calls = 0

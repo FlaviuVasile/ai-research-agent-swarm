@@ -213,7 +213,9 @@ Official references: [Ollama Windows](https://docs.ollama.com/windows), [Ollama 
 
 ## Persistent corpus foundation
 
-The corpus workspace supports scientific QA over one indexed PDF or the full corpus. Responses include quotations with PDF page and character offsets, validation outcomes and a bounded retrieval trace. The MCP server exposes the same query and evidence search through stdio. See the [pipeline](docs/RAG_PIPELINE.md), [MCP workflow](docs/MCP_GUIDE.md), and [Windows demonstration](docs/WINDOWS_RUN_GUIDE.md).
+Corpus QA now retrieves separately for explicit question clauses and returns exact PDF excerpts selected by the local model. Each answer records its document, page, chunk and character offsets. Streamlit and MCP can constrain QA to up to eight papers. See the [demonstration](PROFESSOR_DEMONSTRATION.md), [architecture](SYSTEM_ARCHITECTURE.md), and [scientific quality report](SCIENTIFIC_QUALITY_REPORT.md) for the verified workflow and observed failures.
+
+The MCP server exposes the same search, answer and source-inspection workflow over stdio. See the [MCP integration guide](MCP_INTEGRATION_GUIDE.md) for client arguments and the [paired experiments](ABLATION_STUDY.md) for measured results.
 
 The first scalable research increment is available alongside the original four-agent PDF analysis. See [RESEARCH_PLATFORM_PLAN.md](RESEARCH_PLATFORM_PLAN.md) for the phased plan, verification results and remaining work. This increment stores publications, processes PDFs in resumable bounded batches, and retrieves exact source evidence. Discovery providers and comparative research reports are later phases; no placeholder academic reports are generated.
 

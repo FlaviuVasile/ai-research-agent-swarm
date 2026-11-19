@@ -21,6 +21,12 @@ includes rendered instructions and evidence. Baseline files have regression
 hashes in `tests/baseline_prompt_hashes.json`; add new variants instead of
 rewriting the baseline. No prompt-loader package is required.
 
+The corpus QA workflow also loads `corpus_span_adaptive.md`,
+`corpus_synthesis.md`, `corpus_synthesis_revision.md`, and
+`corpus_synthesis_verify.md` from `baseline/`. These instructions drive the
+bounded follow-up retrieval and model-checked synthesis path; exact source-span
+provenance remains independently verified in code.
+
 Set `PROMPT_VARIANT=baseline`, `fields`, or `evidence` to choose a complete
 experimental family. The default `selected` uses `selection.json`: fields for
 summary, evidence for questions, baseline for literature. The production selection and measured limitations are

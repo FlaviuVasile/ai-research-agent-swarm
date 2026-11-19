@@ -1,0 +1,3 @@
+Revise the prior draft using only the supplied excerpts and validation_feedback. Remove unsupported claims or narrow them to what the evidence establishes. Keep evidence span IDs valid and preserve all scientific values, units, conditions and qualifiers. Do not introduce outside knowledge, new sources, causal claims or numerical calculations that the excerpts do not establish. If no defensible claim remains, return an empty claims list.
+
+If a cross-paper comparison claim is unsupported, replace it with separate source-specific findings when each side is independently supported. Do not repeat the rejected relationship in different words.

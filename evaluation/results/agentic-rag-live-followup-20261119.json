@@ -1,0 +1,495 @@
+{
+  "schema": "agentic-rag-live-mcp-smoke-v1",
+  "model": "llama3.2:latest",
+  "provider": "ollama",
+  "context_tokens": 8192,
+  "llm_timeout_seconds": 90,
+  "cache_enabled": false,
+  "corpus_root": "C:\\Users\\flavi\\OneDrive\\Documente\\neuro\\.runtime\\agentic-rag-live-followup-20261119",
+  "source_papers": [
+    {
+      "file": "1412.6980v9.pdf",
+      "title": "Adam: A Method for Stochastic Optimization"
+    },
+    {
+      "file": "1706.03762v7.pdf",
+      "title": "Attention Is All You Need"
+    },
+    {
+      "file": "2106.09685v2.pdf",
+      "title": "LoRA: Low-Rank Adaptation of Large Language Models"
+    }
+  ],
+  "tool_count": 11,
+  "questions": {
+    "simple_numerical": {
+      "question": "What default values does Adam use for beta1 and beta2?",
+      "response": {
+        "status": "evidence_available",
+        "answer": "Good default settings for the tested machine learning problems are α = 0.002, β1 = 0.9 and β2 = 0.999.",
+        "claims": [
+          {
+            "claim": "Good default settings for the tested machine learning problems are α = 0.002, β1 = 0.9 and β2 = 0.999.",
+            "citation": {
+              "document_id": "814f0d4b21dd455c82667cff8128587d",
+              "publication_id": 1,
+              "title": "Adam: A Method for Stochastic Optimization",
+              "page": 9,
+              "sha256": "eab9c73ae2ceda884b94830bda99312254bac4806f6c9f045cbab90721ecda31",
+              "chunk_id": 53,
+              "quote": "Good default settings for the tested machine learning problems are α = 0.002, β1 = 0.9 and\nβ2 = 0.999.",
+              "start_char": 144,
+              "end_char": 246
+            },
+            "citations": [
+              {
+                "document_id": "814f0d4b21dd455c82667cff8128587d",
+                "publication_id": 1,
+                "title": "Adam: A Method for Stochastic Optimization",
+                "page": 9,
+                "sha256": "eab9c73ae2ceda884b94830bda99312254bac4806f6c9f045cbab90721ecda31",
+                "chunk_id": 53,
+                "quote": "Good default settings for the tested machine learning problems are α = 0.002, β1 = 0.9 and\nβ2 = 0.999.",
+                "start_char": 144,
+                "end_char": 246
+              }
+            ],
+            "kind": "source_excerpt",
+            "question_part": 1,
+            "evidence_span_ids": [
+              2
+            ],
+            "validation": {
+              "provenance": "exact_page_span",
+              "relevance": "selector_model_assessed",
+              "semantic_support": "not_assessed"
+            }
+          }
+        ],
+        "evidence": [
+          {
+            "span_id": 2,
+            "question_part": 1,
+            "citation": {
+              "document_id": "814f0d4b21dd455c82667cff8128587d",
+              "publication_id": 1,
+              "title": "Adam: A Method for Stochastic Optimization",
+              "page": 9,
+              "sha256": "eab9c73ae2ceda884b94830bda99312254bac4806f6c9f045cbab90721ecda31",
+              "chunk_id": 53,
+              "quote": "Good default settings for the tested machine learning problems are α = 0.002, β1 = 0.9 and\nβ2 = 0.999.",
+              "start_char": 144,
+              "end_char": 246
+            },
+            "validation": {
+              "provenance": "exact_page_span",
+              "relevance": "selector_model_assessed"
+            }
+          }
+        ],
+        "trace": [
+          {
+            "query": "adam default values β1 β2",
+            "retrieved": [
+              8,
+              53,
+              55,
+              49,
+              12
+            ],
+            "provided": [
+              8,
+              53
+            ],
+            "candidate_spans": [
+              {
+                "span": 1,
+                "chunk_id": 8
+              },
+              {
+                "span": 2,
+                "chunk_id": 53
+              }
+            ],
+            "required_documents": []
+          }
+        ],
+        "selected_span_ids": [
+          2
+        ],
+        "rejected_span_ids": [],
+        "follow_up_decisions": [],
+        "unanswered_parts": [],
+        "comparison_coverage": {
+          "required_documents": {},
+          "missing_documents": {}
+        },
+        "model_calls": {
+          "span_selection": 1,
+          "synthesis": 0,
+          "claim_validation": 0,
+          "additional_retrieval": 0
+        },
+        "provider": "ollama",
+        "model": "llama3.2:latest",
+        "validation_trace": null,
+        "prompt_version": "111f0080ae7b58957cd0989e0facbf7045e967d132c50095b7622597a182fc03",
+        "coverage": "Exact page provenance is checked. Extractive answers do not receive semantic support assessment; generated claims receive a separate local-model check, not human verification.",
+        "seconds": 12.243
+      },
+      "provenance": {
+        "citation_count": 1,
+        "exact_provenance": true
+      }
+    },
+    "false_premise": {
+      "question": "Why did the Transformer use recurrent layers?",
+      "response": {
+        "status": "evidence_only",
+        "answer": "",
+        "claims": [],
+        "evidence": [
+          {
+            "span_id": 3,
+            "question_part": 1,
+            "citation": {
+              "document_id": "51c1a110095141c887c3f18c264f9998",
+              "publication_id": 2,
+              "title": "Attention Is All You Need",
+              "page": 1,
+              "sha256": "bdfaa68d8984f0dc02beaca527b76f207d99b666d31d1da728ee0728182df697",
+              "chunk_id": 88,
+              "quote": "We propose a new simple network architecture, the Transformer,\n                              based solely on attention mechanisms, dispensing with recurrence and convolutions\n                                    entirely.",
+              "start_char": 1431,
+              "end_char": 1651
+            },
+            "validation": {
+              "provenance": "exact_page_span",
+              "relevance": "selector_model_assessed"
+            }
+          }
+        ],
+        "trace": [
+          {
+            "query": "layers recur transformer",
+            "retrieved": [
+              92,
+              88,
+              149,
+              94,
+              96
+            ],
+            "provided": [
+              149,
+              92,
+              88
+            ],
+            "candidate_spans": [
+              {
+                "span": 1,
+                "chunk_id": 149
+              },
+              {
+                "span": 2,
+                "chunk_id": 92
+              },
+              {
+                "span": 3,
+                "chunk_id": 88
+              },
+              {
+                "span": 4,
+                "chunk_id": 149
+              }
+            ],
+            "required_documents": []
+          }
+        ],
+        "selected_span_ids": [
+          3
+        ],
+        "rejected_span_ids": [],
+        "follow_up_decisions": [],
+        "unanswered_parts": [
+          "Why did the Transformer use recurrent layers?"
+        ],
+        "comparison_coverage": {
+          "required_documents": {},
+          "missing_documents": {}
+        },
+        "model_calls": {
+          "span_selection": 1,
+          "synthesis": 2,
+          "claim_validation": 2,
+          "additional_retrieval": 0
+        },
+        "provider": "ollama",
+        "model": "llama3.2:latest",
+        "validation_trace": {
+          "draft_calls": 2,
+          "validation_calls": 2,
+          "attempts": [
+            {
+              "draft_claims": 1,
+              "provenance_rejected": 0,
+              "numeric_rejected": 0,
+              "comparison_coverage_rejected": 0,
+              "semantic_rejected": 1,
+              "accepted": 0
+            },
+            {
+              "draft_claims": 1,
+              "provenance_rejected": 0,
+              "numeric_rejected": 0,
+              "comparison_coverage_rejected": 0,
+              "semantic_rejected": 1,
+              "accepted": 0
+            }
+          ]
+        },
+        "prompt_version": "111f0080ae7b58957cd0989e0facbf7045e967d132c50095b7622597a182fc03",
+        "coverage": "Exact page provenance is checked. Extractive answers do not receive semantic support assessment; generated claims receive a separate local-model check, not human verification.",
+        "seconds": 30.349
+      },
+      "provenance": {
+        "citation_count": 1,
+        "exact_provenance": true
+      }
+    },
+    "cross_paper": {
+      "question": "Compare the attention mechanism in Attention Is All You Need with the low-rank updates in the LoRA paper.",
+      "response": {
+        "status": "evidence_only",
+        "answer": "",
+        "claims": [],
+        "evidence": [
+          {
+            "span_id": 3,
+            "question_part": 1,
+            "citation": {
+              "document_id": "51c1a110095141c887c3f18c264f9998",
+              "publication_id": 2,
+              "title": "Attention Is All You Need",
+              "page": 5,
+              "sha256": "bdfaa68d8984f0dc02beaca527b76f207d99b666d31d1da728ee0728182df697",
+              "chunk_id": 106,
+              "quote": "We implement this\n         inside of scaled dot-product attention by masking out (setting to −∞) all values in the input\n         of the softmax which correspond to illegal connections.",
+              "start_char": 1976,
+              "end_char": 2161
+            },
+            "validation": {
+              "provenance": "exact_page_span",
+              "relevance": "selector_model_assessed"
+            }
+          },
+          {
+            "span_id": 4,
+            "question_part": 1,
+            "citation": {
+              "document_id": "8bb45aeb366740f1a9abe1c5da9b63b6",
+              "publication_id": 3,
+              "title": "LoRA: Low-Rank Adaptation of Large Language Models",
+              "page": 9,
+              "sha256": "e9a0d3128767db616085dc0f4e6e455e672e89af823e8ed1282793682787395a",
+              "chunk_id": 215,
+              "quote": "Given the empirical advantage of LoRA, we hope to further explain the properties of the low-rank\nadaptation learned from downstream tasks.",
+              "start_char": 4198,
+              "end_char": 4336
+            },
+            "validation": {
+              "provenance": "exact_page_span",
+              "relevance": "selector_model_assessed"
+            }
+          }
+        ],
+        "trace": [
+          {
+            "query": "all attention compare lora low mechanism need rank updates you",
+            "retrieved": [
+              86,
+              106,
+              94,
+              92,
+              97,
+              215,
+              180,
+              251,
+              248,
+              189
+            ],
+            "provided": [
+              106,
+              248,
+              215,
+              92,
+              180,
+              94,
+              189
+            ],
+            "candidate_spans": [
+              {
+                "span": 1,
+                "chunk_id": 106
+              },
+              {
+                "span": 2,
+                "chunk_id": 248
+              },
+              {
+                "span": 3,
+                "chunk_id": 106
+              },
+              {
+                "span": 4,
+                "chunk_id": 215
+              },
+              {
+                "span": 5,
+                "chunk_id": 92
+              },
+              {
+                "span": 6,
+                "chunk_id": 180
+              },
+              {
+                "span": 7,
+                "chunk_id": 94
+              },
+              {
+                "span": 8,
+                "chunk_id": 189
+              },
+              {
+                "span": 9,
+                "chunk_id": 94
+              },
+              {
+                "span": 10,
+                "chunk_id": 189
+              }
+            ],
+            "required_documents": [
+              "51c1a110095141c887c3f18c264f9998",
+              "8bb45aeb366740f1a9abe1c5da9b63b6"
+            ]
+          }
+        ],
+        "selected_span_ids": [
+          3,
+          4
+        ],
+        "rejected_span_ids": [],
+        "follow_up_decisions": [],
+        "unanswered_parts": [
+          "Compare the attention mechanism in Attention Is All You Need with the low-rank updates in the LoRA paper."
+        ],
+        "comparison_coverage": {
+          "required_documents": {
+            "1": {
+              "51c1a110095141c887c3f18c264f9998": "Attention Is All You Need",
+              "8bb45aeb366740f1a9abe1c5da9b63b6": "LoRA: Low-Rank Adaptation of Large Language Models"
+            }
+          },
+          "missing_documents": {
+            "1": {
+              "51c1a110095141c887c3f18c264f9998": "Attention Is All You Need",
+              "8bb45aeb366740f1a9abe1c5da9b63b6": "LoRA: Low-Rank Adaptation of Large Language Models"
+            }
+          }
+        },
+        "model_calls": {
+          "span_selection": 1,
+          "synthesis": 2,
+          "claim_validation": 2,
+          "additional_retrieval": 0
+        },
+        "provider": "ollama",
+        "model": "llama3.2:latest",
+        "validation_trace": {
+          "draft_calls": 2,
+          "validation_calls": 2,
+          "attempts": [
+            {
+              "draft_claims": 1,
+              "provenance_rejected": 0,
+              "numeric_rejected": 0,
+              "comparison_coverage_rejected": 0,
+              "semantic_rejected": 1,
+              "accepted": 0
+            },
+            {
+              "draft_claims": 1,
+              "provenance_rejected": 0,
+              "numeric_rejected": 0,
+              "comparison_coverage_rejected": 0,
+              "semantic_rejected": 1,
+              "accepted": 0
+            }
+          ]
+        },
+        "prompt_version": "111f0080ae7b58957cd0989e0facbf7045e967d132c50095b7622597a182fc03",
+        "coverage": "Exact page provenance is checked. Extractive answers do not receive semantic support assessment; generated claims receive a separate local-model check, not human verification.",
+        "seconds": 38.245
+      },
+      "provenance": {
+        "citation_count": 2,
+        "exact_provenance": true
+      }
+    },
+    "unanswerable": {
+      "question": "What participant dropout rate was measured in the randomized clinical trial?",
+      "response": {
+        "status": "insufficient_evidence",
+        "answer": "",
+        "claims": [],
+        "evidence": [],
+        "trace": [
+          {
+            "query": "clinical dropout measured participant randomized rate trial",
+            "retrieved": [
+              123,
+              271,
+              63,
+              42,
+              33
+            ],
+            "provided": [],
+            "candidate_spans": [],
+            "required_documents": []
+          }
+        ],
+        "selected_span_ids": [],
+        "rejected_span_ids": [],
+        "follow_up_decisions": [],
+        "unanswered_parts": [
+          "What participant dropout rate was measured in the randomized clinical trial?"
+        ],
+        "comparison_coverage": {
+          "required_documents": {},
+          "missing_documents": {}
+        },
+        "model_calls": {
+          "span_selection": 0,
+          "synthesis": 0,
+          "claim_validation": 0,
+          "additional_retrieval": 0
+        },
+        "provider": "ollama",
+        "model": "llama3.2:latest",
+        "validation_trace": null,
+        "prompt_version": "111f0080ae7b58957cd0989e0facbf7045e967d132c50095b7622597a182fc03",
+        "coverage": "Exact page provenance is checked. Extractive answers do not receive semantic support assessment; generated claims receive a separate local-model check, not human verification.",
+        "seconds": 0.028
+      },
+      "provenance": {
+        "citation_count": 0,
+        "exact_provenance": null
+      }
+    }
+  },
+  "indexed_documents": {
+    "Adam: A Method for Stochastic Optimization": "814f0d4b21dd455c82667cff8128587d",
+    "Attention Is All You Need": "51c1a110095141c887c3f18c264f9998",
+    "LoRA: Low-Rank Adaptation of Large Language Models": "8bb45aeb366740f1a9abe1c5da9b63b6"
+  }
+}

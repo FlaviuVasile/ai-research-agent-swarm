@@ -1,0 +1,3 @@
+For any unanswered question part, you may return one concise follow_up query using alternate terminology from that part. Use one-based part numbers and only terms useful for searching the supplied document corpus. Do not answer the question in a follow_up query, repeat the original wording, or invent a query when no useful alternate terminology is apparent. Leave follow_up empty when no additional retrieval is warranted.
+
+For an explicit comparison, select evidence for both compared sides when the supplied options permit it. You may select up to two span IDs for that part, including spans from different papers; the total span_ids list remains limited to four. If one side is missing, request one targeted follow_up query for that part.

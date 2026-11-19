@@ -11,6 +11,7 @@ from research_swarm.config import Settings
 from research_swarm.llm import chunks
 from research_swarm.providers import OllamaProvider
 from .config import CorpusConfig
+from .query import query_search_terms
 from .store import CorpusStore
 
 
@@ -89,11 +90,13 @@ class EvidenceRetrieval:
             raise ValueError("Retrieval limit must be 1–50.")
         return limit
 
-    def keyword(self, query, limit=None, publication_id=None, *, document_id=None):
+    def keyword(self, query, limit=None, publication_id=None, *, document_id=None, document_ids=(),
+                 normalize_query=True):
         limit = self._limit(limit)
         if not query.strip() or len(query) > 1000:
             raise ValueError("Enter a query of 1–1000 characters.")
-        words = re.findall(r"\w+", query, re.UNICODE)[:32]
+        words = (query_search_terms(query) if normalize_query
+                 else re.findall(r"\w+", query, re.UNICODE))[:32]
         if not words:
             return []
         # Literal OR terms, not user-supplied FTS operators/SQL.
@@ -106,6 +109,9 @@ class EvidenceRetrieval:
         if document_id is not None:
             where += " AND d.id=?"
             params.append(document_id)
+        if document_ids:
+            where += " AND d.id IN (" + ",".join("?" for _ in document_ids) + ")"
+            params.extend(document_ids)
         params.append(limit)
         with self.store.connect() as db:
             rows = db.execute("SELECT e.id,bm25(passage_fts) score FROM passage_fts JOIN passages e ON e.id=passage_fts.rowid "
@@ -150,7 +156,7 @@ class EvidenceRetrieval:
             count += len(rows)
         return count
 
-    async def semantic(self, query, limit=None, publication_id=None, *, document_id=None):
+    async def semantic(self, query, limit=None, publication_id=None, *, document_id=None, document_ids=()):
         limit = self._limit(limit)
         if not query.strip() or len(query) > 1000:
             raise ValueError("Enter a query of 1–1000 characters.")
@@ -164,6 +170,9 @@ class EvidenceRetrieval:
         if document_id is not None:
             where += " AND d.id=?"
             params.append(document_id)
+        if document_ids:
+            where += " AND d.id IN (" + ",".join("?" for _ in document_ids) + ")"
+            params.extend(document_ids)
         with self.store.connect() as db:
             count = db.execute("SELECT COUNT(*) FROM vectors v JOIN passages e ON e.id=v.passage_id "
                 "JOIN documents d ON d.id=e.document_id WHERE " + where, params).fetchone()[0]
@@ -193,19 +202,22 @@ class EvidenceRetrieval:
         self.store.record_retrieval(query,"semantic",[row["id"] for row in results])
         return results
 
-    async def search(self, query, *, mode="keyword", limit=None, document_id=None):
+    async def search(self, query, *, mode="keyword", limit=None, document_id=None, document_ids=()):
         limit = self._limit(limit)
-        if document_id is not None:
-            self.store.document(document_id)
+        if len(document_ids) > 8 or (document_id is not None and document_ids):
+            raise ValueError("Select one document ID or up to eight document IDs.")
+        for identifier in (document_id,) if document_id is not None else document_ids:
+            self.store.document(identifier)
+        scope = {"document_id": document_id, "document_ids": document_ids}
         if mode == "keyword":
-            return self.keyword(query, limit, document_id=document_id)
+            return self.keyword(query, limit, **scope)
         if mode == "semantic":
-            return await self.semantic(query, limit, document_id=document_id)
+            return await self.semantic(query, limit, **scope)
         if mode != "hybrid":
             raise ValueError("Unknown retrieval method.")
         candidates = min(50, limit * 3)
-        lexical = self.keyword(query, candidates, document_id=document_id)
-        semantic = await self.semantic(query, candidates, document_id=document_id)
+        lexical = self.keyword(query, candidates, **scope)
+        semantic = await self.semantic(query, candidates, **scope)
         scores, rows = {}, {}
         for ranking in (lexical, semantic):
             for rank, row in enumerate(ranking, 1):

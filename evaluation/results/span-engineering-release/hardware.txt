@@ -1,0 +1,8 @@
+﻿name, memory.total [MiB], memory.free [MiB]
+NVIDIA GeForce RTX 3050 Ti Laptop GPU, 4096 MiB, 958 MiB
+NAME                 ID              SIZE      MODIFIED     
+all-minilm:latest    1b226e2802db    45 MB     2 weeks ago     
+llama3.2:latest      a80c4f17acd5    2.0 GB    5 months ago    
+NAME               ID              SIZE      PROCESSOR    CONTEXT    RUNNER      UNTIL              
+llama3.2:latest    a80c4f17acd5    3.0 GB    100% GPU     8192       llamacpp    7 minutes from now    
+RAM GiB total=15.41 available=1.35

@@ -1,0 +1,51 @@
+{
+  "status": "supported_claims",
+  "claims": [
+    {
+      "claim": "We introduce Adam, an algorithm for ﬁrst-order gradient-based optimization of stochastic objective functions, based on adaptive estimates of lower-order mo- ments.",
+      "citation": {
+        "document_id": "ad69ba59e8dc4d70a56ba5ac087eb22c",
+        "publication_id": 1,
+        "title": "Adam: A Method for Stochastic Optimization",
+        "page": 1,
+        "sha256": "eab9c73ae2ceda884b94830bda99312254bac4806f6c9f045cbab90721ecda31",
+        "chunk_id": 2,
+        "quote": "We introduce Adam, an algorithm for ﬁrst-order gradient-based optimization of\n                                  stochastic objective functions, based on adaptive estimates of lower-order mo-\n                              ments.",
+        "start_char": 468,
+        "end_char": 695
+      },
+      "kind": "source_excerpt",
+      "question_part": 1,
+      "validation": {
+        "provenance": "exact_page_span",
+        "relevance": "model_selected"
+      }
+    }
+  ],
+  "trace": [
+    {
+      "query": "adaptive estimates lower moments order",
+      "retrieved": [
+        6,
+        2,
+        11,
+        10,
+        63
+      ],
+      "provided": [
+        {
+          "span": 1,
+          "chunk_id": 2
+        },
+        {
+          "span": 2,
+          "chunk_id": 6
+        }
+      ]
+    }
+  ],
+  "unanswered_parts": [],
+  "prompt_version": "0dec9cda6aab5585e783440d3b76b563a7e81c120697eaf1604a3f9d7962b323",
+  "coverage": "Exact source excerpts selected for relevance by one model call. Independently review scientific interpretation.",
+  "seconds": 0.903
+}

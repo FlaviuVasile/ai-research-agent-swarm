@@ -1,0 +1,284 @@
+{
+  "schema": "agentic-rag-live-mcp-smoke-v1",
+  "model": "llama3.2:latest",
+  "provider": "ollama",
+  "context_tokens": 8192,
+  "llm_timeout_seconds": 90,
+  "cache_enabled": false,
+  "corpus_root": "C:\\Users\\flavi\\OneDrive\\Documente\\neuro\\.runtime\\agentic-rag-cross-validation-20261119",
+  "source_papers": [
+    {
+      "file": "1412.6980v9.pdf",
+      "title": "Adam: A Method for Stochastic Optimization"
+    },
+    {
+      "file": "1706.03762v7.pdf",
+      "title": "Attention Is All You Need"
+    },
+    {
+      "file": "2106.09685v2.pdf",
+      "title": "LoRA: Low-Rank Adaptation of Large Language Models"
+    }
+  ],
+  "tool_count": 11,
+  "question_cases": [
+    "cross_paper"
+  ],
+  "questions": {
+    "cross_paper": {
+      "question": "Compare the attention mechanism in Attention Is All You Need with the low-rank updates in the LoRA paper.",
+      "response": {
+        "status": "partial_evidence",
+        "answer": "LoRA takes a step further by not requiring the accumu-\nlated gradient update to weight matrices to have full-rank during adaptation.",
+        "claims": [
+          {
+            "claim": "LoRA takes a step further by not requiring the accumu-\nlated gradient update to weight matrices to have full-rank during adaptation.",
+            "citation": {
+              "document_id": "937c0791ec874146b8820c032f24dccf",
+              "publication_id": 3,
+              "title": "LoRA: Low-Rank Adaptation of Large Language Models",
+              "page": 4,
+              "sha256": "e9a0d3128767db616085dc0f4e6e455e672e89af823e8ed1282793682787395a",
+              "chunk_id": 182,
+              "quote": "LoRA takes a step further and does not require the accumu-\nlated gradient update to weight matrices to have full-rank during adaptation.",
+              "start_char": 2914,
+              "end_char": 3050
+            },
+            "citations": [
+              {
+                "document_id": "937c0791ec874146b8820c032f24dccf",
+                "publication_id": 3,
+                "title": "LoRA: Low-Rank Adaptation of Large Language Models",
+                "page": 4,
+                "sha256": "e9a0d3128767db616085dc0f4e6e455e672e89af823e8ed1282793682787395a",
+                "chunk_id": 182,
+                "quote": "LoRA takes a step further and does not require the accumu-\nlated gradient update to weight matrices to have full-rank during adaptation.",
+                "start_char": 2914,
+                "end_char": 3050
+              }
+            ],
+            "kind": "reported_finding",
+            "question_parts": [
+              1
+            ],
+            "evidence_span_ids": [
+              4
+            ],
+            "validation": {
+              "provenance": "exact_page_span",
+              "relevance": "selector_model_assessed",
+              "semantic_support": "model_assessed",
+              "numeric_values": "digit_tokens_match_when_present"
+            }
+          }
+        ],
+        "evidence": [
+          {
+            "span_id": 3,
+            "question_part": 1,
+            "citation": {
+              "document_id": "24d9011aea014d3881a95a0bc39e0eaf",
+              "publication_id": 2,
+              "title": "Attention Is All You Need",
+              "page": 2,
+              "sha256": "bdfaa68d8984f0dc02beaca527b76f207d99b666d31d1da728ee0728182df697",
+              "chunk_id": 92,
+              "quote": "In this work we propose the Transformer, a model architecture eschewing recurrence and instead\nrelying entirely on an attention mechanism to draw global dependencies between input and output.",
+              "start_char": 1542,
+              "end_char": 1733
+            },
+            "validation": {
+              "provenance": "exact_page_span",
+              "relevance": "selector_model_assessed"
+            }
+          },
+          {
+            "span_id": 4,
+            "question_part": 1,
+            "citation": {
+              "document_id": "937c0791ec874146b8820c032f24dccf",
+              "publication_id": 3,
+              "title": "LoRA: Low-Rank Adaptation of Large Language Models",
+              "page": 4,
+              "sha256": "e9a0d3128767db616085dc0f4e6e455e672e89af823e8ed1282793682787395a",
+              "chunk_id": 182,
+              "quote": "LoRA takes a step further and does not require the accumu-\nlated gradient update to weight matrices to have full-rank during adaptation.",
+              "start_char": 2914,
+              "end_char": 3050
+            },
+            "validation": {
+              "provenance": "exact_page_span",
+              "relevance": "selector_model_assessed"
+            }
+          }
+        ],
+        "trace": [
+          {
+            "query": "all attention compare lora low mechanism need rank update you",
+            "retrieved": [
+              92,
+              86,
+              88,
+              105,
+              94,
+              180,
+              215,
+              182,
+              214,
+              251
+            ],
+            "provided": [
+              92,
+              182,
+              88,
+              215,
+              105,
+              180,
+              94
+            ],
+            "candidate_spans": [
+              {
+                "span": 1,
+                "chunk_id": 92
+              },
+              {
+                "span": 2,
+                "chunk_id": 182
+              },
+              {
+                "span": 3,
+                "chunk_id": 92
+              },
+              {
+                "span": 4,
+                "chunk_id": 182
+              },
+              {
+                "span": 5,
+                "chunk_id": 88
+              },
+              {
+                "span": 6,
+                "chunk_id": 215
+              },
+              {
+                "span": 7,
+                "chunk_id": 105
+              },
+              {
+                "span": 8,
+                "chunk_id": 180
+              },
+              {
+                "span": 9,
+                "chunk_id": 94
+              },
+              {
+                "span": 10,
+                "chunk_id": 180
+              }
+            ],
+            "required_documents": [
+              "24d9011aea014d3881a95a0bc39e0eaf",
+              "937c0791ec874146b8820c032f24dccf"
+            ],
+            "document_queries": {
+              "24d9011aea014d3881a95a0bc39e0eaf": "all attention mechanism need transformer update you",
+              "937c0791ec874146b8820c032f24dccf": "all lora low mechanism need rank update you"
+            }
+          }
+        ],
+        "selected_span_ids": [
+          3,
+          4
+        ],
+        "rejected_span_ids": [],
+        "follow_up_decisions": [],
+        "unanswered_parts": [
+          "Compare the attention mechanism in Attention Is All You Need with the low-rank updates in the LoRA paper."
+        ],
+        "comparison_coverage": {
+          "required_documents": {
+            "1": {
+              "24d9011aea014d3881a95a0bc39e0eaf": "Attention Is All You Need",
+              "937c0791ec874146b8820c032f24dccf": "LoRA: Low-Rank Adaptation of Large Language Models"
+            }
+          },
+          "missing_documents": {
+            "1": {
+              "24d9011aea014d3881a95a0bc39e0eaf": "Attention Is All You Need"
+            }
+          },
+          "synthesis_validated": true
+        },
+        "model_calls": {
+          "span_selection": 1,
+          "synthesis": 2,
+          "claim_validation": 1,
+          "additional_retrieval": 0
+        },
+        "provider": "ollama",
+        "model": "llama3.2:latest",
+        "validation_trace": {
+          "draft_calls": 2,
+          "validation_calls": 1,
+          "attempts": [
+            {
+              "draft_claims": 2,
+              "provenance_rejected": 0,
+              "numeric_rejected": 0,
+              "comparison_coverage_rejected": 0,
+              "semantic_rejected": 1,
+              "accepted": 1,
+              "rejected_claims": [
+                {
+                  "claim": "The attention mechanism in Attention Is All You Need does not require the accumu-\nlated gradient update to weight matrices to have full-rank during adaptation.",
+                  "span_ids": [
+                    3
+                  ],
+                  "reason": "semantic_support"
+                }
+              ]
+            },
+            {
+              "draft_claims": 2,
+              "provenance_rejected": 0,
+              "numeric_rejected": 0,
+              "comparison_coverage_rejected": 2,
+              "semantic_rejected": 0,
+              "accepted": 0,
+              "rejected_claims": [
+                {
+                  "claim": "The attention mechanism in Attention Is All You Need requires the accumulated gradient update to weight matrices to have full-rank during adaptation.",
+                  "span_ids": [
+                    3
+                  ],
+                  "reason": "comparison_coverage"
+                },
+                {
+                  "claim": "The low-rank updates in the LoRA paper do not require the accumulated gradient update to weight matrices to have full-rank during adaptation.",
+                  "span_ids": [
+                    4
+                  ],
+                  "reason": "comparison_coverage"
+                }
+              ]
+            }
+          ]
+        },
+        "prompt_version": "7894511caaefd3432b0678bfff145e2f52863413c4270addc07aaebc0298c5e9",
+        "coverage": "Exact page provenance is checked. Extractive answers do not receive semantic support assessment; generated claims receive a separate local-model check, not human verification.",
+        "seconds": 62.668
+      },
+      "provenance": {
+        "citation_count": 2,
+        "exact_provenance": true
+      }
+    }
+  },
+  "indexed_documents": {
+    "Adam: A Method for Stochastic Optimization": "35e72663f814498096192d0e9f260199",
+    "Attention Is All You Need": "24d9011aea014d3881a95a0bc39e0eaf",
+    "LoRA: Low-Rank Adaptation of Large Language Models": "937c0791ec874146b8820c032f24dccf"
+  }
+}
